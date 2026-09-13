@@ -1,0 +1,40 @@
+# Python bytecode, packages, and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets (keep the safe example tracked)
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+# Local documents, vector database, and model caches
+chroma_db/
+uploads/
+.cache/
+
+# Test, type-checking, and coverage output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+# Logs, notebooks, editors, and operating systems
+*.log
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

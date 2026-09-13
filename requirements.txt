@@ -1,0 +1,18 @@
+# Python 3.11 or 3.12 recommended. Integration packages are separate in LangChain 1.x.
+# Compatible major-version ranges; freeze a tested environment for deployment.
+streamlit>=1.40,<2
+langchain>=1.0,<2
+langchain-core>=1.0,<2
+langchain-community>=0.4,<0.5
+langchain-text-splitters>=1.0,<2
+langchain-google-genai>=4.0,<5
+langchain-chroma>=1.0,<2
+langchain-huggingface>=1.0,<2
+chromadb>=1.0,<2
+pypdf>=5,<7
+pandas>=2.2,<3
+openpyxl>=3.1,<4
+sentence-transformers>=3,<6
+python-dotenv>=1.0,<2
+pydantic>=2.7,<3
+torchvision
