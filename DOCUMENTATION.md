@@ -67,7 +67,7 @@ Evaluators can also paste their own keys into the sidebar; those are kept only i
 
 ```text
 app.py               Streamlit UI: sidebar (LLM status, documents, sample questions) and chat
-agent.py             LangChain agent, search tool, guardrails, Gemini -> Groq fallback
+agent.py             LangChain agent, search tool, guardrails, LLM fallback chain
 llm.py               LLM providers, key checks, model names, friendly error messages
 ingestion.py         Multi-format loaders, file validation, chunking, uploaded_documents/ helpers
 retriever.py         Local embeddings, ChromaDB store, semantic search
@@ -77,9 +77,17 @@ chroma_db/           Vector database files (created at run time; empty in the su
 uploaded_documents/  Copies of files uploaded through the UI (empty in the submission)
 tests/               Offline unit tests, setup check, LLM connectivity check
 run_windows.bat      Optional one-click launcher for Windows
+architecture_diagram.jpg   Overview picture of the system (shown in section 3)
 ```
 
 ## 3. Architecture
+
+![Architecture diagram: Streamlit UI, document pipeline (upload, chunking, MiniLM embeddings, ChromaDB) and query pipeline (semantic search, LangChain agent, LLM, verified answer with citations)](architecture_diagram.jpg)
+
+*Figure 1 - Overview of the system ([architecture_diagram.jpg](architecture_diagram.jpg)). The picture is deliberately
+simplified: its "LLM" box is really a chain of four models (Gemini -> Groq -> Groq's second model -> Gemini's second model,
+see section 5), and the agent's checks include local guards that run before any LLM is called. The text diagram below
+shows those details.*
 
 ```text
 +--------------------------------------------------------------------------------------+
@@ -91,9 +99,9 @@ run_windows.bat      Optional one-click launcher for Windows
                 v                                                      v
 +-------------------------------+                     +-----------------------------------+
 |  INGESTION  (ingestion.py)    |                     |  AGENT  (agent.py, LangChain)     |
-|  1 check type/size/encoding   |                     |  0 local pre-check: any relevant  |
-|  2 PDFLoader / TextLoader /   |                     |    passage? if not -> refuse, no  |
-|    CSVLoader / ExcelLoader    |                     |    LLM call                       |
+|  1 check type/size/encoding   |                     |  0 local checks: nothing relevant |
+|  2 PDFLoader / TextLoader /   |                     |    or maths over rows? refuse; no |
+|    CSVLoader / ExcelLoader    |                     |    LLM is called at all           |
 |  3 friendly error per failure |                     |  1 PLAN   (LLM)                   |
 |  4 split into ~700-char chunks|                     |  2 RETRIEVE  tool: search_documents|
 +---------------+---------------+                     |  3 REASON (LLM, up to 3 searches) |
@@ -105,8 +113,8 @@ run_windows.bat      Optional one-click launcher for Windows
 |  ChromaDB collection (cosine) |                                                 v
 |  one collection per session   |                          +------------------------------+
 +-------------------------------+                          |  LLM layer (llm.py)          |
-                                                           |  1st: Gemini   2nd: Groq     |
-   uploaded_documents/  <- copy of each uploaded file      |  (automatic fallback)        |
+                                                           |  Gemini > Groq > Groq 2nd >  |
+   uploaded_documents/  <- copy of each uploaded file      |  Gemini 2nd  (auto fallback) |
    chroma_db/           <- vector data                     +------------------------------+
 ```
 

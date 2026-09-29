@@ -469,6 +469,7 @@ chroma_db/              The search database's files (empty until you index somet
 uploaded_documents/     Copies of files you upload (empty until you upload something)
 tests/                  Automatic tests and setup checks
 run_windows.bat         One-click starter for Windows
+architecture_diagram.jpg  A picture of how the parts fit together (see DOCUMENTATION.md)
 README.md               This guide          DOCUMENTATION.md   How it works inside
 ```
 
