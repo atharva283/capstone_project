@@ -3,7 +3,7 @@
 The agent is built with LangChain's `create_agent`. Its only tool is `search_documents`
 (semantic search over the user's own uploaded files). Whatever the model says is checked
 afterwards against the passages the tool really returned, so invented quotes never reach the user.
-If the primary LLM (Gemini) fails, the same agent is re-run with the fallback LLM (Groq).
+If an LLM fails, the same agent is re-run with the next configured one (Gemini -> Groq -> backups).
 '''
 from __future__ import annotations
 import json
@@ -21,7 +21,8 @@ from langchain_core.messages import HumanMessage
 from langchain_core.tools import tool
 from langgraph.errors import GraphRecursionError
 from pydantic import BaseModel, Field
-from llm import Provider, build_chat_model, describe_error, is_quota_error, redact
+from llm import (Provider, build_chat_model, describe_error, is_daily_limit, is_malformed_tool_call,
+                 is_quota_error, redact, retry_delay_seconds)
 from retriever import SearchHit, semantic_search
 
 log = logging.getLogger('docassistant')
@@ -33,7 +34,20 @@ PASSAGES_PER_SEARCH = 5
 MAX_SOURCES = 15               # distinct passages the agent can cite in one answer
 MAX_CONTEXT_CHARACTERS = 12000
 PROVIDER_COOLDOWN_SECONDS = 90   # after an outage, try the other LLM first for a while
-QUOTA_COOLDOWN_SECONDS = 900     # free-tier quotas (e.g. 20 requests per day) do not recover in a minute
+UNKNOWN_LIMIT_COOLDOWN_SECONDS = 180  # rate limit without a "try again in" hint
+QUOTA_COOLDOWN_SECONDS = 900     # daily quotas (e.g. 20 requests per day) do not recover in a minute
+SPREADSHEET_FORMATS = {'csv', 'xlsx'}
+MAX_ROWS_PER_ANSWER = 2          # an answer built from 3+ different spreadsheet rows is a cross-row calculation
+
+# Words that ask for a calculation over many rows. They only trigger the refusal when the best
+# matches for the question are spreadsheet rows: "How many payrolls ran?" (asked of a PDF) is fine.
+CALCULATION_CUE = re.compile(
+    r'\b(how\s+many|how\s+much\s+(?:in\s+total|total)|number\s+of\s+(?:employees|people|staff|workers|'
+    r'persons|rows|records|entries|departments|managers|hires|men|women)|count\s+of|head\s*count|'
+    r'averages?|avg|median|totals?|sum\s+of|percent(?:age)?|ratio|highest|lowest|maximum|minimum|most|least|'
+    r'top\s+(?:\d+|ten|five|three)|bottom\s+(?:\d+|ten|five|three)|rank(?:ing|ed)?|oldest|youngest|'
+    r'longest|shortest|best[- ]paid|worst[- ]paid|compare|comparison|list\s+all|all\s+employees|'
+    r'every\s+employee|per\s+department|by\s+department|breakdown|distribution)\b', re.I)
 
 # Fixed, safe messages. The model only chooses WHICH one applies, never the wording.
 FALLBACK_RESPONSE = (
@@ -110,6 +124,7 @@ class Answer:
     model: str = ''
     fell_back: bool = False                  # True when the primary LLM failed
     steps: list[dict] = field(default_factory=list)  # searches the agent ran (its "trace")
+    note: str = ''                           # why no LLM was called (local guardrail), if so
 
 
 class AgentError(RuntimeError):
@@ -170,18 +185,23 @@ def make_search_tool(store: Chroma, book: EvidenceBook, min_similarity: float):
 class DocumentAgent:
     '''One LangChain agent with one retrieval tool and an ordered list of LLM providers.
 
-    Guardrails around the model: bounded searches, a local no-evidence check before any
-    LLM call, structured output, quote verification, fixed refusal messages, and fallback
-    to the next provider on any API failure.
+    Guardrails around the model: bounded searches, local no-evidence and "calculation over
+    spreadsheet rows" checks before any LLM call, structured output, quote verification, a
+    cross-row safety net, fixed refusal messages, and fallback to the next provider on any API failure.
     '''
 
     def __init__(
         self, providers: list[Provider],
-        model_factory: Callable[[Provider], BaseChatModel] = build_chat_model,
+        model_factory: Callable[[Provider], BaseChatModel] | None = None,
     ) -> None:
         if not providers:
             raise ValueError('Configure at least one LLM API key (GOOGLE_API_KEY or GROQ_API_KEY).')
         self.providers = list(providers)
+        if model_factory is None:
+            # With spare providers, fail fast and let the chain switch (a different model has its own
+            # rate-limit bucket) instead of sleeping and retrying; a lone provider gets one retry.
+            retries = 0 if len(self.providers) > 1 else 1
+            model_factory = lambda provider: build_chat_model(provider, max_retries=retries)  # noqa: E731
         self._model_factory = model_factory
         self._blocked_until: dict[str, float] = {}
         self.last_provider: Provider | None = None
@@ -208,6 +228,13 @@ class DocumentAgent:
                 used.setdefault(evidence.source_id, []).append(evidence.quote)
             labels = ' '.join(f'[{source_id}]' for source_id in sorted(citations))
             lines.append(f'{claim.text} {labels}')
+        rows = {(hit.document.metadata.get('source'), hit.document.metadata.get('sheet'),
+                 hit.document.metadata.get('row')) for hit in (book.hits[i] for i in used)
+                if hit.document.metadata.get('format') in SPREADSHEET_FORMATS}
+        if len(rows) > MAX_ROWS_PER_ANSWER:
+            # Safety net for weaker models: combining several rows is a count / average / list in
+            # disguise, and the few retrieved rows are never the whole table.
+            return Answer(REFUSAL_MESSAGES['needs_calculation'])
         cards = []
         for source_id, quotes in sorted(used.items()):
             hit = book.hits[source_id]
@@ -238,6 +265,33 @@ class DocumentAgent:
         draft = result.get('structured_response')
         return draft if isinstance(draft, GroundedDraft) else None
 
+    def _attempt(self, provider: Provider, question: str, store: Chroma, min_similarity: float,
+                 secrets: list[str]) -> tuple[GroundedDraft | None, EvidenceBook]:
+        '''Run the agent once; run it a second time only if the model produced a malformed tool call.'''
+        for attempt in (1, 2):
+            book = EvidenceBook()
+            try:
+                return self._run_agent(provider, question, store, book, min_similarity), book
+            except Exception as exc:  # noqa: BLE001
+                if attempt == 1 and is_malformed_tool_call(exc):
+                    log.warning('%s produced a malformed tool call; retrying once: %s', provider.label,
+                                redact(str(exc)[:200], secrets))
+                    continue
+                raise
+        raise AssertionError('unreachable')
+
+    @staticmethod
+    def _cooldown_seconds(exc: BaseException) -> float:
+        '''How long to try a failed provider last. Per-minute limits recover fast, daily ones do not.'''
+        if not is_quota_error(exc):
+            return PROVIDER_COOLDOWN_SECONDS
+        hint = retry_delay_seconds(exc)
+        if is_daily_limit(exc):
+            return max(hint or 0, QUOTA_COOLDOWN_SECONDS)
+        if hint is not None:
+            return min(max(hint + 2, 5), QUOTA_COOLDOWN_SECONDS)
+        return UNKNOWN_LIMIT_COOLDOWN_SECONDS
+
     def _ordered_providers(self) -> list[Provider]:
         now = time.monotonic()
         healthy = [p for p in self.providers if self._blocked_until.get(p.name, 0) <= now]
@@ -251,23 +305,28 @@ class DocumentAgent:
         if len(question) > MAX_QUESTION_LENGTH:
             return Answer(f'Please shorten your question to {MAX_QUESTION_LENGTH} characters.')
         try:
-            # Local, free check: no relevant passage means no LLM call at all.
-            if not semantic_search(store, question, min_similarity=min_similarity):
-                return Answer(FALLBACK_RESPONSE)
+            hits = semantic_search(store, question, min_similarity=min_similarity)
         except Exception as exc:
             log.exception('Document search failed')
             raise AgentError('Searching the knowledge base failed. Clear it and index your files again.') from exc
+        # Local, free checks first: they need no LLM, so they cannot be talked out of their decision.
+        if not hits:
+            return Answer(FALLBACK_RESPONSE,
+                          note='Guardrail: nothing relevant was found locally, so no LLM was called.')
+        rows = sum(1 for hit in hits if hit.document.metadata.get('format') in SPREADSHEET_FORMATS)
+        if rows * 2 > len(hits) and CALCULATION_CUE.search(question):
+            return Answer(REFUSAL_MESSAGES['needs_calculation'],
+                          note='Guardrail: this asks for a calculation across spreadsheet rows, '
+                               'so no LLM was called.')
         secrets = [p.api_key for p in self.providers]
         problems = []
         for provider in self._ordered_providers():
-            book = EvidenceBook()
             try:
-                draft = self._run_agent(provider, question, store, book, min_similarity)
+                draft, book = self._attempt(provider, question, store, min_similarity, secrets)
             except Exception as exc:  # noqa: BLE001 - any API failure moves on to the next LLM
                 log.warning('%s failed: %s: %s', provider.label, type(exc).__name__,
                             redact(str(exc)[:300], secrets))
-                pause = QUOTA_COOLDOWN_SECONDS if is_quota_error(exc) else PROVIDER_COOLDOWN_SECONDS
-                self._blocked_until[provider.name] = time.monotonic() + pause
+                self._blocked_until[provider.name] = time.monotonic() + self._cooldown_seconds(exc)
                 problems.append(f'{provider.label}: {describe_error(exc)}')
                 continue
             self._blocked_until.pop(provider.name, None)

@@ -27,8 +27,7 @@ def main() -> int:
         print(f'Testing {provider.label} (model: {provider.model}) ...')
         try:
             reply = build_chat_model(provider, timeout=30).invoke('Say hello in five words.')
-            text = reply.text() if callable(reply.text) else reply.text
-            print(f'  [OK] WORKS - reply: {text.strip()}')
+            print(f'  [OK] WORKS - reply: {str(reply.text).strip()}')  # .text is a property (not a method call)
         except Exception as exc:  # noqa: BLE001
             failures += 1
             print(f'  [FAILED] {describe_error(exc)}')

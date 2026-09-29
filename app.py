@@ -6,7 +6,7 @@ from pathlib import Path
 import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
-from agent import FALLBACK_RESPONSE, MAX_QUESTION_LENGTH, AgentError, DocumentAgent
+from agent import MAX_QUESTION_LENGTH, AgentError, DocumentAgent
 from ingestion import (IngestionError, chunk_documents, delete_session_uploads, describe_empty,
                        load_document, purge_stale_uploads, safe_filename, save_upload_copy)
 from llm import Provider, check_provider, configured_providers
@@ -129,8 +129,8 @@ def _render_extras(message: dict) -> None:
     meta = message.get('meta') or {}
     if meta.get('provider'):
         st.caption(f"Answered by {meta['provider']} (`{meta['model']}`)" + (' - fallback LLM' if meta.get('fell_back') else ''))
-    elif message['content'] == FALLBACK_RESPONSE:
-        st.caption('Guardrail: nothing relevant was found locally, so no LLM was called.')
+    elif meta.get('note'):
+        st.caption(meta['note'])
     if meta.get('steps'):
         st.caption('Agent searched: ' + ' → '.join(f"“{s['query']}” ({s['passages']} passages)" for s in meta['steps']))
     if message.get('sources'):
@@ -293,7 +293,7 @@ def main() -> None:
                         answer = _agent(providers).answer(question, initialize_vector_store(st.session_state.collection))
                     response, sources = answer.text, answer.sources
                     meta = {'provider': answer.provider, 'model': answer.model,
-                            'fell_back': answer.fell_back, 'steps': answer.steps}
+                            'fell_back': answer.fell_back, 'steps': answer.steps, 'note': answer.note}
                     if answer.provider:
                         st.session_state.last_provider = next(
                             (p.name for p in providers if p.label == answer.provider), '')

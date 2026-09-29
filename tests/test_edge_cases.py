@@ -25,8 +25,9 @@ from agent import (FALLBACK_RESPONSE, REFUSAL_MESSAGES, AgentError, DocumentAgen
                    GroundedDraft, Claim, Evidence)
 from ingestion import (IngestionError, chunk_documents, describe_empty, load_document,
                        safe_filename)
-from llm import (Provider, configured_providers, describe_error, is_quota_error, is_real_key, redact,
-                 resolve_gemini_model, resolve_groq_model)
+from llm import (Provider, configured_providers, describe_error, is_daily_limit, is_malformed_tool_call,
+                 is_quota_error, is_real_key, redact, resolve_gemini_model, resolve_groq_model,
+                 retry_delay_seconds)
 from retriever import SearchHit
 
 SAMPLES = ROOT / 'sample_documents'
@@ -410,38 +411,56 @@ class LlmHelperTests(unittest.TestCase):
             self.assertFalse(is_real_key(value), value)
         self.assertTrue(is_real_key('AIzaSyExampleKey123'))
 
+    def setUp(self):
+        self._saved = {name: os.environ.pop(name, None) for name in (
+            'GEMINI_MODEL', 'GEMINI_BACKUP_MODEL', 'GROQ_MODEL', 'GROQ_BACKUP_MODEL', 'PRIMARY_LLM',
+            'GOOGLE_API_KEY', 'GROQ_API_KEY')}
+
+    def tearDown(self):
+        for name, value in self._saved.items():
+            os.environ.pop(name, None)
+            if value is not None:
+                os.environ[name] = value
+
     def test_model_resolution(self):
-        os.environ.pop('GEMINI_MODEL', None)
-        os.environ.pop('GROQ_MODEL', None)
         self.assertEqual(resolve_gemini_model(), 'gemini-3.6-flash')
         self.assertEqual(resolve_gemini_model('gemini-1.5-pro'), 'gemini-3.6-flash')  # retired -> default
         self.assertEqual(resolve_gemini_model('gemini-custom'), 'gemini-custom')
-        self.assertEqual(resolve_groq_model(), 'llama-3.3-70b-versatile')
+        self.assertEqual(resolve_groq_model(), 'qwen/qwen3.8-27b')
+        self.assertEqual(resolve_groq_model('some/custom-model'), 'some/custom-model')
+
+    def test_retired_groq_models_are_replaced_by_the_default(self):
+        for retired in ('llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'gemma2-9b-it', 'mixtral-8x7b-32768',
+                        'openai/gpt-oss-120b'):
+            self.assertEqual(resolve_groq_model(retired), 'qwen/qwen3.8-27b', retired)
+            os.environ['GROQ_MODEL'] = retired            # a stale .env entry must not cause "model not found"
+            os.environ['GROQ_BACKUP_MODEL'] = retired
+            self.assertEqual(resolve_groq_model(), 'qwen/qwen3.8-27b')
+            self.assertEqual([p.model for p in configured_providers(None, 'groq-key-value')],
+                             ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b'])
 
     def test_provider_order_and_placeholders(self):
-        os.environ.pop('GEMINI_BACKUP_MODEL', None)
-        names = [p.name for p in configured_providers('gemini-key-value', 'groq-key-value')]
-        self.assertEqual(names, ['gemini', 'groq', 'gemini-backup'])  # backup model = last resort
-        self.assertEqual([p.name for p in configured_providers('gemini-key-value', None)][:1], ['gemini'])
-        saved = {k: os.environ.pop(k, None) for k in ('GOOGLE_API_KEY', 'GROQ_API_KEY')}
-        try:
-            os.environ['GROQ_API_KEY'] = 'your_groq_api_key_here'
-            self.assertEqual(configured_providers(None, None), [])
-            os.environ['GROQ_API_KEY'] = 'real-groq-key-abc'
-            self.assertEqual([p.name for p in configured_providers()], ['groq'])  # no Gemini key: no backup
-        finally:
-            for key, value in saved.items():
-                os.environ.pop(key, None)
-                if value is not None:
-                    os.environ[key] = value
+        both = [p.name for p in configured_providers('gemini-key-value', 'groq-key-value')]
+        # the two main models first, then each company's backup model (Groq's first)
+        self.assertEqual(both, ['gemini', 'groq', 'groq-backup', 'gemini-backup'])
+        self.assertEqual([p.name for p in configured_providers('gemini-key-value', None)], ['gemini', 'gemini-backup'])
+        os.environ['GROQ_API_KEY'] = 'your_groq_api_key_here'
+        self.assertEqual(configured_providers(None, None), [])
+        os.environ['GROQ_API_KEY'] = 'real-groq-key-abc'
+        self.assertEqual([p.name for p in configured_providers()], ['groq', 'groq-backup'])  # no Gemini key
+
+    def test_backup_models_share_the_key_but_differ_in_model(self):
+        providers = {p.name: p for p in configured_providers('gemini-key-value', 'groq-key-value')}
+        self.assertEqual(providers['gemini-backup'].api_key, providers['gemini'].api_key)
+        self.assertEqual(providers['groq-backup'].api_key, providers['groq'].api_key)
+        self.assertNotEqual(providers['groq-backup'].model, providers['groq'].model)
+        os.environ['GROQ_BACKUP_MODEL'] = providers['groq'].model     # same model twice is pointless
+        self.assertNotIn('groq-backup', [p.name for p in configured_providers('gemini-key-value', 'groq-key-value')])
 
     def test_primary_llm_setting_puts_groq_first(self):
         os.environ['PRIMARY_LLM'] = 'groq'
-        try:
-            names = [p.name for p in configured_providers('gemini-key-value', 'groq-key-value')]
-        finally:
-            os.environ.pop('PRIMARY_LLM', None)
-        self.assertEqual(names, ['groq', 'gemini', 'gemini-backup'])
+        names = [p.name for p in configured_providers('gemini-key-value', 'groq-key-value')]
+        self.assertEqual(names, ['groq', 'gemini', 'groq-backup', 'gemini-backup'])
 
     def test_quota_errors_are_recognised(self):
         self.assertTrue(is_quota_error(RuntimeError('429 RESOURCE_EXHAUSTED: quota exceeded')))
@@ -455,6 +474,8 @@ class LlmHelperTests(unittest.TestCase):
             'API key not valid. Please pass a valid API key.': 'rejected',
             '429 RESOURCE_EXHAUSTED': 'quota',
             '404 NOT_FOUND model': 'model name',
+            "The model `llama-3.3-70b-versatile` has been decommissioned": 'model name',
+            "The model `x` does not exist or you do not have access to it": 'model name',
             'ConnectError: connection refused': 'busy or unreachable',
             '503 UNAVAILABLE. This model is currently experiencing high demand': 'busy or unreachable',
             '504 DEADLINE_EXCEEDED': 'busy or unreachable',
@@ -465,6 +486,131 @@ class LlmHelperTests(unittest.TestCase):
 
     def test_redact(self):
         self.assertEqual(redact('key=abcdefgh1234 failed', ['abcdefgh1234']), 'key=*** failed')
+
+
+def row_doc(number: int, department: str = 'Sales') -> Document:
+    return Document(page_content=f'EmployeeID: {number}\nDepartment: {department}',
+                    metadata={'source': 'staff.csv', 'format': 'csv', 'row': number + 1, 'chunk_id': f'r{number}'})
+
+
+def table_store(rows: int = 5) -> FakeStore:
+    return FakeStore([(row_doc(n), 0.3) for n in range(1, rows + 1)])  # similarity 0.7 each
+
+
+class LocalGuardTests(unittest.TestCase):
+    '''Deterministic checks that hold even when the LLM is weak or badly behaved.'''
+
+    def agent(self, calls):
+        return DocumentAgent([GEMINI], model_factory=scripted_factory(GOOD_ANSWER, calls=calls))
+
+    def test_calculation_question_over_spreadsheet_rows_is_refused_without_an_llm(self):
+        for question in ('How many employees work in the Sales department?',
+                         'What is the average salary in Engineering?',
+                         'Who is the highest paid employee?',
+                         'What is the total salary per department?',
+                         'List all employees in Finance',
+                         'What is the number of employees in HR?'):
+            calls = []
+            answer = self.agent(calls).answer(question, table_store())
+            self.assertEqual(answer.text, REFUSAL_MESSAGES['needs_calculation'], question)
+            self.assertEqual(calls, [], question)
+            self.assertIn('no LLM was called', answer.note)
+
+    def test_ordinary_lookups_with_similar_words_are_not_refused(self):
+        for question in ('What is the phone number of Luna Sanders?',      # "number of" is not a count
+                         "What is Max Miller's job title?",               # Max is a first name
+                         'What does the Good performance score mean?',
+                         'What is the employee number of Mitchell Serrano?'):
+            calls = []
+            self.agent(calls).answer(question, table_store())
+            self.assertEqual(calls, ['gemini'], question)
+
+    def test_the_same_words_are_fine_when_the_evidence_is_not_a_table(self):
+        calls = []
+        store = FakeStore([(LEAVE, 0.2)])  # a text passage, not a spreadsheet row
+        answer = self.agent(calls).answer('How many annual leave days do I get?', store)
+        self.assertEqual(calls, ['gemini'])
+        self.assertIn('20 days', answer.text)
+
+    def test_lookup_questions_about_a_row_still_reach_the_llm(self):
+        calls = []
+        self.agent(calls).answer('What is the department of employee 3?', table_store())
+        self.assertEqual(calls, ['gemini'])
+
+    def test_no_evidence_refusal_explains_itself(self):
+        answer = self.agent([]).answer('Who won the world cup?', FakeStore([(LEAVE, 0.95)]))
+        self.assertEqual(answer.text, FALLBACK_RESPONSE)
+        self.assertIn('nothing relevant', answer.note)
+
+    def test_answer_built_from_many_rows_is_refused_as_a_hidden_calculation(self):
+        book = EvidenceBook()
+        for number in range(1, 6):
+            book.add('q', [SearchHit(row_doc(number), 0.7)])
+
+        def draft(ids):
+            return GroundedDraft(outcome='answered', claims=[Claim(text='The average is 118,535.', evidence=[
+                Evidence(source_id=i, quote=f'EmployeeID: {i}') for i in ids])])
+
+        self.assertEqual(DocumentAgent._validate(draft([1, 2, 3, 4, 5]), book).text, REFUSAL_MESSAGES['needs_calculation'])
+        self.assertEqual(DocumentAgent._validate(draft([1, 2, 3]), book).text, REFUSAL_MESSAGES['needs_calculation'])
+        self.assertIn('[1]', DocumentAgent._validate(draft([1, 2]), book).text)   # up to two rows is fine
+        self.assertIn('[1]', DocumentAgent._validate(draft([1]), book).text)
+
+    def test_malformed_tool_call_is_retried_once_before_falling_back(self):
+        calls = []
+        state = {'failed': False}
+
+        def flaky(provider):
+            calls.append(provider.name)
+            if not state['failed']:
+                state['failed'] = True
+                raise RuntimeError("Error code: 400 - tool_use_failed: attempted to call tool 'commentary'")
+            return scripted_factory(GOOD_ANSWER)(provider)
+
+        answer = DocumentAgent([GEMINI, GROQ], model_factory=flaky).answer('How many annual leave days?', leave_store())
+        self.assertEqual(calls, ['gemini', 'gemini'])   # same provider twice, no jump to Groq
+        self.assertEqual(answer.provider, 'Gemini')
+        self.assertFalse(answer.fell_back)
+
+
+class RateLimitTests(unittest.TestCase):
+    def test_retry_hints_are_parsed(self):
+        cases = {
+            'Please try again in 420ms. Need more tokens?': 0.42,
+            'Please try again in 1m3.5s.': 63.5,
+            'Please retry in 51.020329022s.': 51.02,
+            "'retryDelay': '51s'": 51.0,
+            'try again in 2h1m': 7260.0,
+        }
+        for text, seconds in cases.items():
+            self.assertAlmostEqual(retry_delay_seconds(RuntimeError(text)), seconds, places=2, msg=text)
+        self.assertIsNone(retry_delay_seconds(RuntimeError('503 unavailable')))
+
+    def test_daily_and_malformed_detection(self):
+        self.assertTrue(is_daily_limit(RuntimeError("quotaId: 'GenerateRequestsPerDayPerProjectPerModel-FreeTier'")))
+        self.assertTrue(is_daily_limit(RuntimeError('Rate limit reached ... on tokens per day (TPD)')))
+        self.assertFalse(is_daily_limit(RuntimeError('Rate limit reached ... on tokens per minute (TPM)')))
+        self.assertTrue(is_malformed_tool_call(RuntimeError("code: 'tool_use_failed', failed_generation: '{}'")))
+        self.assertFalse(is_malformed_tool_call(RuntimeError('503 unavailable')))
+
+    def test_cooldown_policy(self):
+        per_minute = RuntimeError('429 Rate limit reached on tokens per minute (TPM). Please try again in 8.4s.')
+        daily = RuntimeError('429 RESOURCE_EXHAUSTED GenerateRequestsPerDayPerProjectPerModel Please retry in 51s')
+        unknown = RuntimeError('429 too many requests')
+        outage = RuntimeError('503 UNAVAILABLE high demand')
+        self.assertAlmostEqual(DocumentAgent._cooldown_seconds(per_minute), 10.4, places=1)   # hint + 2 s
+        self.assertEqual(DocumentAgent._cooldown_seconds(daily), agent_module.QUOTA_COOLDOWN_SECONDS)
+        self.assertEqual(DocumentAgent._cooldown_seconds(unknown), agent_module.UNKNOWN_LIMIT_COOLDOWN_SECONDS)
+        self.assertEqual(DocumentAgent._cooldown_seconds(outage), agent_module.PROVIDER_COOLDOWN_SECONDS)
+
+    def test_numbers_inside_other_numbers_are_not_status_codes(self):
+        # "Requested 4013" used to be read as HTTP 401 ("API key rejected").
+        exc = RuntimeError('Error code: 429 - Rate limit reached ... Limit 8000, Used 6210, Requested 4013.')
+        self.assertIn('quota', describe_error(exc))
+        self.assertNotIn('rejected', describe_error(RuntimeError('Requested 4013 tokens, limit 0.403')))
+        self.assertIn('rejected', describe_error(RuntimeError('Error code: 401 - Invalid API Key')))
+        self.assertIn('busy', describe_error(RuntimeError('Error code: 503')))
+        self.assertIn('unusable', describe_error(RuntimeError("tool_use_failed: attempted to call tool 'commentary'")))
 
 
 if __name__ == '__main__':

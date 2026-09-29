@@ -33,7 +33,7 @@ with citations that are checked by code before they are shown.
 | Agentic framework | **LangChain 1.x** (`create_agent`, `@tool`, middleware) - the only agent framework used |
 | Number of agents | **1** agent with **1** tool (`search_documents`) |
 | Primary LLM | Google **Gemini** (`gemini-3.6-flash`) |
-| Fallback LLMs | **Groq** (`llama-3.3-70b-versatile`), then a second Gemini model (`gemini-3.5-flash-lite`) - used automatically when Gemini's main model fails |
+| Fallback LLMs | **Groq** (`qwen/qwen3.8-27b`), Groq's second model (`openai/gpt-oss-20b`), then a second Gemini model (`gemini-3.5-flash-lite`) - used automatically, in this order, when the one before fails |
 | Embeddings | `sentence-transformers/all-MiniLM-L6-v2` (free, runs locally on CPU, 384 dimensions) |
 | Vector database | **ChromaDB** (persistent, cosine similarity) |
 | File formats | PDF, TXT, CSV, XLSX. Anything else is refused with an explanation |
@@ -57,7 +57,7 @@ Configuration lives in a `.env` file (template: `.env.example`):
 |---|---|
 | `GOOGLE_API_KEY` | Gemini key (primary LLM) |
 | `GROQ_API_KEY` | Groq key (fallback LLM). Optional; the app works with either key alone |
-| `GEMINI_MODEL`, `GROQ_MODEL`, `GEMINI_BACKUP_MODEL` | Optional model overrides (defaults: `gemini-3.6-flash`, `llama-3.3-70b-versatile`, `gemini-3.5-flash-lite`) |
+| `GEMINI_MODEL`, `GEMINI_BACKUP_MODEL`, `GROQ_MODEL`, `GROQ_BACKUP_MODEL` | Optional model overrides (defaults: `gemini-3.6-flash`, `gemini-3.5-flash-lite`, `qwen/qwen3.8-27b`, `openai/gpt-oss-20b`). Names of models the provider has retired are replaced by the default automatically |
 | `PRIMARY_LLM` | Optional. `groq` puts Groq first in the chain (useful when the Gemini free quota is small); default `gemini` |
 
 Evaluators can also paste their own keys into the sidebar; those are kept only in the browser session.
@@ -186,12 +186,18 @@ VALIDATE every quote found word-for-word in its passage?
 (`REFUSAL_MESSAGES`), so a refusal can never be talked into saying something else.
 
 **LLM fallback.** The providers form an ordered chain: **1. Gemini** (`gemini-3.6-flash`) -> **2. Groq**
-(`llama-3.3-70b-versatile`) -> **3. a second Gemini model** on the same key (`gemini-3.5-flash-lite`) as a
-last resort. If a call raises any error (invalid key, quota, overload, timeout), the *same agent* is re-run
-with the next provider. A failed provider is tried last for 90 seconds so later questions are not slowed
-down. The sidebar shows whether each provider's key is accepted (a cached, **quota-free** metadata check - free tiers allow
-only a few generation requests per day, so a status light must not spend them), and every answer says which LLM produced
-it. After a quota error a provider is skipped for 15 minutes, after a short outage for 90 seconds. Providers without a key are simply left out of the chain.
+(`qwen/qwen3.8-27b`) -> **3. Groq's second model** (`openai/gpt-oss-20b`) -> **4. a second Gemini model**
+(`gemini-3.5-flash-lite`). The two main models come first (a different company is the best spare), then each
+company's second model, which has its own rate-limit bucket. If a call raises any error (invalid key, quota, overload,
+timeout), the *same agent* is re-run with the next provider; with several providers configured the first failure is
+not retried, it simply moves on (a lone provider gets one retry). A model that returns a *malformed tool call* - a known
+glitch of some open models - is retried once before moving on.
+
+A failed provider is tried last for a while, and how long depends on why it failed: the delay the provider asks for in
+its "try again in ..." message (per-minute limits, typically seconds), 15 minutes for daily limits, 3 minutes for an
+unexplained rate limit, 90 seconds for an outage. The sidebar shows whether each provider's key and model are accepted (a
+cached, **quota-free** metadata check - free tiers allow only a few generation requests, so a status light must not spend
+them), and every answer says which LLM produced it. Providers without a key are simply left out of the chain.
 
 **What the user sees.** Under each answer: which LLM answered, the searches the agent ran (its "trace"),
 and an *Evidence* panel with the exact quotes and source (file, page or row).
@@ -209,9 +215,9 @@ and an *Evidence* panel with the exact quotes and source (file, page or row).
 | Long / empty questions | Input limited to 2000 characters; empty questions rejected |
 | Hallucination | Answers only from retrieved passages; every claim needs a verbatim, code-verified quote; otherwise refusal |
 | No relevant data | Local similarity threshold; the LLM is not even called |
-| Spreadsheet maths | Rows are retrieved one by one, so counts / averages / rankings are refused (`needs_calculation`) instead of guessed |
+| Spreadsheet maths | Rows are retrieved one by one, so counts / averages / rankings are never computed. Three layers: (1) a **local check** - a calculation word ("how many", "average", "highest", ...) plus best matches that are spreadsheet rows -> refusal **before any LLM call**; (2) the prompt tells the model to answer `needs_calculation`; (3) a **safety net** after validation: an answer that combines 3 or more different spreadsheet rows is discarded. Layers 1 and 3 are plain code, so a weak or misbehaving model cannot get around them |
 | Prompt injection (in questions or documents) | Text is declared untrusted data; the agent has no tools except search; refusal wording is fixed; the answer is validated afterwards |
-| LLM outage or quota | Automatic Groq fallback; if both fail, a clear message without raw error text |
+| LLM outage, quota or retired model | Automatic fallback through up to four models (two companies); a retired model name in `.env` is replaced by the current default; if all fail, a clear message without raw error text |
 | Secrets | Keys live in `.env` (git-ignored); never shown in the UI or logs (`redact`, `repr` hidden); sidebar override is session-only |
 | Runaway agent | Max 3 searches per question, step limit, 60 s LLM timeout |
 | Privacy | Embeddings run locally; only the retrieved passages leave the machine (to the LLM); chat tracing is off |
@@ -224,7 +230,7 @@ and an *Evidence* panel with the exact quotes and source (file, page or row).
 | **Streamlit** | UI | A chat + upload interface in ~250 lines of Python; the assignment asks for a simple UI |
 | **LangChain 1.x** | Agent, tool, loaders, splitter, integrations | One framework covers loaders, chunking, vector store, LLM wrappers *and* the agent (`create_agent`), so nothing else is needed |
 | **Gemini** (`langchain-google-genai`) | Primary LLM | Free tier, good tool calling and structured output, generous context |
-| **Groq** (`langchain-groq`) | Fallback LLM | Free tier, very fast, a different provider - a real second option when Gemini is down or out of quota. (A second, lighter Gemini model on the same key is the last resort.) |
+| **Groq** (`langchain-groq`) | Fallback LLM | Free tier, very fast (answers in 2-3 s), a different company - a real second option when Gemini is down or out of quota. Two models are used (`qwen/qwen3.8-27b`, `openai/gpt-oss-20b`), chosen by benchmark - see challenge 16 |
 | **sentence-transformers MiniLM** | Embeddings | Free, ~90 MB, runs on any CPU, no API key, documents are not sent anywhere |
 | **ChromaDB** | Vector database | Embedded (no server), persistent, cosine search, first-class LangChain integration |
 | **pypdf / pandas / openpyxl** | Reading PDF / CSV / Excel | Pure-Python, no system dependencies (no Java, no poppler) |
@@ -261,7 +267,7 @@ function-size limits, so the app cannot run there.
 
 | Check | How to run | What it proves |
 |---|---|---|
-| Unit tests (offline, ~5 s) | `python -m unittest discover -s tests -v` | 48 tests: every bad-file type, encodings, agent guardrails with a scripted fake LLM, invented-quote rejection, Gemini -> Groq fallback, key redaction |
+| Unit tests (offline, ~5 s) | `python -m unittest discover -s tests -v` | 61 tests: every bad-file type, encodings, agent guardrails with a scripted fake LLM, invented-quote rejection, the local calculation guard and cross-row safety net, provider order and fallback, retired-model replacement, rate-limit parsing and cooldowns, key redaction |
 | Setup check | `python tests/verify_setup.py` | Real embeddings + ChromaDB on the sample data; unrelated questions never reach an LLM |
 | LLM check | `python tests/check_llm_apis.py` | Each configured API key really works |
 | Manual test guide | README -> "Testing Guide" | 10 questions that must be answered, 10 that must be declined, and the bad-file uploads |
@@ -270,18 +276,20 @@ function-size limits, so the app cannot run there.
 
 | Test | Result |
 |---|---|
-| Offline unit tests (fresh virtual environments, pinned `requirements.txt`) | **48 / 48 passed** on Python 3.11 **and** on Python 3.13, in about 5-7 s |
+| Offline unit tests (fresh virtual environments, pinned `requirements.txt`) | **61 / 61 passed** on Python 3.11 **and** on Python 3.13, in about 5-8 s |
 | Indexing the four sample files (2,269 passages) | about 40 s on a laptop CPU; a search takes about 20 ms |
 | Retrieval quality of the vector index (16 questions x 8 fresh index builds, compared with exact brute-force search) | **0 / 128 misses** with the final settings (10 / 80 misses with ChromaDB's default settings - see challenge 14) |
 | Live agent test - 10 answerable questions on the sample data (README, Testing Guide A) | **10 / 10 correct**, each with a verified citation; 4-8 s per answer; the agent refined its own search query when the first one was not enough (e.g. the "acknowledge by which date" question) |
-| Live agent test - questions that must be declined (Testing Guide B) | **10 / 10 declined safely**: 3 aggregation questions -> "needs calculations" message after the agent searched; 6 off-topic / injection / secret-stealing / vague questions -> refused by the local guard **without any LLM call**; 1 privacy question (home address) -> "no evidence" after a search |
+| Live agent test - questions that must be declined (Testing Guide B) | **10 / 10 declined safely**: 2 aggregation questions -> "needs calculations" by the local guard **without any LLM call**; 6 off-topic / injection / secret-stealing / vague questions -> refused by the local guard without any LLM call; "highest paid" and the privacy question (home address) -> refused by the agent after a search |
+| Live run of all 20 Testing Guide questions through the real provider chain while Gemini's main model was unavailable and Groq was rate-limiting | all 10 answerable questions correct with citations (2-10 s each), all 10 declined; the chain handed over Groq (Qwen) -> Groq (gpt-oss-20b) -> Gemini backup by itself as limits were hit |
+| Groq model benchmark (real agent, one model at a time, 13 questions) | `qwen/qwen3.8-27b` **13 / 13**; `openai/gpt-oss-20b` 12 / 13 (one vague answer); `openai/gpt-oss-120b` 2 / 13 (9 malformed-tool-call errors) |
 | Browser test of the real UI (headless Chromium) | sidebar status, sample load, sample-question buttons, upload of all 7 error-test files at once (6 bad ones each explained, the valid CSV still indexed), Clear, "add documents first" message, wrong-key handling: all behaved as documented |
 | Provider failures met during testing | Gemini `503 high demand` and `429 quota` were both handled: clear message, automatic switch to the next provider, no crash |
 
 Note for transparency: while these live tests ran, `gemini-3.6-flash` was intermittently overloaded on Google's side
-(503) and the free-tier quota was hit (429), so most live answers were produced by the backup model
-`gemini-3.5-flash-lite`. The Groq step of the chain is covered by the offline tests (scripted model); a live Groq
-call needs a Groq key - run `python tests/check_llm_apis.py` to verify yours.
+(503) and its free-tier quota was hit (429), so the live answers came from the Groq models and from the backup Gemini
+model `gemini-3.5-flash-lite`; the primary Gemini model itself was therefore exercised only in the sidebar key check. Run
+`python tests/check_llm_apis.py` to verify every configured model with your own keys.
 
 ## 10. Limitations and known issues
 
@@ -302,8 +310,12 @@ call needs a Groq key - run `python tests/check_llm_apis.py` to verify yours.
   for exactly this; a billing-enabled key removes the limit.
 - **Retrieved text leaves the machine.** The passages sent to Gemini/Groq are processed by those providers; do not
   use regulated or confidential data without an approved agreement.
-- **Groq answer quality** with `llama-3.3-70b-versatile` is good but can be stricter/looser than Gemini; the
-  validator keeps both safe, but the refusal rate may differ.
+- **Answer quality differs between models.** Qwen and Gemini answered every test question correctly; the smaller
+  `gpt-oss-20b` once gave a vague answer without the e-mail address. The validator and the local guards keep every model
+  safe (no invented quotes, no invented calculations), but a weaker model can be less helpful.
+- **Providers retire models without notice.** Groq removed `llama-3.3-70b-versatile` (and the other older models) while this
+  project was being finished. Names are configurable, retired names are replaced by defaults, and the status light checks
+  that the configured model really exists - but the defaults themselves will need updating over time.
 - **Single-machine design.** ChromaDB runs inside the app process; a multi-user deployment needs a hosted vector database and login.
 
 ## 11. Challenges faced during development
@@ -353,6 +365,21 @@ call needs a Groq key - run `python tests/check_llm_apis.py` to verify yours.
 15. **Terminal encodings on Windows.** A setup-check script that printed check-mark symbols crashed on classic Windows consoles
     (cp1252/cp437 cannot encode them), and cleaning up a temporary ChromaDB folder failed while Windows still held the file.
     *Fix:* plain-text `[OK]` / `[FAILED]` markers and tolerant cleanup - found only by running the scripts the way an evaluator would.
+16. **Groq retired the model, and the replacements were not equally good.** The first Groq default,
+    `llama-3.3-70b-versatile`, disappeared from the account ("model not found"), and so did the other well-known names
+    (`llama-3.1-8b-instant`, `gemma2-9b-it`, `mixtral-8x7b-32768`). Only three general chat models were left. Benchmarking
+    them inside the real agent (one at a time, 13 questions) showed: `openai/gpt-oss-120b` failed 9 of 13 with Groq's
+    `tool_use_failed` error (the model tries to call a tool named "commentary"); `openai/gpt-oss-20b` worked but once
+    answered vaguely, and - more seriously - when it was used as a fallback it **answered "the average salary is
+    $118,535.59" and "there are five employees in Sales" by combining just five retrieved rows**. The quotes existed, so
+    citation checking passed. *Fix:* `qwen/qwen3.8-27b` (13/13) became the default with `gpt-oss-20b` as its backup,
+    `gpt-oss-120b` is blocked like a retired model, and the "no maths over rows" rule stopped depending on the model:
+    a local keyword guard runs before any LLM call and a cross-row safety net discards answers built from three or more
+    spreadsheet rows. Qwen's "thinking" is switched off (its tokens count against Groq's small per-minute limit), malformed
+    tool calls are retried once, and rate-limit messages are parsed for the "try again in ..." delay.
+17. **A status code hidden in a token count.** The error classifier treated any message containing "401" as "API key rejected",
+    so a Groq rate-limit message with "Requested 4013 tokens" would have blamed the key. *Fix:* status codes are matched as
+    whole numbers only, with a regression test.
 
 ## 12. Future improvements
 
