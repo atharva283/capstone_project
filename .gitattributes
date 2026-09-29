@@ -1,0 +1,12 @@
+# Windows batch files break with LF-only line endings; shell scripts break with CRLF.
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.sh  text eol=lf
+
+# Sample documents must never be rewritten by line-ending conversion.
+*.pdf  binary
+*.xlsx binary
+*.docx binary
+*.zip  binary
+*.xls  binary
+sample_documents/** -text

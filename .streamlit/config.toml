@@ -1,0 +1,17 @@
+# Streamlit settings for this project.
+# They make the first run friendlier: no e-mail prompt, no usage tracking,
+# and no noisy file-watcher warnings from the machine-learning libraries.
+
+[server]
+# Watching source files makes torch/transformers print confusing errors. Not needed here.
+fileWatcherType = "none"
+# Uploads larger than this (in MB) are refused by Streamlit itself.
+maxUploadSize = 25
+# Do not ask first-time users for an e-mail address on start-up.
+showEmailPrompt = false
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"

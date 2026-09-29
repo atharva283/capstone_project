@@ -1,0 +1,69 @@
+MEMORANDUM
+
+TO:      All Staff, Acme Corporation (Fictitious Company)
+FROM:    IT Security Department
+DATE:    January 15, 2026
+RE:      Mandatory Password Policy Update and Phishing Awareness
+
+--------------------------------------------------------------------
+1. PURPOSE
+--------------------------------------------------------------------
+This memo outlines updated IT security requirements effective
+February 1, 2026. All employees, contractors, and temporary staff
+with access to company systems must comply.
+
+--------------------------------------------------------------------
+2. PASSWORD REQUIREMENTS
+--------------------------------------------------------------------
+- Minimum 12 characters, including uppercase, lowercase, a number,
+  and a special character.
+- Passwords must be changed every 90 days.
+- Reuse of the last 5 passwords is not permitted.
+- Multi-factor authentication (MFA) is mandatory for all remote
+  access to company systems, effective immediately.
+
+--------------------------------------------------------------------
+3. PHISHING AWARENESS
+--------------------------------------------------------------------
+Employees are reminded to:
+- Never click links or open attachments from unknown senders.
+- Verify unexpected requests for sensitive information by phone,
+  using a known internal extension (not a number provided in the
+  suspicious email).
+- Report suspicious emails to security@acmecorp-example.com using
+  the "Report Phishing" button in Outlook.
+
+--------------------------------------------------------------------
+4. DEVICE AND DATA HANDLING
+--------------------------------------------------------------------
+- Company laptops must have disk encryption enabled at all times.
+- USB storage devices are restricted; use approved cloud storage
+  for file transfers.
+- Lock your workstation (Windows+L / Cmd+Ctrl+Q) whenever stepping
+  away from your desk.
+
+--------------------------------------------------------------------
+5. INCIDENT REPORTING
+--------------------------------------------------------------------
+Any suspected security incident (lost device, compromised account,
+malware infection) must be reported to the IT Helpdesk within
+1 hour of discovery.
+
+  IT Helpdesk: helpdesk@acmecorp-example.com
+  Emergency Security Line: (555) 010-1234 (fictitious number)
+
+--------------------------------------------------------------------
+6. ACKNOWLEDGEMENT
+--------------------------------------------------------------------
+All employees must acknowledge receipt of this policy via the HR
+portal by January 31, 2026.
+
+Questions may be directed to the IT Security Department at
+itsecurity@acmecorp-example.com.
+
+--- END OF MEMO ---
+
+Note: This is a fictitious sample document containing no real
+company, employee, or personal data. Generated for software
+testing and RAG (Retrieval-Augmented Generation) system evaluation
+purposes only.

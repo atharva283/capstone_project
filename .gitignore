@@ -7,6 +7,7 @@ __pycache__/
 build/
 dist/
 *.egg
+
 # Virtual environments
 .venv/
 venv/
@@ -18,9 +19,12 @@ ENV/
 .env.*
 !.env.example
 .streamlit/secrets.toml
-# Local documents, vector database, and model caches
-chroma_db/
-uploads/
+
+# Runtime data: keep the folders (via .gitkeep) but never their contents
+chroma_db/*
+!chroma_db/.gitkeep
+uploaded_documents/*
+!uploaded_documents/.gitkeep
 .cache/
 
 # Test, type-checking, and coverage output
@@ -31,10 +35,16 @@ uploads/
 .coverage.*
 htmlcov/
 coverage.xml
-# Logs, notebooks, editors, and operating systems
+
+# Logs, notebooks, editors, tooling, and operating systems
 *.log
 .ipynb_checkpoints/
 .vscode/
 .idea/
+.kilo/
 .DS_Store
 Thumbs.db
+
+# Course-provided files (not part of the deliverable)
+capstone_project.pdf
+Additional instruction.txt

@@ -1,0 +1,1001 @@
+EmployeeID,FirstName,LastName,Gender,Department,JobTitle,Salary,HireDate,PerformanceScore,ManagerID,Location,Email
+1,Mitchell,Serrano,Male,IT,IT Support Specialist,80951.3,2021-04-22,Below Average,,Chicago,mitchell.serrano@example.com
+2,Edward,Carlson,Male,Sales,Account Executive,65552.36,2013-07-20,Average,,Chicago,edward.carlson@example.com
+3,Paul,Riley,Female,Marketing,Content Strategist,136135.7,2017-08-24,Good,,Chicago,paul.riley@example.com
+4,Robert,Harris,Other,Marketing,SEO Specialist,116315.27,2013-11-24,Below Average,,Boston,robert.harris@example.com
+5,Alicia,Arnold,Male,Engineering,Data Engineer,60335.28,2020-09-18,Poor,,New York,alicia.arnold@example.com
+6,Desiree,Rivera,Female,Engineering,QA Engineer,100864.38,2022-12-28,Poor,,Seattle,desiree.rivera@example.com
+7,Tonya,Duffy,Female,Marketing,SEO Specialist,61910.62,2016-05-11,Average,,Austin,tonya.duffy@example.com
+8,Amy,Rodriguez,Female,Marketing,Content Strategist,147724.48,2013-08-07,Below Average,,Boston,amy.rodriguez@example.com
+9,Breanna,Cordova,Male,Engineering,Data Engineer,51213.21,2023-09-25,Good,,Austin,breanna.cordova@example.com
+10,Brian,Lam,Female,Finance,Payroll Specialist,144308.69,2014-04-11,Poor,,San Francisco,brian.lam@example.com
+11,David,Parker,Male,Sales,Sales Representative,106161.14,2013-10-25,Excellent,,Austin,david.parker@example.com
+12,Douglas,Sloan,Male,Engineering,Data Engineer,135641.94,2016-11-17,Below Average,,Chicago,douglas.sloan@example.com
+13,Patricia,Hamilton,Other,Finance,Accountant,148801.77,2019-09-10,Good,,Seattle,patricia.hamilton@example.com
+14,Christopher,Burns,Female,Engineering,DevOps Engineer,145328.03,2010-09-18,Below Average,,San Francisco,christopher.burns@example.com
+15,William,Rodriguez,Other,Marketing,Marketing Manager,141699.39,2014-07-26,Poor,,Chicago,william.rodriguez@example.com
+16,Christine,Sharp,Male,Finance,Accountant,117071.89,2012-07-23,Excellent,,New York,christine.sharp@example.com
+17,Sheri,Lester,Other,HR,Recruiter,103753.47,2021-09-20,Poor,,New York,sheri.lester@example.com
+18,Belinda,Edwards,Male,Finance,Payroll Specialist,143372.46,2023-11-03,Below Average,,Seattle,belinda.edwards@example.com
+19,Kimberly,Perez,Male,Marketing,SEO Specialist,113978.74,2023-11-11,Average,,Seattle,kimberly.perez@example.com
+20,Brittney,Juarez,Male,Engineering,QA Engineer,50352.69,2023-11-11,Average,,Chicago,brittney.juarez@example.com
+21,Gregory,Wheeler,Female,Marketing,Marketing Manager,108713.34,2020-05-16,Excellent,,Austin,gregory.wheeler@example.com
+22,Jessica,Proctor,Male,IT,Network Engineer,142424.49,2018-04-05,Excellent,,Chicago,jessica.proctor@example.com
+23,Raymond,Massey,Other,Sales,Sales Representative,102868.76,2018-06-29,Poor,,Boston,raymond.massey@example.com
+24,Robert,Duke,Female,Sales,Sales Representative,99761.37,2012-02-12,Good,,Austin,robert.duke@example.com
+25,Michael,Martin,Other,Marketing,Content Strategist,145981.43,2011-05-06,Excellent,,Seattle,michael.martin@example.com
+26,Robin,Haynes,Female,Sales,Sales Representative,92884.88,2010-09-02,Excellent,,New York,robin.haynes@example.com
+27,David,Henderson,Female,Engineering,Software Engineer,81007.34,2011-04-20,Average,,New York,david.henderson@example.com
+28,Yolanda,Rose,Female,Marketing,Content Strategist,127899.65,2020-02-12,Average,,Seattle,yolanda.rose@example.com
+29,Julie,Eaton,Male,HR,HR Coordinator,113232.56,2016-01-09,Average,,Austin,julie.eaton@example.com
+30,Sabrina,Delacruz,Female,Marketing,SEO Specialist,87247.73,2019-04-09,Good,,Austin,sabrina.delacruz@example.com
+31,Derek,Castillo,Male,Marketing,Content Strategist,112128.96,2019-08-19,Poor,,New York,derek.castillo@example.com
+32,Anthony,Diaz,Male,Marketing,SEO Specialist,103252.38,2022-10-25,Average,,San Francisco,anthony.diaz@example.com
+33,Dustin,Farmer,Other,Marketing,Marketing Manager,134189.93,2011-03-10,Below Average,,New York,dustin.farmer@example.com
+34,Diane,Austin,Male,IT,Network Engineer,50890.61,2014-01-03,Poor,,Seattle,diane.austin@example.com
+35,Brenda,Mata,Male,Engineering,Data Engineer,126409.84,2020-03-06,Average,,Boston,brenda.mata@example.com
+36,Tina,Hooper,Other,IT,IT Support Specialist,118158.94,2011-06-06,Below Average,,Austin,tina.hooper@example.com
+37,Daniel,Estrada,Other,IT,System Administrator,127135.07,2011-05-16,Average,,Austin,daniel.estrada@example.com
+38,Julie,Dean,Female,Finance,Financial Analyst,117938.98,2014-08-03,Below Average,,Boston,julie.dean@example.com
+39,Emily,Thomas,Female,Sales,Sales Manager,98803.83,2010-10-30,Good,,Chicago,emily.thomas@example.com
+40,Phillip,Harrington,Other,Finance,Payroll Specialist,53761.77,2018-01-27,Below Average,,Austin,phillip.harrington@example.com
+41,Anna,Pearson,Female,Engineering,Data Engineer,129903.85,2017-06-24,Below Average,,Austin,anna.pearson@example.com
+42,Roy,Mills,Female,HR,HR Manager,112241.69,2013-12-05,Good,,San Francisco,roy.mills@example.com
+43,William,Hunter,Male,Engineering,DevOps Engineer,135309.59,2023-07-20,Good,,Boston,william.hunter@example.com
+44,Amber,Adams,Female,Engineering,QA Engineer,96697.83,2018-10-20,Good,,Austin,amber.adams@example.com
+45,Erin,Dyer,Other,Finance,Payroll Specialist,71311.25,2011-04-02,Below Average,,Chicago,erin.dyer@example.com
+46,Maurice,Greene,Male,Engineering,QA Engineer,126201.91,2014-11-26,Good,,Seattle,maurice.greene@example.com
+47,James,Bell,Other,Engineering,DevOps Engineer,67669.09,2017-03-08,Good,,Seattle,james.bell@example.com
+48,Connie,Perkins,Male,IT,Network Engineer,98903.25,2020-01-05,Excellent,,San Francisco,connie.perkins@example.com
+49,Carrie,Baker,Female,HR,HR Coordinator,131695.55,2014-10-05,Below Average,,Seattle,carrie.baker@example.com
+50,Michael,Burch,Female,Engineering,QA Engineer,88162.71,2016-07-21,Excellent,,Boston,michael.burch@example.com
+51,Charles,Robinson,Female,Marketing,Content Strategist,142210.35,2011-11-08,Average,,New York,charles.robinson@example.com
+52,Brandi,Palmer,Other,Finance,Accountant,114480.35,2020-05-15,Good,,Chicago,brandi.palmer@example.com
+53,Nicole,Hampton,Female,HR,Recruiter,139890.34,2011-03-19,Average,,Seattle,nicole.hampton@example.com
+54,Shelly,Martinez,Male,Engineering,DevOps Engineer,118687.08,2020-09-15,Poor,,San Francisco,shelly.martinez@example.com
+55,Maria,Lewis,Female,Engineering,DevOps Engineer,130978.21,2010-12-03,Below Average,,Boston,maria.lewis@example.com
+56,Judy,Kennedy,Female,Sales,Sales Representative,129082.98,2012-06-03,Poor,,New York,judy.kennedy@example.com
+57,Ashley,West,Female,Finance,Financial Analyst,61838.36,2023-11-09,Good,,Austin,ashley.west@example.com
+58,Shannon,Boyer,Other,Marketing,SEO Specialist,53005.85,2017-02-15,Average,,Austin,shannon.boyer@example.com
+59,Kimberly,Brown,Female,Engineering,DevOps Engineer,140488.27,2014-01-06,Good,,New York,kimberly.brown@example.com
+60,Justin,Hart,Female,Sales,Account Executive,124651.21,2018-02-12,Poor,,San Francisco,justin.hart@example.com
+61,Melvin,Howard,Female,Sales,Sales Manager,133398.8,2021-12-10,Good,,Seattle,melvin.howard@example.com
+62,Lacey,Shah,Female,Engineering,Data Engineer,53126.82,2021-08-10,Good,,Chicago,lacey.shah@example.com
+63,Jamie,Holloway,Other,Finance,Payroll Specialist,56921.39,2012-04-30,Excellent,,Boston,jamie.holloway@example.com
+64,Michael,Welch,Male,Finance,Payroll Specialist,143842.94,2018-03-27,Poor,,Austin,michael.welch@example.com
+65,Margaret,Adkins,Male,Marketing,SEO Specialist,87161.93,2013-06-22,Average,,Seattle,margaret.adkins@example.com
+66,Luis,Gonzalez,Female,Engineering,QA Engineer,147725.58,2013-01-16,Good,,Austin,luis.gonzalez@example.com
+67,Lauren,Smith,Other,Finance,Payroll Specialist,52393.66,2014-05-13,Average,,New York,lauren.smith@example.com
+68,Stephanie,Brennan,Other,IT,Network Engineer,101533.4,2014-12-05,Average,,Chicago,stephanie.brennan@example.com
+69,Steven,Walls,Other,Sales,Sales Manager,59540.09,2014-04-15,Good,,Austin,steven.walls@example.com
+70,Jonathan,Hernandez,Other,Finance,Accountant,67644.73,2012-12-06,Average,,Seattle,jonathan.hernandez@example.com
+71,Randy,Bowers,Male,Sales,Sales Representative,57046.81,2020-09-10,Good,,Austin,randy.bowers@example.com
+72,George,Cowan,Female,IT,Network Engineer,97911.83,2013-03-07,Average,,San Francisco,george.cowan@example.com
+73,Rebecca,Cline,Female,IT,System Administrator,87198.24,2013-08-03,Below Average,,Seattle,rebecca.cline@example.com
+74,Nancy,Vasquez,Male,Marketing,Content Strategist,129641.39,2014-03-27,Below Average,,Boston,nancy.vasquez@example.com
+75,Gabriel,Johnson,Other,Marketing,Marketing Manager,60510.28,2011-07-05,Poor,,Seattle,gabriel.johnson@example.com
+76,Kimberly,Miller,Male,Marketing,Content Strategist,62387.52,2011-02-15,Poor,,San Francisco,kimberly.miller@example.com
+77,Mason,Wright,Other,Finance,Accountant,83851.26,2018-05-13,Poor,,Austin,mason.wright@example.com
+78,Melissa,Johnson,Other,Marketing,SEO Specialist,85022.33,2016-01-11,Below Average,,Seattle,melissa.johnson@example.com
+79,Sharon,Pierce,Female,Finance,Financial Analyst,86867.93,2019-06-23,Average,,New York,sharon.pierce@example.com
+80,William,Andrews,Female,Sales,Account Executive,120269.21,2022-06-02,Below Average,,New York,william.andrews@example.com
+81,John,Velazquez,Male,Marketing,Marketing Manager,110965.99,2010-06-03,Excellent,,San Francisco,john.velazquez@example.com
+82,Dustin,Ali,Other,Finance,Financial Analyst,52529.92,2012-11-23,Poor,,New York,dustin.ali@example.com
+83,Tammy,Maynard,Female,Engineering,Data Engineer,114888.31,2013-07-31,Good,,Seattle,tammy.maynard@example.com
+84,Angela,Wallace,Female,HR,HR Coordinator,53077.66,2021-04-28,Good,,San Francisco,angela.wallace@example.com
+85,Nicole,Li,Male,Marketing,Marketing Manager,102575.31,2022-03-31,Excellent,,Boston,nicole.li@example.com
+86,Kaitlin,Kelley,Other,HR,HR Manager,129233.38,2021-07-27,Poor,,New York,kaitlin.kelley@example.com
+87,Sara,Ramsey,Male,Finance,Accountant,83246.75,2022-09-25,Excellent,,Seattle,sara.ramsey@example.com
+88,Cheryl,Wallace,Male,HR,HR Coordinator,96466.64,2014-05-24,Average,,Seattle,cheryl.wallace@example.com
+89,Christopher,Horn,Male,Engineering,Data Engineer,133204.96,2017-11-08,Average,,Seattle,christopher.horn@example.com
+90,Whitney,Owen,Male,HR,HR Manager,53033.61,2014-09-29,Excellent,,New York,whitney.owen@example.com
+91,Christopher,Moran,Female,Sales,Account Executive,51351.07,2016-06-26,Excellent,,Seattle,christopher.moran@example.com
+92,Mariah,Saunders,Male,Finance,Accountant,72586.69,2020-10-22,Excellent,,New York,mariah.saunders@example.com
+93,Michael,Steele,Male,Marketing,SEO Specialist,64997.07,2020-10-09,Below Average,,New York,michael.steele@example.com
+94,Karen,Graham,Male,Finance,Financial Analyst,118662.4,2014-08-06,Poor,,Austin,karen.graham@example.com
+95,Megan,Davis,Male,IT,System Administrator,83677.77,2022-09-30,Below Average,,Boston,megan.davis@example.com
+96,Kevin,Moran,Female,Marketing,SEO Specialist,106331.37,2015-07-12,Good,,New York,kevin.moran@example.com
+97,Christian,Smith,Female,Sales,Account Executive,65289.47,2015-11-29,Average,,New York,christian.smith@example.com
+98,Daniel,Jenkins,Male,Sales,Sales Representative,70445.93,2013-09-08,Excellent,,Boston,daniel.jenkins@example.com
+99,Morgan,Lee,Male,IT,IT Support Specialist,52139.75,2010-12-02,Poor,,San Francisco,morgan.lee@example.com
+100,David,Eaton,Male,Marketing,Content Strategist,99375.41,2012-10-30,Poor,,San Francisco,david.eaton@example.com
+101,Mary,Ware,Female,Sales,Sales Manager,115113.49,2014-05-15,Below Average,48.0,San Francisco,mary.ware@example.com
+102,Linda,Brooks,Female,Marketing,Content Strategist,110387.15,2023-09-03,Good,29.0,New York,linda.brooks@example.com
+103,Keith,Rodriguez,Male,Finance,Accountant,132665.66,2014-05-24,Poor,40.0,Austin,keith.rodriguez@example.com
+104,Katie,Rhodes,Female,Finance,Financial Analyst,102888.28,2016-07-25,Poor,89.0,Chicago,katie.rhodes@example.com
+105,Kirk,Knight,Male,Engineering,DevOps Engineer,71964.33,2011-02-13,Below Average,93.0,Seattle,kirk.knight@example.com
+106,Jacob,Rodriguez,Male,Finance,Financial Analyst,81951.99,2024-04-25,Good,26.0,San Francisco,jacob.rodriguez@example.com
+107,Angelica,Moran,Female,Finance,Financial Analyst,129940.58,2020-05-21,Below Average,3.0,New York,angelica.moran@example.com
+108,Charles,Benson,Female,Sales,Account Executive,61215.68,2018-03-20,Excellent,94.0,Seattle,charles.benson@example.com
+109,Patricia,Henry,Female,Finance,Accountant,134719.34,2023-09-01,Below Average,40.0,Seattle,patricia.henry@example.com
+110,Christopher,Jackson,Other,Sales,Sales Manager,140886.84,2016-08-27,Below Average,91.0,San Francisco,christopher.jackson@example.com
+111,Gregory,Smith,Other,Engineering,DevOps Engineer,91566.65,2021-07-10,Good,96.0,Austin,gregory.smith@example.com
+112,Christy,Serrano,Female,Engineering,Software Engineer,139157.86,2018-05-16,Good,11.0,Seattle,christy.serrano@example.com
+113,Crystal,Campos,Male,Sales,Sales Representative,86601.21,2011-12-29,Below Average,30.0,Seattle,crystal.campos@example.com
+114,Beth,Campbell,Other,Engineering,Data Engineer,141768.93,2021-11-16,Good,24.0,New York,beth.campbell@example.com
+115,Helen,Adams,Other,Sales,Account Executive,58841.36,2017-05-18,Average,21.0,Boston,helen.adams@example.com
+116,Jon,Hammond,Other,Marketing,SEO Specialist,67108.88,2013-08-09,Average,6.0,Boston,jon.hammond@example.com
+117,Erika,Thomas,Male,Engineering,QA Engineer,146408.41,2022-10-16,Excellent,64.0,New York,erika.thomas@example.com
+118,Scott,Smith,Male,Finance,Payroll Specialist,58310.49,2022-10-30,Poor,62.0,New York,scott.smith@example.com
+119,Kara,Anderson,Male,IT,IT Support Specialist,68450.77,2018-07-20,Excellent,78.0,Chicago,kara.anderson@example.com
+120,Sara,Jones,Male,HR,HR Coordinator,75619.6,2010-07-28,Average,77.0,Boston,sara.jones@example.com
+121,Katie,Hancock,Male,Marketing,SEO Specialist,115218.08,2015-10-13,Below Average,46.0,New York,katie.hancock@example.com
+122,Jeffrey,Nelson,Female,Finance,Accountant,74392.24,2018-06-13,Excellent,36.0,Austin,jeffrey.nelson@example.com
+123,Kathleen,Johnson,Male,Marketing,Marketing Manager,93792.9,2017-06-17,Good,95.0,New York,kathleen.johnson@example.com
+124,Eric,Miller,Female,Marketing,Content Strategist,83290.84,2024-05-02,Excellent,94.0,Austin,eric.miller@example.com
+125,Debra,Bradley,Female,Marketing,Content Strategist,118103.07,2023-04-06,Average,68.0,Boston,debra.bradley@example.com
+126,Anthony,Green,Female,Sales,Account Executive,127401.82,2019-06-27,Below Average,71.0,Chicago,anthony.green@example.com
+127,Roy,Mooney,Male,Marketing,Content Strategist,132435.43,2021-02-05,Excellent,62.0,Boston,roy.mooney@example.com
+128,Ricardo,Downs,Male,Sales,Sales Representative,112135.31,2010-07-07,Good,12.0,Seattle,ricardo.downs@example.com
+129,Bryan,West,Female,Finance,Accountant,105709.97,2010-10-25,Good,51.0,Austin,bryan.west@example.com
+130,Tristan,Brown,Male,Marketing,Marketing Manager,84446.77,2014-03-07,Excellent,33.0,New York,tristan.brown@example.com
+131,Kyle,Williams,Other,HR,HR Manager,92734.1,2012-08-06,Average,19.0,Boston,kyle.williams@example.com
+132,Michael,Wilson,Male,Marketing,Marketing Manager,96465.81,2016-09-29,Below Average,74.0,Boston,michael.wilson@example.com
+133,Sherry,Flores,Male,Engineering,Software Engineer,98588.7,2014-06-15,Excellent,75.0,Chicago,sherry.flores@example.com
+134,James,Smith,Other,Marketing,Content Strategist,80980.22,2017-02-22,Average,54.0,Seattle,james.smith@example.com
+135,Susan,Haney,Female,IT,IT Support Specialist,60499.2,2014-03-23,Average,15.0,San Francisco,susan.haney@example.com
+136,Dustin,Bryant,Female,IT,Network Engineer,64863.66,2011-05-29,Good,58.0,Seattle,dustin.bryant@example.com
+137,Valerie,Vargas,Male,Marketing,Marketing Manager,67249.78,2018-08-13,Poor,92.0,New York,valerie.vargas@example.com
+138,Sharon,Collins,Female,Engineering,Software Engineer,54418.72,2017-12-12,Average,28.0,San Francisco,sharon.collins@example.com
+139,Alex,Johnson,Female,IT,IT Support Specialist,148716.74,2012-03-26,Good,81.0,Boston,alex.johnson@example.com
+140,Richard,Duke,Female,Sales,Account Executive,85632.18,2019-12-06,Poor,15.0,Austin,richard.duke@example.com
+141,Hannah,Johnson,Female,Sales,Sales Representative,98053.64,2020-11-30,Good,21.0,New York,hannah.johnson@example.com
+142,Catherine,Houston,Male,Finance,Financial Analyst,112708.42,2015-11-24,Average,27.0,Chicago,catherine.houston@example.com
+143,John,Walker,Female,IT,IT Support Specialist,87594.26,2012-07-08,Average,57.0,Chicago,john.walker@example.com
+144,Matthew,Silva,Other,Marketing,Marketing Manager,60791.55,2016-02-10,Poor,12.0,Boston,matthew.silva@example.com
+145,Reginald,Austin,Male,Engineering,QA Engineer,138560.41,2015-04-30,Excellent,34.0,San Francisco,reginald.austin@example.com
+146,Elizabeth,Barnes,Male,IT,IT Support Specialist,139643.88,2022-08-16,Good,57.0,Seattle,elizabeth.barnes@example.com
+147,Kenneth,Pollard,Other,IT,IT Support Specialist,110552.82,2016-05-23,Below Average,30.0,Austin,kenneth.pollard@example.com
+148,Dustin,Vasquez,Female,Engineering,DevOps Engineer,108121.43,2013-06-15,Average,69.0,Chicago,dustin.vasquez@example.com
+149,Jennifer,Ramirez,Female,Engineering,QA Engineer,69823.53,2011-04-17,Excellent,33.0,Seattle,jennifer.ramirez@example.com
+150,Michele,Dixon,Other,Sales,Account Executive,104875.34,2015-08-24,Average,98.0,Chicago,michele.dixon@example.com
+151,Julia,Fleming,Female,HR,HR Manager,128868.65,2021-01-23,Below Average,69.0,Seattle,julia.fleming@example.com
+152,Jessica,Page,Female,Sales,Sales Manager,112626.55,2011-09-19,Average,48.0,Chicago,jessica.page@example.com
+153,Jasmine,Garcia,Male,IT,Network Engineer,50354.69,2019-11-29,Below Average,24.0,Chicago,jasmine.garcia@example.com
+154,Tanya,Levy,Male,Marketing,SEO Specialist,130959.52,2014-10-01,Below Average,30.0,New York,tanya.levy@example.com
+155,Kathryn,Sanchez,Male,Engineering,Software Engineer,84275.23,2022-01-02,Good,85.0,Austin,kathryn.sanchez@example.com
+156,Jessica,Oliver,Female,IT,IT Support Specialist,137163.25,2011-02-20,Below Average,48.0,New York,jessica.oliver@example.com
+157,Douglas,Zuniga,Female,IT,Network Engineer,110766.04,2022-03-12,Good,24.0,Boston,douglas.zuniga@example.com
+158,Justin,Fowler,Other,HR,HR Manager,94781.55,2011-03-17,Average,46.0,New York,justin.fowler@example.com
+159,Lawrence,James,Female,Marketing,Marketing Manager,142673.92,2017-02-08,Good,61.0,Seattle,lawrence.james@example.com
+160,James,Cobb,Female,Sales,Account Executive,81850.26,2018-04-09,Excellent,71.0,Seattle,james.cobb@example.com
+161,John,Patel,Female,Finance,Payroll Specialist,59264.87,2010-07-01,Below Average,12.0,Seattle,john.patel@example.com
+162,Brandy,Mccullough,Female,Marketing,Content Strategist,141214.1,2023-08-14,Poor,30.0,Seattle,brandy.mccullough@example.com
+163,Russell,Jimenez,Male,Engineering,QA Engineer,67349.9,2013-03-28,Average,58.0,Boston,russell.jimenez@example.com
+164,Stephanie,Fox,Female,IT,Network Engineer,51112.85,2022-06-17,Excellent,48.0,Boston,stephanie.fox@example.com
+165,James,Patrick,Male,Finance,Accountant,131096.87,2023-09-27,Excellent,80.0,Austin,james.patrick@example.com
+166,Olivia,Weaver,Other,Engineering,Data Engineer,117844.72,2017-07-24,Excellent,34.0,Boston,olivia.weaver@example.com
+167,Michelle,Villa,Male,Sales,Account Executive,104196.5,2012-04-23,Below Average,27.0,San Francisco,michelle.villa@example.com
+168,Kim,Avila,Female,Sales,Sales Manager,88642.4,2017-07-27,Good,3.0,San Francisco,kim.avila@example.com
+169,Theresa,Nash,Female,Sales,Sales Representative,132637.9,2014-01-21,Excellent,37.0,Boston,theresa.nash@example.com
+170,Angel,Allen,Male,IT,System Administrator,108985.76,2024-03-19,Good,5.0,Boston,angel.allen@example.com
+171,Kevin,Kelly,Female,HR,Recruiter,110220.77,2012-02-12,Good,99.0,Chicago,kevin.kelly@example.com
+172,Krista,Dunn,Male,Sales,Sales Manager,139123.01,2018-12-08,Excellent,7.0,Seattle,krista.dunn@example.com
+173,Alyssa,Burton,Female,Sales,Account Executive,71785.12,2011-08-22,Below Average,5.0,Austin,alyssa.burton@example.com
+174,Megan,Rangel,Male,HR,HR Manager,98543.0,2019-06-06,Good,98.0,Seattle,megan.rangel@example.com
+175,Anne,Gonzalez,Other,IT,IT Support Specialist,55891.25,2017-04-24,Average,90.0,Boston,anne.gonzalez@example.com
+176,Donna,Warren,Other,IT,IT Support Specialist,97786.5,2012-09-25,Poor,18.0,San Francisco,donna.warren@example.com
+177,Cynthia,Harris,Male,Finance,Financial Analyst,75206.71,2010-07-20,Average,54.0,New York,cynthia.harris@example.com
+178,Robert,Davis,Male,HR,Recruiter,96768.18,2018-04-26,Below Average,30.0,Seattle,robert.davis@example.com
+179,Kevin,Taylor,Female,Marketing,SEO Specialist,134204.56,2019-08-26,Poor,13.0,Seattle,kevin.taylor@example.com
+180,Dakota,Brown,Male,Finance,Accountant,75376.34,2013-06-25,Excellent,45.0,Boston,dakota.brown@example.com
+181,Douglas,Steele,Male,Marketing,SEO Specialist,122000.96,2024-03-27,Average,36.0,San Francisco,douglas.steele@example.com
+182,Cheryl,Hunt,Male,HR,Recruiter,51050.02,2014-09-09,Below Average,1.0,Seattle,cheryl.hunt@example.com
+183,Carol,Sutton,Male,HR,HR Coordinator,135650.49,2015-02-23,Average,17.0,Boston,carol.sutton@example.com
+184,Brian,Jimenez,Female,HR,HR Coordinator,113143.22,2016-01-02,Poor,36.0,Austin,brian.jimenez@example.com
+185,Kayla,Blake,Other,Engineering,Software Engineer,110701.78,2014-02-11,Excellent,86.0,Seattle,kayla.blake@example.com
+186,Micheal,Bell,Male,IT,Network Engineer,120509.27,2011-06-24,Excellent,8.0,Chicago,micheal.bell@example.com
+187,Blake,Perkins,Female,Sales,Account Executive,123824.97,2018-08-17,Average,38.0,San Francisco,blake.perkins@example.com
+188,Diana,Rodriguez,Other,HR,HR Coordinator,146464.57,2024-03-28,Excellent,60.0,Austin,diana.rodriguez@example.com
+189,Jamie,Casey,Other,Sales,Sales Manager,117672.75,2019-05-17,Excellent,94.0,Seattle,jamie.casey@example.com
+190,Rachel,Daniel,Other,IT,Network Engineer,126249.46,2022-03-05,Good,57.0,Boston,rachel.daniel@example.com
+191,Steven,Hunter,Male,Marketing,Marketing Manager,139495.27,2014-04-14,Below Average,45.0,Boston,steven.hunter@example.com
+192,Samuel,Carson,Other,Sales,Sales Representative,130257.33,2012-12-12,Below Average,19.0,San Francisco,samuel.carson@example.com
+193,Renee,Jensen,Female,Marketing,SEO Specialist,126012.59,2012-02-10,Poor,56.0,Seattle,renee.jensen@example.com
+194,Tracey,Johnson,Male,Marketing,Marketing Manager,55415.47,2013-08-24,Average,30.0,Boston,tracey.johnson@example.com
+195,Shannon,Gonzalez,Other,HR,Recruiter,81822.4,2015-06-27,Good,92.0,Austin,shannon.gonzalez@example.com
+196,Tyler,Holland,Other,Engineering,DevOps Engineer,131432.05,2023-09-22,Poor,85.0,Seattle,tyler.holland@example.com
+197,James,Harris,Other,Sales,Sales Manager,98759.71,2011-10-19,Poor,70.0,Chicago,james.harris@example.com
+198,Mariah,Evans,Other,IT,IT Support Specialist,89256.04,2018-06-09,Average,80.0,Boston,mariah.evans@example.com
+199,Bryan,Barnes,Male,HR,HR Manager,107648.65,2021-06-26,Good,44.0,Boston,bryan.barnes@example.com
+200,John,Stewart,Male,HR,Recruiter,146781.54,2014-07-25,Excellent,77.0,Seattle,john.stewart@example.com
+201,Elizabeth,Werner,Other,IT,System Administrator,67204.14,2016-09-16,Good,80.0,Boston,elizabeth.werner@example.com
+202,Debra,Armstrong,Female,HR,Recruiter,54437.78,2023-05-21,Below Average,40.0,Seattle,debra.armstrong@example.com
+203,Lisa,Spencer,Other,IT,System Administrator,63221.91,2022-10-02,Average,88.0,San Francisco,lisa.spencer@example.com
+204,Matthew,Murphy,Female,Engineering,Software Engineer,93613.53,2021-09-12,Below Average,39.0,Austin,matthew.murphy@example.com
+205,Kelly,Martinez,Female,Engineering,DevOps Engineer,95393.32,2017-09-16,Good,20.0,Austin,kelly.martinez@example.com
+206,Sandra,Walsh,Other,Sales,Account Executive,146069.91,2013-01-05,Poor,81.0,Austin,sandra.walsh@example.com
+207,Erica,Ward,Female,Sales,Account Executive,125068.87,2020-10-10,Excellent,97.0,Austin,erica.ward@example.com
+208,Jonathan,Davis,Male,IT,System Administrator,60914.15,2011-08-24,Excellent,44.0,Boston,jonathan.davis@example.com
+209,Emma,Roberson,Male,HR,HR Coordinator,76612.57,2018-05-28,Good,71.0,Austin,emma.roberson@example.com
+210,John,Vasquez,Female,Finance,Accountant,52390.39,2024-02-19,Below Average,93.0,New York,john.vasquez@example.com
+211,Joseph,Bradshaw,Male,Finance,Payroll Specialist,62746.15,2022-04-20,Below Average,63.0,Boston,joseph.bradshaw@example.com
+212,Dean,Howard,Other,Sales,Sales Representative,60405.47,2019-01-11,Average,3.0,Seattle,dean.howard@example.com
+213,Joseph,Williams,Female,Engineering,Software Engineer,100036.25,2011-07-19,Good,45.0,Austin,joseph.williams@example.com
+214,Kristine,Garcia,Male,HR,HR Manager,119937.17,2016-02-22,Average,26.0,Austin,kristine.garcia@example.com
+215,Kendra,Garcia,Female,HR,Recruiter,103220.31,2022-07-07,Average,9.0,Boston,kendra.garcia@example.com
+216,Angela,Nelson,Female,Marketing,SEO Specialist,130890.1,2019-10-15,Excellent,27.0,New York,angela.nelson@example.com
+217,Alexander,Rodriguez,Other,Engineering,QA Engineer,106549.37,2020-06-01,Below Average,85.0,San Francisco,alexander.rodriguez@example.com
+218,Kathryn,Schmidt,Other,Engineering,Data Engineer,142631.69,2014-01-05,Poor,27.0,Seattle,kathryn.schmidt@example.com
+219,William,Ramirez,Male,Sales,Account Executive,115725.01,2019-06-18,Below Average,52.0,Boston,william.ramirez@example.com
+220,Morgan,Ford,Male,Sales,Account Executive,142260.66,2010-12-13,Poor,90.0,New York,morgan.ford@example.com
+221,Monica,Dougherty,Male,IT,Network Engineer,68147.94,2024-01-31,Good,32.0,San Francisco,monica.dougherty@example.com
+222,Ann,Martinez,Female,Finance,Accountant,79014.33,2013-06-19,Average,84.0,Seattle,ann.martinez@example.com
+223,Brett,Peterson,Female,Sales,Account Executive,78680.15,2015-04-30,Average,47.0,Seattle,brett.peterson@example.com
+224,Stephen,Reyes,Other,IT,Network Engineer,99284.34,2020-10-10,Excellent,44.0,Boston,stephen.reyes@example.com
+225,Tina,Allen,Male,Engineering,QA Engineer,129211.7,2022-08-02,Good,77.0,Austin,tina.allen@example.com
+226,William,Fitzgerald,Other,Finance,Payroll Specialist,60441.0,2010-07-28,Below Average,16.0,Austin,william.fitzgerald@example.com
+227,Kristi,Morales,Other,IT,IT Support Specialist,123023.62,2015-07-17,Poor,89.0,Boston,kristi.morales@example.com
+228,Kari,Ortiz,Female,Marketing,SEO Specialist,75158.21,2024-04-24,Poor,60.0,Boston,kari.ortiz@example.com
+229,Raymond,Vaughn,Female,Sales,Sales Representative,147909.69,2012-08-27,Average,7.0,Chicago,raymond.vaughn@example.com
+230,Jeffrey,Brown,Other,Engineering,QA Engineer,60177.13,2014-10-18,Average,65.0,Boston,jeffrey.brown@example.com
+231,Alex,Moore,Female,IT,System Administrator,64654.44,2016-01-22,Poor,75.0,San Francisco,alex.moore@example.com
+232,Brent,Lopez,Other,HR,Recruiter,108882.27,2019-01-23,Excellent,39.0,San Francisco,brent.lopez@example.com
+233,Angela,Liu,Female,Finance,Payroll Specialist,116450.17,2017-05-18,Excellent,99.0,Chicago,angela.liu@example.com
+234,Matthew,Harper,Male,Engineering,Software Engineer,90805.03,2021-12-04,Good,69.0,New York,matthew.harper@example.com
+235,Bryan,Cooper,Female,HR,HR Coordinator,78677.68,2013-04-30,Poor,32.0,New York,bryan.cooper@example.com
+236,Lauren,Mendoza,Female,Finance,Accountant,81877.07,2019-07-23,Excellent,20.0,New York,lauren.mendoza@example.com
+237,Justin,Hanson,Other,HR,HR Manager,120042.42,2016-03-06,Good,93.0,New York,justin.hanson@example.com
+238,Lawrence,Lee,Male,HR,Recruiter,54299.72,2018-11-06,Average,25.0,New York,lawrence.lee@example.com
+239,Kevin,Aguirre,Female,Engineering,QA Engineer,59317.42,2014-12-22,Good,22.0,Austin,kevin.aguirre@example.com
+240,Crystal,Warren,Male,Sales,Sales Representative,125977.0,2016-04-17,Poor,81.0,Chicago,crystal.warren@example.com
+241,Monica,Kelly,Female,Marketing,SEO Specialist,64101.64,2015-02-01,Below Average,10.0,Chicago,monica.kelly@example.com
+242,Travis,Mann,Other,Sales,Sales Manager,109957.36,2012-11-19,Good,37.0,New York,travis.mann@example.com
+243,Amanda,Watts,Male,Engineering,QA Engineer,147919.15,2011-01-19,Below Average,81.0,New York,amanda.watts@example.com
+244,William,Peters,Male,IT,IT Support Specialist,72520.56,2010-08-13,Poor,7.0,Chicago,william.peters@example.com
+245,Brian,Blake,Female,HR,Recruiter,79571.1,2015-11-27,Average,39.0,Austin,brian.blake@example.com
+246,Misty,Drake,Male,Finance,Financial Analyst,74082.9,2013-07-22,Below Average,21.0,New York,misty.drake@example.com
+247,Rachel,Chapman,Female,Sales,Sales Representative,87142.59,2017-10-14,Average,18.0,San Francisco,rachel.chapman@example.com
+248,Gregory,Ramirez,Male,Marketing,Content Strategist,87080.19,2011-04-19,Good,75.0,Chicago,gregory.ramirez@example.com
+249,Judy,Blake,Male,Engineering,DevOps Engineer,107825.4,2014-11-02,Excellent,59.0,San Francisco,judy.blake@example.com
+250,James,Jackson,Other,IT,System Administrator,64618.76,2021-02-19,Below Average,9.0,Austin,james.jackson@example.com
+251,Jessica,Olsen,Female,Sales,Sales Representative,113565.62,2020-03-20,Average,71.0,New York,jessica.olsen@example.com
+252,Madeline,Hernandez,Female,Sales,Sales Representative,76204.57,2014-11-18,Average,38.0,Austin,madeline.hernandez@example.com
+253,Theresa,Smith,Female,HR,HR Coordinator,129643.38,2022-10-05,Excellent,97.0,New York,theresa.smith@example.com
+254,Victoria,Perkins,Male,IT,System Administrator,91812.74,2021-11-07,Good,82.0,Austin,victoria.perkins@example.com
+255,Christopher,Garcia,Male,HR,Recruiter,127022.94,2017-04-22,Excellent,78.0,Seattle,christopher.garcia@example.com
+256,William,Huber,Female,IT,Network Engineer,102113.22,2012-02-23,Average,38.0,Seattle,william.huber@example.com
+257,Jeremy,Clark,Female,Marketing,Content Strategist,91817.86,2023-09-29,Good,95.0,Austin,jeremy.clark@example.com
+258,William,Black,Male,HR,Recruiter,147623.89,2020-08-13,Below Average,36.0,Chicago,william.black@example.com
+259,Thomas,Ortiz,Female,Finance,Payroll Specialist,64132.03,2011-02-07,Good,71.0,Austin,thomas.ortiz@example.com
+260,Laura,Johnson,Other,Finance,Payroll Specialist,77623.18,2022-05-09,Average,54.0,New York,laura.johnson@example.com
+261,Troy,Fox,Male,Engineering,QA Engineer,55913.02,2018-07-01,Average,30.0,San Francisco,troy.fox@example.com
+262,Michael,Wilson,Female,HR,HR Manager,115471.32,2023-07-19,Average,91.0,Chicago,michael.wilson@example.com
+263,Jamie,Castaneda,Female,Finance,Accountant,61290.49,2011-01-29,Average,20.0,Seattle,jamie.castaneda@example.com
+264,Terri,Clark,Male,Finance,Payroll Specialist,106004.4,2015-05-03,Below Average,68.0,Boston,terri.clark@example.com
+265,Mark,Russell,Female,IT,IT Support Specialist,141331.25,2021-05-22,Below Average,40.0,New York,mark.russell@example.com
+266,Brad,Mcclain,Other,IT,Network Engineer,115640.02,2011-03-05,Below Average,98.0,Austin,brad.mcclain@example.com
+267,Billy,Hughes,Female,IT,IT Support Specialist,108260.53,2011-08-10,Poor,58.0,New York,billy.hughes@example.com
+268,Wesley,Johnson,Female,Finance,Accountant,125056.72,2021-10-19,Excellent,12.0,Seattle,wesley.johnson@example.com
+269,Anthony,Parsons,Female,Marketing,Marketing Manager,139419.57,2017-12-08,Excellent,64.0,Austin,anthony.parsons@example.com
+270,Tamara,Huff,Male,Marketing,Content Strategist,144864.47,2021-12-14,Poor,11.0,Boston,tamara.huff@example.com
+271,Curtis,Brown,Other,HR,HR Coordinator,78024.51,2018-08-08,Good,50.0,Austin,curtis.brown@example.com
+272,Emma,Mckay,Other,Finance,Financial Analyst,83999.77,2020-08-25,Good,35.0,Seattle,emma.mckay@example.com
+273,Albert,Holt,Male,Finance,Accountant,86800.72,2020-05-31,Poor,2.0,Austin,albert.holt@example.com
+274,Amanda,Mitchell,Female,Marketing,Marketing Manager,130507.13,2010-08-28,Poor,6.0,Austin,amanda.mitchell@example.com
+275,Lori,Simmons,Male,IT,Network Engineer,66844.85,2010-11-27,Below Average,4.0,Boston,lori.simmons@example.com
+276,Derek,Jones,Other,Engineering,Data Engineer,60540.16,2018-03-06,Excellent,66.0,Chicago,derek.jones@example.com
+277,Richard,Walker,Male,Engineering,DevOps Engineer,62753.79,2022-08-22,Average,19.0,San Francisco,richard.walker@example.com
+278,Tammy,Morrison,Female,HR,HR Manager,117865.17,2015-03-03,Excellent,47.0,Seattle,tammy.morrison@example.com
+279,Christopher,Mitchell,Female,IT,IT Support Specialist,98506.66,2018-05-08,Excellent,80.0,Austin,christopher.mitchell@example.com
+280,Renee,Flores,Other,IT,System Administrator,121103.58,2019-04-01,Below Average,60.0,New York,renee.flores@example.com
+281,Kristin,Proctor,Other,IT,IT Support Specialist,103863.94,2013-05-26,Poor,95.0,San Francisco,kristin.proctor@example.com
+282,Anna,Contreras,Other,HR,Recruiter,87349.13,2023-07-06,Poor,54.0,Chicago,anna.contreras@example.com
+283,Elizabeth,Russell,Female,IT,Network Engineer,149896.93,2014-03-01,Poor,68.0,Boston,elizabeth.russell@example.com
+284,Jennifer,Smith,Female,Marketing,SEO Specialist,96891.91,2011-09-02,Good,42.0,Chicago,jennifer.smith@example.com
+285,Patrick,Garza,Female,Finance,Payroll Specialist,108047.25,2010-11-09,Average,40.0,New York,patrick.garza@example.com
+286,Judith,Joyce,Other,Sales,Account Executive,80089.85,2020-02-18,Average,66.0,Seattle,judith.joyce@example.com
+287,Justin,Hernandez,Female,Engineering,Software Engineer,116851.91,2017-07-24,Good,49.0,San Francisco,justin.hernandez@example.com
+288,John,Poole,Male,Marketing,Content Strategist,87024.55,2019-12-20,Excellent,43.0,New York,john.poole@example.com
+289,Eric,Murphy,Male,Marketing,Content Strategist,93674.5,2015-02-15,Excellent,92.0,Seattle,eric.murphy@example.com
+290,Catherine,Valdez,Male,IT,IT Support Specialist,78260.44,2013-08-26,Excellent,55.0,Seattle,catherine.valdez@example.com
+291,Harry,Shepherd,Female,Sales,Sales Manager,92890.08,2023-12-10,Poor,31.0,San Francisco,harry.shepherd@example.com
+292,Alex,Schroeder,Male,IT,IT Support Specialist,95123.74,2011-05-31,Below Average,71.0,Seattle,alex.schroeder@example.com
+293,Nathan,Cain,Other,Marketing,Content Strategist,130895.29,2014-03-17,Average,19.0,Boston,nathan.cain@example.com
+294,Thomas,Richardson,Male,Sales,Account Executive,99362.85,2022-08-26,Poor,47.0,Austin,thomas.richardson@example.com
+295,Karen,Ware,Other,Engineering,DevOps Engineer,108853.3,2023-10-17,Average,98.0,Chicago,karen.ware@example.com
+296,Kevin,Terry,Male,HR,HR Manager,105175.19,2010-09-30,Below Average,87.0,Chicago,kevin.terry@example.com
+297,Kimberly,Miller,Female,Sales,Sales Manager,79445.38,2020-02-15,Poor,62.0,Boston,kimberly.miller@example.com
+298,Christopher,Singh,Male,Marketing,Marketing Manager,94559.29,2020-09-06,Poor,99.0,Austin,christopher.singh@example.com
+299,Gabriella,Powers,Male,Sales,Sales Manager,60874.35,2013-09-09,Excellent,87.0,Boston,gabriella.powers@example.com
+300,Curtis,White,Male,HR,HR Coordinator,51799.64,2020-03-14,Good,61.0,Seattle,curtis.white@example.com
+301,Deanna,Jones,Female,IT,System Administrator,50862.4,2013-03-19,Good,3.0,Austin,deanna.jones@example.com
+302,Marcus,Thomas,Female,HR,HR Coordinator,105390.66,2012-07-07,Poor,21.0,San Francisco,marcus.thomas@example.com
+303,Rebecca,Chaney,Other,Marketing,Marketing Manager,94104.84,2023-06-17,Poor,77.0,Chicago,rebecca.chaney@example.com
+304,Jessica,Daniel,Male,Engineering,Data Engineer,68248.31,2020-03-02,Good,34.0,San Francisco,jessica.daniel@example.com
+305,Jennifer,Turner,Other,Engineering,QA Engineer,95840.03,2013-12-09,Excellent,48.0,Chicago,jennifer.turner@example.com
+306,Allen,Ball,Other,Sales,Sales Representative,97168.52,2023-02-21,Below Average,23.0,Seattle,allen.ball@example.com
+307,Peter,Wood,Other,Engineering,QA Engineer,63333.1,2019-10-21,Average,44.0,Chicago,peter.wood@example.com
+308,Emily,Mccullough,Male,HR,HR Manager,124143.04,2014-06-08,Good,46.0,New York,emily.mccullough@example.com
+309,Darrell,Allen,Other,IT,System Administrator,60437.46,2010-09-09,Average,21.0,Boston,darrell.allen@example.com
+310,Brenda,Sanchez,Other,Marketing,Content Strategist,60418.74,2023-11-28,Good,80.0,Chicago,brenda.sanchez@example.com
+311,Denise,Gill,Female,Sales,Sales Manager,110884.23,2012-11-10,Good,19.0,Chicago,denise.gill@example.com
+312,Timothy,Morris,Male,IT,System Administrator,56882.07,2013-06-26,Good,69.0,Austin,timothy.morris@example.com
+313,Amber,Barrera,Female,IT,Network Engineer,95374.56,2015-12-02,Average,57.0,Chicago,amber.barrera@example.com
+314,Andrea,Acosta,Male,Finance,Accountant,84350.23,2020-07-16,Below Average,78.0,Chicago,andrea.acosta@example.com
+315,James,Allen,Female,Sales,Account Executive,134746.91,2019-01-08,Below Average,76.0,Seattle,james.allen@example.com
+316,Samantha,Kelly,Male,HR,HR Coordinator,96457.42,2018-10-21,Good,26.0,New York,samantha.kelly@example.com
+317,Justin,Johnson,Other,Marketing,Content Strategist,58987.31,2021-07-02,Average,14.0,Chicago,justin.johnson@example.com
+318,Kimberly,Williams,Male,Engineering,Software Engineer,132723.54,2021-05-25,Average,57.0,San Francisco,kimberly.williams@example.com
+319,Anna,Fletcher,Male,Marketing,Content Strategist,113048.36,2018-05-15,Good,58.0,New York,anna.fletcher@example.com
+320,Andrew,Martinez,Other,HR,HR Coordinator,99007.74,2019-08-05,Average,55.0,San Francisco,andrew.martinez@example.com
+321,Mark,Parker,Female,HR,HR Manager,88557.48,2019-04-01,Excellent,92.0,Austin,mark.parker@example.com
+322,Carlos,Salazar,Male,HR,HR Coordinator,55174.06,2017-09-10,Good,89.0,Chicago,carlos.salazar@example.com
+323,Bradley,Montoya,Other,IT,System Administrator,137293.96,2018-07-14,Poor,8.0,Boston,bradley.montoya@example.com
+324,Michael,Ramos,Male,Finance,Accountant,62917.46,2016-10-15,Below Average,5.0,Chicago,michael.ramos@example.com
+325,Ashlee,Chavez,Other,Engineering,DevOps Engineer,85200.78,2015-06-04,Excellent,22.0,Austin,ashlee.chavez@example.com
+326,Jerry,Fisher,Male,Sales,Sales Manager,89850.04,2015-11-18,Poor,50.0,San Francisco,jerry.fisher@example.com
+327,Patricia,Powell,Female,IT,IT Support Specialist,98722.98,2021-06-08,Excellent,24.0,San Francisco,patricia.powell@example.com
+328,Nancy,Patel,Other,Finance,Accountant,63860.51,2023-08-21,Average,86.0,San Francisco,nancy.patel@example.com
+329,Sophia,Smith,Other,HR,HR Coordinator,70282.81,2012-09-22,Excellent,81.0,Chicago,sophia.smith@example.com
+330,Joseph,Bass,Male,Sales,Sales Manager,106897.06,2013-02-15,Below Average,96.0,Austin,joseph.bass@example.com
+331,Vincent,Pena,Other,Finance,Financial Analyst,67764.93,2022-06-10,Good,69.0,Chicago,vincent.pena@example.com
+332,Jeffrey,Ellis,Male,Engineering,Software Engineer,144991.62,2017-07-10,Below Average,27.0,Seattle,jeffrey.ellis@example.com
+333,Michael,Lee,Other,Sales,Account Executive,149798.25,2014-12-05,Below Average,74.0,San Francisco,michael.lee@example.com
+334,Sandra,Koch,Female,Marketing,Marketing Manager,124239.9,2023-11-11,Excellent,42.0,Chicago,sandra.koch@example.com
+335,Eduardo,Shelton,Other,IT,IT Support Specialist,130972.45,2015-03-18,Below Average,47.0,San Francisco,eduardo.shelton@example.com
+336,Kathryn,Johnson,Female,Marketing,SEO Specialist,131439.41,2011-08-09,Excellent,18.0,Chicago,kathryn.johnson@example.com
+337,Brandy,Vega,Male,Sales,Sales Representative,138074.5,2016-03-13,Poor,31.0,Seattle,brandy.vega@example.com
+338,David,Lee,Female,HR,HR Coordinator,92313.0,2014-12-25,Below Average,84.0,Boston,david.lee@example.com
+339,John,Edwards,Female,HR,HR Coordinator,51353.81,2012-10-22,Good,9.0,Seattle,john.edwards@example.com
+340,Paul,Mcneil,Other,Finance,Accountant,64413.68,2015-01-26,Excellent,94.0,New York,paul.mcneil@example.com
+341,Catherine,Stephenson,Male,Marketing,Content Strategist,139290.45,2016-04-12,Average,34.0,Chicago,catherine.stephenson@example.com
+342,Megan,Gill,Female,IT,IT Support Specialist,66301.64,2024-04-20,Excellent,44.0,Boston,megan.gill@example.com
+343,Robin,Morgan,Female,IT,System Administrator,112558.72,2017-04-12,Below Average,8.0,Chicago,robin.morgan@example.com
+344,Jessica,Miranda,Other,IT,Network Engineer,103069.71,2020-01-21,Excellent,32.0,Boston,jessica.miranda@example.com
+345,Crystal,Fox,Other,Engineering,Data Engineer,50326.36,2010-09-04,Poor,12.0,Austin,crystal.fox@example.com
+346,Joshua,Harrison,Female,Sales,Account Executive,73014.85,2021-12-17,Excellent,87.0,Chicago,joshua.harrison@example.com
+347,Daniel,Hernandez,Other,HR,HR Coordinator,84861.91,2021-12-25,Average,95.0,San Francisco,daniel.hernandez@example.com
+348,Brittany,Johnson,Other,Sales,Sales Representative,96110.92,2016-05-17,Below Average,54.0,New York,brittany.johnson@example.com
+349,Gary,King,Other,Engineering,QA Engineer,70783.75,2016-01-01,Poor,20.0,New York,gary.king@example.com
+350,Jorge,Huber,Other,Sales,Sales Representative,135602.19,2011-10-14,Below Average,18.0,Boston,jorge.huber@example.com
+351,Glenn,Jones,Male,Engineering,Data Engineer,141990.15,2019-11-07,Good,99.0,Boston,glenn.jones@example.com
+352,Lindsey,Edwards,Male,HR,HR Coordinator,68256.97,2023-10-02,Poor,70.0,San Francisco,lindsey.edwards@example.com
+353,Brandon,Garner,Male,Marketing,SEO Specialist,98310.64,2010-10-28,Poor,55.0,New York,brandon.garner@example.com
+354,Amy,Flowers,Male,IT,IT Support Specialist,141808.88,2022-04-14,Poor,61.0,Seattle,amy.flowers@example.com
+355,Wendy,King,Male,Finance,Financial Analyst,95735.84,2021-10-06,Poor,68.0,Austin,wendy.king@example.com
+356,Bobby,Valdez,Other,Finance,Accountant,74912.32,2020-10-16,Poor,58.0,New York,bobby.valdez@example.com
+357,Brandi,Mack,Other,Engineering,Software Engineer,110758.38,2011-10-26,Below Average,67.0,Boston,brandi.mack@example.com
+358,Thomas,Carlson,Other,IT,Network Engineer,68022.34,2017-04-29,Good,13.0,Seattle,thomas.carlson@example.com
+359,Isaiah,Ruiz,Other,IT,IT Support Specialist,95002.54,2010-09-04,Below Average,66.0,San Francisco,isaiah.ruiz@example.com
+360,Angela,Gonzalez,Other,HR,HR Coordinator,84512.53,2017-01-13,Average,88.0,Boston,angela.gonzalez@example.com
+361,Elizabeth,Gallagher,Female,HR,Recruiter,135244.06,2015-12-08,Poor,90.0,Austin,elizabeth.gallagher@example.com
+362,Jonathan,Harris,Female,Marketing,Content Strategist,54704.15,2021-06-07,Poor,6.0,Boston,jonathan.harris@example.com
+363,William,Flores,Other,Engineering,Data Engineer,105842.63,2024-05-12,Poor,3.0,Boston,william.flores@example.com
+364,Alexis,Preston,Female,HR,HR Coordinator,69578.77,2013-04-14,Average,91.0,Boston,alexis.preston@example.com
+365,Cynthia,Bowen,Female,Sales,Account Executive,122481.33,2014-11-21,Average,39.0,New York,cynthia.bowen@example.com
+366,Shannon,Krueger,Other,HR,Recruiter,96005.74,2016-06-06,Poor,96.0,Chicago,shannon.krueger@example.com
+367,Carlos,Reese,Other,IT,System Administrator,88102.31,2015-09-29,Average,42.0,Chicago,carlos.reese@example.com
+368,Gary,Hogan,Female,IT,Network Engineer,123995.76,2012-10-07,Poor,75.0,New York,gary.hogan@example.com
+369,Katherine,Webster,Male,Finance,Financial Analyst,50297.6,2012-03-28,Below Average,26.0,Boston,katherine.webster@example.com
+370,Jeffrey,Stewart,Male,Engineering,Data Engineer,77689.36,2010-11-04,Poor,57.0,New York,jeffrey.stewart@example.com
+371,Marissa,Martinez,Other,HR,HR Manager,123306.13,2010-06-03,Below Average,6.0,New York,marissa.martinez@example.com
+372,Christopher,Wallace,Male,Engineering,DevOps Engineer,124739.23,2020-11-15,Good,22.0,New York,christopher.wallace@example.com
+373,Michael,Powers,Other,HR,HR Manager,140806.34,2011-08-28,Average,45.0,Austin,michael.powers@example.com
+374,Jeffrey,Howell,Other,HR,HR Manager,81201.29,2015-03-16,Good,25.0,New York,jeffrey.howell@example.com
+375,Nathaniel,Riley,Male,Marketing,SEO Specialist,72464.58,2013-12-10,Poor,68.0,New York,nathaniel.riley@example.com
+376,Stephanie,Cross,Male,Sales,Sales Manager,149906.2,2018-04-22,Average,27.0,Austin,stephanie.cross@example.com
+377,Cathy,David,Male,IT,Network Engineer,114165.13,2012-06-19,Average,19.0,New York,cathy.david@example.com
+378,John,Johnson,Male,HR,HR Coordinator,73212.71,2023-03-18,Good,26.0,Austin,john.johnson@example.com
+379,Randy,Parker,Other,Marketing,Content Strategist,110199.37,2020-01-02,Poor,63.0,Austin,randy.parker@example.com
+380,Jennifer,Wright,Other,Sales,Sales Representative,53469.76,2023-05-12,Good,37.0,Seattle,jennifer.wright@example.com
+381,Beth,Arroyo,Male,IT,System Administrator,102056.64,2017-01-03,Good,8.0,Chicago,beth.arroyo@example.com
+382,Joseph,Henry,Female,Sales,Sales Manager,65300.53,2011-02-25,Excellent,87.0,Chicago,joseph.henry@example.com
+383,Roger,Meadows,Other,Finance,Payroll Specialist,68007.71,2018-05-28,Average,16.0,Chicago,roger.meadows@example.com
+384,Nancy,Thompson,Male,Marketing,Content Strategist,80872.43,2020-03-30,Good,9.0,Boston,nancy.thompson@example.com
+385,Lisa,Reynolds,Other,Engineering,DevOps Engineer,86568.28,2018-12-26,Good,2.0,Boston,lisa.reynolds@example.com
+386,Amy,Novak,Male,Finance,Financial Analyst,64547.33,2017-10-16,Excellent,94.0,New York,amy.novak@example.com
+387,Kristina,Welch,Female,HR,HR Coordinator,73315.58,2018-11-14,Excellent,36.0,New York,kristina.welch@example.com
+388,Anthony,Summers,Male,Marketing,SEO Specialist,125938.9,2023-10-08,Poor,85.0,Austin,anthony.summers@example.com
+389,Bryan,Ho,Other,IT,IT Support Specialist,138497.69,2020-01-15,Poor,10.0,New York,bryan.ho@example.com
+390,Timothy,Rivera,Female,Marketing,Content Strategist,69510.74,2012-10-03,Excellent,59.0,New York,timothy.rivera@example.com
+391,Ronnie,Smith,Other,Engineering,DevOps Engineer,61233.64,2016-01-29,Average,65.0,Seattle,ronnie.smith@example.com
+392,Sara,Ramsey,Male,Marketing,Marketing Manager,137881.18,2022-07-27,Good,56.0,Boston,sara.ramsey@example.com
+393,Amanda,Short,Male,Engineering,Data Engineer,62924.79,2012-03-03,Excellent,66.0,New York,amanda.short@example.com
+394,Catherine,Torres,Other,Marketing,Content Strategist,59184.22,2021-11-02,Poor,72.0,Austin,catherine.torres@example.com
+395,Jon,Sanchez,Female,IT,Network Engineer,57157.08,2023-09-17,Poor,7.0,Seattle,jon.sanchez@example.com
+396,John,Craig,Female,Finance,Payroll Specialist,142772.46,2018-06-25,Good,74.0,Boston,john.craig@example.com
+397,Andrew,Vega,Male,Sales,Sales Representative,100999.95,2017-05-10,Good,73.0,San Francisco,andrew.vega@example.com
+398,Robert,Lopez,Female,Marketing,Marketing Manager,106091.95,2018-04-30,Poor,19.0,New York,robert.lopez@example.com
+399,Christopher,Medina,Female,Marketing,SEO Specialist,117614.07,2022-12-16,Poor,13.0,Austin,christopher.medina@example.com
+400,Stacey,Nash,Other,IT,Network Engineer,105075.0,2013-12-19,Excellent,81.0,Boston,stacey.nash@example.com
+401,Cassandra,Watkins,Female,Sales,Sales Manager,143913.68,2018-05-13,Poor,78.0,Seattle,cassandra.watkins@example.com
+402,Ronnie,Roberts,Female,IT,System Administrator,103590.05,2016-08-15,Below Average,18.0,Boston,ronnie.roberts@example.com
+403,Michael,Taylor,Female,Finance,Payroll Specialist,127182.97,2024-03-12,Average,71.0,New York,michael.taylor@example.com
+404,Sean,Moore,Male,Sales,Sales Manager,113929.71,2018-07-16,Excellent,15.0,Austin,sean.moore@example.com
+405,Lucas,Evans,Female,HR,HR Coordinator,73229.3,2013-03-26,Good,62.0,Seattle,lucas.evans@example.com
+406,Matthew,Miller,Male,IT,System Administrator,109713.43,2017-11-17,Below Average,56.0,New York,matthew.miller@example.com
+407,Krystal,Owens,Other,Engineering,QA Engineer,70399.19,2018-05-02,Good,50.0,Seattle,krystal.owens@example.com
+408,Lisa,Simpson,Other,HR,HR Manager,52738.9,2013-10-19,Average,16.0,Boston,lisa.simpson@example.com
+409,Christopher,Johnson,Male,Engineering,QA Engineer,79908.44,2023-01-14,Below Average,70.0,Seattle,christopher.johnson@example.com
+410,Destiny,Harris,Other,Marketing,Content Strategist,89823.52,2015-04-10,Poor,60.0,Chicago,destiny.harris@example.com
+411,Bradley,Nelson,Other,Finance,Accountant,105738.4,2011-03-11,Average,21.0,Boston,bradley.nelson@example.com
+412,Dawn,Ayala,Other,IT,System Administrator,63093.37,2020-05-31,Excellent,88.0,New York,dawn.ayala@example.com
+413,Michele,King,Female,Engineering,DevOps Engineer,117856.2,2016-11-08,Below Average,30.0,Boston,michele.king@example.com
+414,Mary,Hayden,Male,Engineering,DevOps Engineer,139875.22,2017-07-09,Good,74.0,Austin,mary.hayden@example.com
+415,Heather,Torres,Female,IT,Network Engineer,140674.59,2013-05-05,Good,78.0,Seattle,heather.torres@example.com
+416,Derek,Spencer,Male,Marketing,SEO Specialist,115742.42,2014-10-05,Excellent,31.0,Austin,derek.spencer@example.com
+417,Kenneth,Mooney,Other,Sales,Account Executive,67523.99,2023-01-16,Below Average,1.0,San Francisco,kenneth.mooney@example.com
+418,Jonathan,Carter,Female,IT,Network Engineer,126888.72,2012-01-08,Poor,40.0,San Francisco,jonathan.carter@example.com
+419,Christian,Meza,Male,Marketing,Content Strategist,70879.96,2014-11-01,Poor,22.0,New York,christian.meza@example.com
+420,Dakota,Valencia,Female,Marketing,Content Strategist,93338.81,2011-08-08,Excellent,68.0,Austin,dakota.valencia@example.com
+421,Brian,Elliott,Female,IT,System Administrator,94687.07,2018-08-27,Poor,15.0,Seattle,brian.elliott@example.com
+422,Angela,Washington,Other,IT,System Administrator,76446.99,2010-09-18,Poor,73.0,Seattle,angela.washington@example.com
+423,Jennifer,Carpenter,Female,IT,System Administrator,88280.15,2011-11-24,Average,93.0,Chicago,jennifer.carpenter@example.com
+424,Alexandria,Taylor,Male,Sales,Account Executive,64963.75,2022-07-28,Average,53.0,Chicago,alexandria.taylor@example.com
+425,Hunter,Hickman,Female,HR,HR Coordinator,83254.74,2024-04-13,Below Average,91.0,Boston,hunter.hickman@example.com
+426,Robert,Wilson,Male,Marketing,Marketing Manager,115111.61,2018-09-30,Average,51.0,San Francisco,robert.wilson@example.com
+427,Jason,King,Other,HR,Recruiter,87941.99,2015-08-30,Average,61.0,Austin,jason.king@example.com
+428,Nancy,Raymond,Other,Marketing,Marketing Manager,129055.67,2018-11-30,Average,29.0,Austin,nancy.raymond@example.com
+429,Brenda,Brown,Female,Marketing,SEO Specialist,95630.43,2017-10-31,Poor,17.0,San Francisco,brenda.brown@example.com
+430,Rebecca,Bryant,Male,Engineering,Data Engineer,89235.45,2018-06-17,Average,11.0,Austin,rebecca.bryant@example.com
+431,Christopher,Johnson,Female,Finance,Payroll Specialist,96699.17,2022-06-21,Poor,88.0,New York,christopher.johnson@example.com
+432,Courtney,West,Male,Marketing,Content Strategist,59417.58,2023-11-08,Below Average,86.0,San Francisco,courtney.west@example.com
+433,Amy,Underwood,Other,Engineering,Software Engineer,134606.85,2016-03-06,Poor,35.0,Chicago,amy.underwood@example.com
+434,Thomas,Thomas,Male,HR,Recruiter,117072.54,2010-07-09,Good,2.0,Austin,thomas.thomas@example.com
+435,Joseph,Santos,Male,Sales,Account Executive,133981.36,2022-10-18,Below Average,14.0,Boston,joseph.santos@example.com
+436,Antonio,Walker,Female,Engineering,Software Engineer,96784.35,2015-01-06,Poor,70.0,Austin,antonio.walker@example.com
+437,Vincent,Manning,Other,Finance,Accountant,63632.84,2022-05-07,Below Average,3.0,Seattle,vincent.manning@example.com
+438,Edward,Ingram,Male,Engineering,Data Engineer,119457.12,2016-07-26,Below Average,64.0,Seattle,edward.ingram@example.com
+439,Patricia,Chen,Other,Finance,Financial Analyst,94802.86,2011-03-09,Below Average,76.0,New York,patricia.chen@example.com
+440,John,Moyer,Other,Sales,Sales Manager,147284.75,2017-01-25,Poor,94.0,San Francisco,john.moyer@example.com
+441,Paul,Cooper,Female,IT,Network Engineer,115998.5,2011-03-26,Below Average,42.0,Boston,paul.cooper@example.com
+442,Michelle,Mercer,Other,IT,System Administrator,82279.66,2011-07-10,Good,37.0,Chicago,michelle.mercer@example.com
+443,Susan,Mann,Female,Engineering,Software Engineer,133922.68,2014-09-29,Good,59.0,Chicago,susan.mann@example.com
+444,Gary,Davis,Other,HR,Recruiter,136315.75,2024-01-23,Below Average,71.0,Seattle,gary.davis@example.com
+445,Ann,Barry,Male,Finance,Accountant,100609.54,2021-10-19,Good,5.0,Seattle,ann.barry@example.com
+446,Megan,Carter,Male,Sales,Sales Manager,99448.41,2011-06-24,Poor,70.0,Austin,megan.carter@example.com
+447,Monique,Turner,Female,Engineering,DevOps Engineer,136890.08,2019-02-13,Poor,21.0,Seattle,monique.turner@example.com
+448,Sara,Bennett,Male,Finance,Financial Analyst,69612.19,2014-03-24,Excellent,65.0,Austin,sara.bennett@example.com
+449,Connie,Mcmillan,Other,IT,System Administrator,124941.88,2014-11-10,Below Average,25.0,San Francisco,connie.mcmillan@example.com
+450,Diane,Moss,Other,Sales,Sales Representative,98557.67,2016-02-29,Poor,59.0,Austin,diane.moss@example.com
+451,Sheryl,Bruce,Other,Engineering,Data Engineer,97041.07,2013-04-30,Excellent,34.0,Chicago,sheryl.bruce@example.com
+452,Lauren,Brock,Other,Marketing,Content Strategist,60815.09,2012-07-29,Average,74.0,Seattle,lauren.brock@example.com
+453,James,Jackson,Female,IT,System Administrator,111645.96,2010-12-15,Below Average,23.0,San Francisco,james.jackson@example.com
+454,Luke,Martinez,Male,Sales,Account Executive,55060.9,2015-11-27,Poor,35.0,Chicago,luke.martinez@example.com
+455,Charles,Robinson,Other,Finance,Financial Analyst,70513.09,2020-06-22,Poor,53.0,New York,charles.robinson@example.com
+456,Christopher,Rogers,Other,Engineering,QA Engineer,111971.57,2020-10-31,Below Average,81.0,Austin,christopher.rogers@example.com
+457,Krystal,Walter,Other,IT,IT Support Specialist,54237.71,2022-04-06,Excellent,72.0,Boston,krystal.walter@example.com
+458,Dennis,Cruz,Male,Finance,Payroll Specialist,72043.74,2019-10-01,Excellent,3.0,Chicago,dennis.cruz@example.com
+459,Allison,Powell,Other,HR,Recruiter,110070.29,2011-01-10,Good,65.0,Austin,allison.powell@example.com
+460,Eric,Taylor,Female,IT,System Administrator,124002.93,2018-06-03,Average,80.0,Chicago,eric.taylor@example.com
+461,John,Atkinson,Female,IT,System Administrator,77907.71,2018-07-26,Poor,92.0,Chicago,john.atkinson@example.com
+462,Hunter,Deleon,Female,IT,System Administrator,51254.26,2016-10-16,Average,64.0,New York,hunter.deleon@example.com
+463,Arthur,Ferguson,Other,Marketing,Marketing Manager,87216.57,2024-03-01,Below Average,88.0,Seattle,arthur.ferguson@example.com
+464,Crystal,Allen,Other,IT,System Administrator,101393.9,2023-10-26,Excellent,2.0,Boston,crystal.allen@example.com
+465,Kaylee,Lane,Other,IT,IT Support Specialist,102662.72,2020-05-11,Below Average,9.0,San Francisco,kaylee.lane@example.com
+466,Bradley,Jones,Female,IT,IT Support Specialist,93851.77,2021-12-30,Good,94.0,Boston,bradley.jones@example.com
+467,Diane,Wang,Male,Engineering,DevOps Engineer,117940.18,2014-10-10,Average,77.0,New York,diane.wang@example.com
+468,Sandra,Pruitt,Other,IT,IT Support Specialist,141567.71,2020-03-16,Excellent,15.0,Seattle,sandra.pruitt@example.com
+469,James,Weber,Other,Finance,Payroll Specialist,65829.57,2019-01-22,Average,48.0,New York,james.weber@example.com
+470,Ashley,Bailey,Female,Sales,Sales Manager,146622.5,2016-11-01,Good,25.0,New York,ashley.bailey@example.com
+471,Linda,Ware,Female,Engineering,QA Engineer,126493.43,2024-05-06,Excellent,96.0,New York,linda.ware@example.com
+472,Ashley,Stewart,Male,HR,Recruiter,82336.83,2021-12-28,Poor,89.0,Austin,ashley.stewart@example.com
+473,Kristin,Bruce,Other,HR,Recruiter,140369.98,2012-10-16,Average,49.0,San Francisco,kristin.bruce@example.com
+474,Marco,Daniels,Female,Sales,Account Executive,117343.31,2018-06-18,Excellent,62.0,Boston,marco.daniels@example.com
+475,Adam,Archer,Female,Sales,Sales Representative,92057.95,2014-08-03,Poor,11.0,Chicago,adam.archer@example.com
+476,William,Griffin,Other,Marketing,Marketing Manager,123247.18,2016-10-18,Below Average,8.0,New York,william.griffin@example.com
+477,Stephanie,Lee,Female,IT,System Administrator,67365.27,2014-08-01,Good,33.0,Boston,stephanie.lee@example.com
+478,Charles,Watkins,Other,Engineering,DevOps Engineer,78183.61,2019-04-26,Good,1.0,San Francisco,charles.watkins@example.com
+479,Kelly,Thomas,Female,Marketing,SEO Specialist,80574.85,2015-05-01,Average,45.0,New York,kelly.thomas@example.com
+480,Michael,Hogan,Male,Marketing,Marketing Manager,124227.33,2018-12-25,Average,13.0,Austin,michael.hogan@example.com
+481,Angela,Dennis,Female,Finance,Payroll Specialist,107477.8,2019-04-29,Good,9.0,San Francisco,angela.dennis@example.com
+482,Brett,Clayton,Male,Marketing,Marketing Manager,61374.36,2017-06-19,Excellent,6.0,Chicago,brett.clayton@example.com
+483,Dennis,Williams,Female,Engineering,QA Engineer,116114.88,2014-02-26,Poor,51.0,Chicago,dennis.williams@example.com
+484,Julia,Brown,Female,Finance,Payroll Specialist,85759.86,2021-03-30,Below Average,86.0,Chicago,julia.brown@example.com
+485,Cynthia,Mcclain,Other,Finance,Accountant,110734.53,2013-08-07,Poor,49.0,Chicago,cynthia.mcclain@example.com
+486,Lisa,Benjamin,Other,Engineering,Data Engineer,129052.27,2010-07-08,Poor,69.0,New York,lisa.benjamin@example.com
+487,Charles,Cruz,Male,HR,Recruiter,62987.51,2011-12-04,Excellent,25.0,Austin,charles.cruz@example.com
+488,Gregory,West,Other,Engineering,Data Engineer,97050.08,2015-09-01,Poor,77.0,Austin,gregory.west@example.com
+489,Peter,Hess,Female,HR,HR Coordinator,105247.47,2020-01-25,Below Average,77.0,New York,peter.hess@example.com
+490,Shane,Flores,Male,Engineering,Data Engineer,125297.54,2019-07-04,Good,58.0,San Francisco,shane.flores@example.com
+491,Lisa,Harris,Other,Marketing,Content Strategist,86656.06,2011-05-21,Average,92.0,Austin,lisa.harris@example.com
+492,Steve,Foster,Female,Finance,Financial Analyst,123521.25,2020-06-20,Average,11.0,Chicago,steve.foster@example.com
+493,Sharon,Williamson,Female,HR,HR Manager,141670.17,2021-07-25,Average,60.0,Boston,sharon.williamson@example.com
+494,Rachel,Sanchez,Male,IT,System Administrator,100793.25,2019-09-12,Good,75.0,Chicago,rachel.sanchez@example.com
+495,Michael,Bond,Male,Sales,Sales Representative,104167.2,2012-03-24,Average,6.0,Seattle,michael.bond@example.com
+496,Thomas,Jimenez,Other,HR,HR Coordinator,55796.34,2016-02-08,Below Average,94.0,Boston,thomas.jimenez@example.com
+497,Noah,Walter,Female,HR,Recruiter,144702.01,2014-02-26,Excellent,43.0,Austin,noah.walter@example.com
+498,Brian,King,Female,IT,Network Engineer,64524.9,2013-04-12,Poor,99.0,San Francisco,brian.king@example.com
+499,Randy,Ellis,Other,IT,IT Support Specialist,137458.09,2016-03-09,Below Average,3.0,New York,randy.ellis@example.com
+500,Amy,Reed,Other,IT,Network Engineer,144908.93,2011-06-18,Good,70.0,Austin,amy.reed@example.com
+501,Crystal,Wiggins,Female,Marketing,Marketing Manager,99764.6,2019-09-06,Poor,6.0,Boston,crystal.wiggins@example.com
+502,Jonathan,Lynch,Male,Sales,Sales Representative,139765.69,2018-03-13,Average,27.0,Austin,jonathan.lynch@example.com
+503,Adam,Mcmahon,Female,Marketing,Marketing Manager,119664.49,2023-05-10,Good,35.0,Seattle,adam.mcmahon@example.com
+504,John,Hatfield,Other,HR,HR Coordinator,72440.56,2023-10-08,Good,28.0,San Francisco,john.hatfield@example.com
+505,Patricia,Martinez,Male,Finance,Payroll Specialist,130731.68,2015-09-28,Good,79.0,New York,patricia.martinez@example.com
+506,Amber,Smith,Other,IT,Network Engineer,113005.24,2018-06-20,Excellent,82.0,Boston,amber.smith@example.com
+507,Brian,Patel,Female,Marketing,Content Strategist,89122.71,2021-06-20,Below Average,22.0,Seattle,brian.patel@example.com
+508,Justin,Sharp,Male,IT,Network Engineer,125892.87,2011-08-10,Excellent,52.0,Seattle,justin.sharp@example.com
+509,Brenda,Martin,Other,IT,IT Support Specialist,120489.07,2015-07-16,Good,18.0,Austin,brenda.martin@example.com
+510,Jennifer,Frazier,Male,IT,System Administrator,108980.91,2012-10-18,Excellent,29.0,Seattle,jennifer.frazier@example.com
+511,Natalie,Smith,Male,HR,HR Manager,65087.67,2016-05-20,Poor,79.0,Seattle,natalie.smith@example.com
+512,Kelly,Conway,Female,Sales,Account Executive,82680.01,2014-05-23,Poor,37.0,Boston,kelly.conway@example.com
+513,Judith,Scott,Other,HR,HR Coordinator,121250.8,2024-01-16,Good,54.0,Seattle,judith.scott@example.com
+514,Sarah,Guzman,Female,Sales,Sales Representative,67760.54,2016-03-28,Good,66.0,New York,sarah.guzman@example.com
+515,John,Mitchell,Female,Marketing,Content Strategist,72481.33,2016-09-14,Excellent,52.0,Boston,john.mitchell@example.com
+516,Gabriella,Mcguire,Female,Sales,Sales Manager,133476.54,2013-01-08,Excellent,75.0,San Francisco,gabriella.mcguire@example.com
+517,Veronica,Cobb,Other,Finance,Payroll Specialist,140106.13,2021-02-23,Excellent,62.0,San Francisco,veronica.cobb@example.com
+518,Jessica,Wilkerson,Other,Finance,Accountant,91627.83,2014-12-20,Excellent,59.0,San Francisco,jessica.wilkerson@example.com
+519,Randy,Santiago,Female,Marketing,SEO Specialist,110536.33,2019-02-04,Good,12.0,San Francisco,randy.santiago@example.com
+520,Monique,Soto,Female,IT,System Administrator,142822.88,2023-08-03,Good,38.0,Chicago,monique.soto@example.com
+521,Whitney,Adams,Male,Sales,Sales Representative,101524.92,2021-04-21,Average,61.0,Chicago,whitney.adams@example.com
+522,Margaret,Copeland,Male,HR,Recruiter,104712.32,2018-01-28,Average,4.0,San Francisco,margaret.copeland@example.com
+523,Joshua,Thompson,Other,Marketing,Marketing Manager,131131.54,2022-12-16,Below Average,81.0,Chicago,joshua.thompson@example.com
+524,Paul,Copeland,Female,Finance,Financial Analyst,87900.92,2020-11-21,Poor,83.0,San Francisco,paul.copeland@example.com
+525,Andrea,Frank,Male,Sales,Sales Representative,83672.97,2023-08-04,Good,36.0,Seattle,andrea.frank@example.com
+526,Matthew,Orr,Female,Engineering,QA Engineer,58218.25,2016-05-15,Below Average,89.0,Boston,matthew.orr@example.com
+527,Jonathan,Cervantes,Other,HR,HR Coordinator,115792.33,2020-03-04,Poor,29.0,Boston,jonathan.cervantes@example.com
+528,Brittany,Allison,Other,Engineering,DevOps Engineer,133660.43,2019-08-20,Good,38.0,San Francisco,brittany.allison@example.com
+529,Sarah,Young,Other,Engineering,Software Engineer,109096.67,2018-07-03,Average,92.0,Seattle,sarah.young@example.com
+530,Marissa,Williams,Male,Engineering,QA Engineer,123069.76,2013-11-20,Below Average,11.0,Boston,marissa.williams@example.com
+531,Michael,Brooks,Female,HR,HR Coordinator,128260.76,2022-10-06,Average,93.0,Boston,michael.brooks@example.com
+532,Robert,Johnson,Female,Engineering,DevOps Engineer,117701.36,2011-07-17,Poor,34.0,Boston,robert.johnson@example.com
+533,Carla,Strickland,Male,Sales,Sales Manager,128290.73,2022-04-17,Below Average,3.0,Boston,carla.strickland@example.com
+534,Wendy,Smith,Other,Sales,Sales Representative,112577.46,2016-05-03,Below Average,93.0,Seattle,wendy.smith@example.com
+535,Jonathan,Fry,Male,HR,HR Coordinator,58776.06,2020-01-12,Excellent,78.0,Chicago,jonathan.fry@example.com
+536,Curtis,Conley,Other,Engineering,QA Engineer,105293.67,2022-11-02,Good,40.0,New York,curtis.conley@example.com
+537,Gina,Williams,Female,Engineering,Data Engineer,70157.53,2011-10-26,Excellent,65.0,New York,gina.williams@example.com
+538,Tammy,Garrett,Other,Marketing,Marketing Manager,85725.59,2020-03-17,Poor,21.0,San Francisco,tammy.garrett@example.com
+539,Mark,Grant,Other,Marketing,Content Strategist,86734.17,2012-11-11,Good,99.0,Chicago,mark.grant@example.com
+540,Christy,Smith,Male,HR,HR Manager,140277.74,2010-10-18,Good,11.0,Austin,christy.smith@example.com
+541,Wendy,Schwartz,Female,Finance,Accountant,111887.7,2021-01-08,Average,9.0,Austin,wendy.schwartz@example.com
+542,Justin,Bell,Other,HR,HR Manager,139096.06,2017-06-18,Poor,65.0,Austin,justin.bell@example.com
+543,Melissa,Becker,Female,IT,System Administrator,70867.12,2024-03-20,Excellent,32.0,San Francisco,melissa.becker@example.com
+544,Jennifer,Bradley,Other,Marketing,SEO Specialist,56363.75,2014-05-16,Poor,70.0,New York,jennifer.bradley@example.com
+545,Dale,Lewis,Female,Finance,Payroll Specialist,88360.96,2019-01-04,Excellent,81.0,New York,dale.lewis@example.com
+546,Glenn,Lewis,Male,HR,HR Manager,52166.49,2015-07-06,Excellent,65.0,New York,glenn.lewis@example.com
+547,Suzanne,Sanchez,Male,Sales,Account Executive,133535.59,2013-09-06,Below Average,34.0,Seattle,suzanne.sanchez@example.com
+548,Melanie,Torres,Female,Marketing,SEO Specialist,105047.77,2017-08-15,Excellent,79.0,Boston,melanie.torres@example.com
+549,Thomas,Long,Female,HR,Recruiter,123834.41,2023-08-12,Excellent,79.0,Chicago,thomas.long@example.com
+550,Stacy,Carter,Other,Marketing,Content Strategist,102554.72,2012-09-09,Below Average,86.0,New York,stacy.carter@example.com
+551,Matthew,Heath,Male,Marketing,Content Strategist,130582.85,2018-12-21,Excellent,64.0,Boston,matthew.heath@example.com
+552,Phillip,Silva,Male,Marketing,SEO Specialist,92784.38,2020-11-22,Good,96.0,Seattle,phillip.silva@example.com
+553,Jacob,Crane,Female,Engineering,Data Engineer,139312.29,2012-06-26,Good,40.0,Austin,jacob.crane@example.com
+554,Lori,Brooks,Female,Marketing,Content Strategist,84458.06,2020-06-28,Average,89.0,Seattle,lori.brooks@example.com
+555,Robert,Wagner,Male,Engineering,Software Engineer,97280.1,2024-05-06,Good,78.0,New York,robert.wagner@example.com
+556,Jeffery,Gonzalez,Other,HR,HR Manager,77298.86,2023-01-11,Excellent,90.0,New York,jeffery.gonzalez@example.com
+557,Randy,Sanchez,Male,Sales,Sales Manager,76382.07,2013-09-19,Average,62.0,San Francisco,randy.sanchez@example.com
+558,Erica,Allen,Male,Sales,Account Executive,99787.82,2020-05-31,Excellent,9.0,San Francisco,erica.allen@example.com
+559,Timothy,Hudson,Other,Marketing,Marketing Manager,135343.63,2016-03-17,Good,42.0,San Francisco,timothy.hudson@example.com
+560,Erika,Brown,Other,Marketing,Content Strategist,119364.58,2021-07-10,Excellent,17.0,Austin,erika.brown@example.com
+561,Cody,Hall,Other,Finance,Payroll Specialist,100669.91,2013-09-24,Below Average,11.0,Austin,cody.hall@example.com
+562,Chris,Parrish,Female,Finance,Financial Analyst,57426.36,2021-11-27,Poor,77.0,New York,chris.parrish@example.com
+563,John,Wilson,Male,Marketing,SEO Specialist,78768.46,2016-03-09,Poor,52.0,New York,john.wilson@example.com
+564,Randy,Wells,Female,IT,Network Engineer,89827.89,2015-03-07,Excellent,97.0,Chicago,randy.wells@example.com
+565,Jessica,Ewing,Other,Engineering,DevOps Engineer,53087.3,2013-06-08,Excellent,84.0,Chicago,jessica.ewing@example.com
+566,Carolyn,Huang,Other,HR,HR Manager,82378.77,2021-05-05,Below Average,54.0,New York,carolyn.huang@example.com
+567,Tracy,Paul,Female,Sales,Sales Manager,95225.69,2011-10-25,Average,93.0,Boston,tracy.paul@example.com
+568,Allen,Owen,Female,Sales,Sales Representative,142126.55,2015-12-03,Good,1.0,Boston,allen.owen@example.com
+569,Daniel,Williams,Female,Marketing,Marketing Manager,69922.51,2017-04-05,Average,96.0,Seattle,daniel.williams@example.com
+570,Daniel,Kirk,Female,HR,HR Manager,85498.71,2020-04-26,Below Average,86.0,Seattle,daniel.kirk@example.com
+571,David,Stewart,Female,IT,System Administrator,118291.72,2021-01-08,Excellent,46.0,New York,david.stewart@example.com
+572,Kevin,White,Female,HR,Recruiter,134716.15,2019-06-29,Poor,38.0,New York,kevin.white@example.com
+573,Elizabeth,Williams,Male,Marketing,Marketing Manager,54868.52,2012-03-10,Poor,92.0,Boston,elizabeth.williams@example.com
+574,Krista,Knapp,Male,Finance,Accountant,116656.19,2015-12-04,Below Average,41.0,Boston,krista.knapp@example.com
+575,Richard,Young,Female,Engineering,DevOps Engineer,69874.75,2016-09-16,Poor,7.0,Boston,richard.young@example.com
+576,Desiree,Holt,Female,Engineering,QA Engineer,50850.95,2020-05-31,Below Average,94.0,Boston,desiree.holt@example.com
+577,Thomas,Smith,Female,IT,System Administrator,89140.02,2015-03-08,Average,27.0,New York,thomas.smith@example.com
+578,Michael,Green,Other,Marketing,SEO Specialist,57446.53,2021-09-03,Below Average,94.0,San Francisco,michael.green@example.com
+579,Jill,Barton,Female,IT,System Administrator,133065.4,2011-07-01,Excellent,79.0,San Francisco,jill.barton@example.com
+580,Angela,Ryan,Female,Engineering,Software Engineer,104381.32,2011-03-17,Below Average,36.0,Chicago,angela.ryan@example.com
+581,Andrew,Hill,Female,Engineering,Software Engineer,82531.35,2011-12-12,Good,29.0,New York,andrew.hill@example.com
+582,Robert,Marquez,Female,Sales,Sales Manager,122761.27,2021-03-29,Below Average,10.0,Boston,robert.marquez@example.com
+583,Stephanie,Carey,Male,Engineering,QA Engineer,129270.93,2016-02-01,Poor,32.0,Austin,stephanie.carey@example.com
+584,Louis,Parker,Other,Sales,Sales Manager,104340.01,2017-03-29,Poor,48.0,Seattle,louis.parker@example.com
+585,Nicole,Foster,Other,IT,IT Support Specialist,60545.05,2021-03-03,Average,85.0,New York,nicole.foster@example.com
+586,Nancy,Watson,Male,Sales,Account Executive,136308.03,2017-02-07,Excellent,11.0,Boston,nancy.watson@example.com
+587,James,Duncan,Male,Finance,Accountant,77621.26,2023-10-13,Average,99.0,San Francisco,james.duncan@example.com
+588,Jesse,Jones,Female,Finance,Payroll Specialist,106598.07,2011-01-17,Below Average,20.0,Boston,jesse.jones@example.com
+589,Derek,Franklin,Female,Sales,Account Executive,90337.75,2017-08-02,Poor,9.0,Seattle,derek.franklin@example.com
+590,Andrea,Jones,Other,Sales,Sales Manager,102481.16,2021-10-23,Average,38.0,Seattle,andrea.jones@example.com
+591,Tyler,Powers,Other,Sales,Sales Representative,114342.67,2013-06-01,Poor,12.0,New York,tyler.powers@example.com
+592,Kevin,Craig,Other,HR,HR Manager,119291.49,2017-12-22,Average,38.0,Seattle,kevin.craig@example.com
+593,Jennifer,Hernandez,Other,HR,HR Manager,99884.25,2016-07-13,Below Average,66.0,Boston,jennifer.hernandez@example.com
+594,Michael,Graves,Male,Finance,Payroll Specialist,115544.75,2017-04-01,Poor,98.0,New York,michael.graves@example.com
+595,Paul,Mathis,Female,Finance,Payroll Specialist,88635.25,2013-05-07,Good,48.0,Seattle,paul.mathis@example.com
+596,Tracy,Mills,Other,Marketing,Marketing Manager,81233.03,2011-04-14,Poor,1.0,Boston,tracy.mills@example.com
+597,Michael,Beltran,Female,Sales,Sales Representative,105559.02,2014-09-09,Poor,99.0,New York,michael.beltran@example.com
+598,Tyler,Adams,Female,HR,HR Manager,68990.77,2013-11-22,Good,82.0,Seattle,tyler.adams@example.com
+599,Ethan,Shelton,Other,Finance,Payroll Specialist,54026.25,2017-06-21,Poor,38.0,San Francisco,ethan.shelton@example.com
+600,William,Anderson,Male,HR,HR Manager,110469.15,2022-01-10,Excellent,9.0,Seattle,william.anderson@example.com
+601,Scott,Montes,Female,Sales,Sales Manager,83122.18,2021-02-13,Below Average,84.0,San Francisco,scott.montes@example.com
+602,Carlos,Barrett,Female,IT,Network Engineer,140287.35,2017-12-21,Poor,16.0,Austin,carlos.barrett@example.com
+603,Jesse,Miller,Other,Sales,Sales Representative,97050.24,2014-08-15,Poor,40.0,Chicago,jesse.miller@example.com
+604,Jean,Wilson,Other,HR,HR Manager,143148.86,2014-06-19,Good,46.0,New York,jean.wilson@example.com
+605,Cory,Walker,Female,IT,System Administrator,113792.48,2010-09-11,Poor,38.0,New York,cory.walker@example.com
+606,Jimmy,Carpenter,Female,IT,IT Support Specialist,103709.79,2011-07-08,Excellent,46.0,Seattle,jimmy.carpenter@example.com
+607,James,Owens,Other,Marketing,SEO Specialist,68021.65,2016-09-06,Good,57.0,Seattle,james.owens@example.com
+608,Michael,House,Other,Sales,Sales Manager,76614.05,2020-10-31,Excellent,32.0,Seattle,michael.house@example.com
+609,Hayley,Simmons,Male,Finance,Payroll Specialist,137602.41,2023-05-29,Excellent,31.0,Boston,hayley.simmons@example.com
+610,Amanda,Soto,Other,HR,Recruiter,139500.77,2011-10-06,Average,49.0,Chicago,amanda.soto@example.com
+611,Danielle,Smith,Male,Engineering,Software Engineer,145920.95,2014-06-04,Excellent,66.0,Seattle,danielle.smith@example.com
+612,James,Coleman,Other,HR,HR Coordinator,86566.21,2014-12-30,Average,56.0,Chicago,james.coleman@example.com
+613,Cory,Miller,Other,IT,IT Support Specialist,94993.25,2017-05-25,Poor,95.0,Chicago,cory.miller@example.com
+614,Mary,Williams,Female,Sales,Sales Representative,116622.68,2020-03-09,Average,52.0,Boston,mary.williams@example.com
+615,Kevin,Gamble,Female,Marketing,SEO Specialist,57073.18,2013-03-18,Average,50.0,Seattle,kevin.gamble@example.com
+616,David,Hart,Male,HR,Recruiter,54257.37,2021-06-24,Poor,78.0,Boston,david.hart@example.com
+617,Tony,Fleming,Female,HR,HR Manager,145520.87,2020-07-13,Below Average,82.0,New York,tony.fleming@example.com
+618,Robyn,Ruiz,Female,Marketing,Content Strategist,134145.08,2022-08-03,Below Average,62.0,Chicago,robyn.ruiz@example.com
+619,Wendy,Golden,Female,Sales,Sales Representative,56061.07,2013-06-20,Poor,84.0,Austin,wendy.golden@example.com
+620,Patricia,Herrera,Male,HR,HR Manager,142537.75,2016-08-10,Below Average,13.0,Boston,patricia.herrera@example.com
+621,Juan,Davila,Male,Finance,Financial Analyst,148879.97,2023-08-24,Good,69.0,Seattle,juan.davila@example.com
+622,Mariah,Molina,Female,Marketing,Marketing Manager,136340.16,2024-02-28,Poor,3.0,San Francisco,mariah.molina@example.com
+623,Sarah,Miller,Other,Finance,Financial Analyst,133233.28,2013-05-07,Below Average,99.0,Boston,sarah.miller@example.com
+624,Brittany,Johnson,Other,HR,HR Coordinator,125952.29,2012-05-27,Poor,98.0,Seattle,brittany.johnson@example.com
+625,Dana,Walter,Other,Finance,Accountant,145217.54,2011-06-19,Good,59.0,Boston,dana.walter@example.com
+626,Jamie,Adams,Other,Marketing,SEO Specialist,145960.2,2023-02-15,Below Average,37.0,Austin,jamie.adams@example.com
+627,Christopher,Roberts,Male,Engineering,Data Engineer,83114.06,2010-12-22,Below Average,27.0,Chicago,christopher.roberts@example.com
+628,Gabriel,Walker,Male,Marketing,SEO Specialist,115990.39,2016-10-04,Average,25.0,Seattle,gabriel.walker@example.com
+629,Laurie,Hall,Other,HR,HR Manager,132101.14,2024-03-02,Excellent,75.0,Boston,laurie.hall@example.com
+630,Amanda,Rubio,Female,Sales,Account Executive,98025.5,2021-07-25,Poor,60.0,New York,amanda.rubio@example.com
+631,Ashley,Ross,Male,Engineering,Software Engineer,110054.76,2017-08-21,Average,71.0,Boston,ashley.ross@example.com
+632,John,Wade,Male,HR,HR Manager,142080.72,2019-06-02,Poor,16.0,New York,john.wade@example.com
+633,Leah,Harris,Other,Engineering,Software Engineer,106897.5,2013-02-10,Good,20.0,San Francisco,leah.harris@example.com
+634,Thomas,Washington,Female,HR,Recruiter,87118.68,2018-02-13,Below Average,41.0,Seattle,thomas.washington@example.com
+635,Carrie,Woods,Male,HR,Recruiter,132989.76,2017-11-15,Below Average,19.0,New York,carrie.woods@example.com
+636,Jordan,Bailey,Other,HR,HR Manager,89767.64,2014-04-19,Excellent,16.0,Boston,jordan.bailey@example.com
+637,Gina,Reid,Other,HR,HR Coordinator,108501.67,2014-08-02,Good,22.0,Boston,gina.reid@example.com
+638,Joseph,Brown,Male,HR,HR Manager,92764.52,2011-11-14,Below Average,48.0,Austin,joseph.brown@example.com
+639,Emily,Reese,Male,Marketing,Marketing Manager,92268.42,2022-12-19,Good,85.0,Boston,emily.reese@example.com
+640,Jennifer,Burns,Female,HR,HR Coordinator,50065.35,2019-12-29,Good,28.0,New York,jennifer.burns@example.com
+641,Laura,Goodman,Other,Finance,Payroll Specialist,78533.35,2024-02-03,Below Average,59.0,New York,laura.goodman@example.com
+642,Jeffery,Freeman,Other,HR,Recruiter,91221.18,2011-01-10,Below Average,28.0,Seattle,jeffery.freeman@example.com
+643,Timothy,Weeks,Other,IT,Network Engineer,83184.17,2020-04-03,Good,99.0,Austin,timothy.weeks@example.com
+644,Terri,Lyons,Male,Finance,Accountant,79958.78,2014-04-14,Excellent,34.0,Seattle,terri.lyons@example.com
+645,Jeffrey,Kelly,Male,Finance,Financial Analyst,100629.34,2012-06-21,Average,72.0,San Francisco,jeffrey.kelly@example.com
+646,Molly,Ramirez,Male,Finance,Payroll Specialist,111855.0,2011-11-24,Excellent,77.0,Chicago,molly.ramirez@example.com
+647,William,Davis,Male,Marketing,SEO Specialist,116740.27,2018-05-19,Good,42.0,Chicago,william.davis@example.com
+648,Erica,Conway,Female,Finance,Financial Analyst,58392.35,2018-02-19,Excellent,90.0,Boston,erica.conway@example.com
+649,Lauren,Pham,Male,Marketing,SEO Specialist,120432.04,2015-09-17,Poor,42.0,Austin,lauren.pham@example.com
+650,Alexis,Young,Other,IT,System Administrator,105012.1,2012-10-04,Good,32.0,Chicago,alexis.young@example.com
+651,Christopher,Moore,Other,Sales,Sales Manager,56966.85,2015-06-18,Poor,91.0,Austin,christopher.moore@example.com
+652,Nancy,Davis,Other,IT,IT Support Specialist,112684.55,2013-09-05,Average,32.0,Seattle,nancy.davis@example.com
+653,Erin,Watson,Other,IT,IT Support Specialist,58626.77,2022-05-12,Good,70.0,New York,erin.watson@example.com
+654,Ashley,Pierce,Other,Sales,Sales Manager,76482.62,2013-12-16,Excellent,25.0,Chicago,ashley.pierce@example.com
+655,Renee,Smith,Female,Finance,Payroll Specialist,68788.5,2023-11-21,Good,10.0,San Francisco,renee.smith@example.com
+656,Shawn,Ramirez,Female,Sales,Sales Manager,122024.78,2014-03-28,Poor,26.0,Boston,shawn.ramirez@example.com
+657,Alisha,Smith,Other,HR,Recruiter,86492.54,2015-02-10,Good,51.0,San Francisco,alisha.smith@example.com
+658,Brandon,Hamilton,Female,Finance,Accountant,83796.04,2013-04-21,Below Average,85.0,Seattle,brandon.hamilton@example.com
+659,Lisa,Cole,Female,Engineering,QA Engineer,133669.88,2021-11-30,Excellent,9.0,Boston,lisa.cole@example.com
+660,Sean,Davis,Female,Engineering,Data Engineer,147839.21,2022-03-29,Average,18.0,Austin,sean.davis@example.com
+661,Debra,Bishop,Female,Marketing,SEO Specialist,65053.73,2013-02-04,Average,83.0,San Francisco,debra.bishop@example.com
+662,Jesse,Sanchez,Female,Engineering,DevOps Engineer,64830.84,2013-09-22,Average,20.0,Chicago,jesse.sanchez@example.com
+663,Leslie,Andrews,Female,HR,Recruiter,91788.04,2012-01-16,Below Average,75.0,New York,leslie.andrews@example.com
+664,Daryl,Bowman,Male,Sales,Sales Manager,77933.49,2017-03-06,Below Average,38.0,San Francisco,daryl.bowman@example.com
+665,Nicholas,Burnett,Other,Finance,Financial Analyst,121317.89,2013-07-29,Poor,52.0,Chicago,nicholas.burnett@example.com
+666,Christopher,Smith,Other,Finance,Financial Analyst,115037.0,2014-04-25,Good,73.0,San Francisco,christopher.smith@example.com
+667,Tracy,Hale,Other,Marketing,SEO Specialist,106149.02,2018-10-13,Poor,63.0,San Francisco,tracy.hale@example.com
+668,Ricardo,Walsh,Other,IT,System Administrator,120382.21,2020-06-30,Excellent,77.0,San Francisco,ricardo.walsh@example.com
+669,Troy,Reed,Other,Sales,Account Executive,88096.38,2022-05-29,Poor,51.0,Chicago,troy.reed@example.com
+670,Vincent,Whitehead,Female,IT,Network Engineer,109530.91,2019-03-17,Below Average,68.0,New York,vincent.whitehead@example.com
+671,Sheila,Moreno,Female,Sales,Sales Manager,64123.37,2017-11-17,Average,78.0,San Francisco,sheila.moreno@example.com
+672,Stephen,Duke,Male,Engineering,DevOps Engineer,130196.78,2017-07-24,Excellent,98.0,Seattle,stephen.duke@example.com
+673,Alexander,Anderson,Other,HR,Recruiter,59765.72,2016-05-07,Average,41.0,Boston,alexander.anderson@example.com
+674,Jeffrey,Simon,Male,Sales,Account Executive,91266.83,2012-07-25,Below Average,3.0,Chicago,jeffrey.simon@example.com
+675,Amanda,Brown,Female,HR,HR Manager,96721.16,2010-12-08,Average,16.0,Seattle,amanda.brown@example.com
+676,Lisa,Martin,Male,IT,IT Support Specialist,85565.24,2019-02-16,Good,4.0,San Francisco,lisa.martin@example.com
+677,Stephen,Reeves,Female,IT,System Administrator,80449.89,2012-10-30,Good,48.0,Boston,stephen.reeves@example.com
+678,Marc,Hall,Other,Finance,Financial Analyst,89231.45,2017-01-03,Excellent,45.0,Austin,marc.hall@example.com
+679,Maria,Reynolds,Female,Marketing,Content Strategist,69967.3,2020-05-24,Below Average,75.0,Chicago,maria.reynolds@example.com
+680,Thomas,Bell,Female,Engineering,DevOps Engineer,120207.14,2015-02-11,Below Average,65.0,San Francisco,thomas.bell@example.com
+681,Joshua,Lloyd,Male,IT,Network Engineer,66504.0,2011-01-16,Average,84.0,Chicago,joshua.lloyd@example.com
+682,Rachel,Lewis,Other,Engineering,Software Engineer,57312.04,2019-01-27,Average,98.0,Austin,rachel.lewis@example.com
+683,Phillip,Lewis,Male,Engineering,DevOps Engineer,78178.3,2013-03-26,Good,31.0,New York,phillip.lewis@example.com
+684,Brent,Hood,Male,IT,IT Support Specialist,81563.86,2021-01-12,Average,74.0,Austin,brent.hood@example.com
+685,Dawn,Brown,Other,HR,HR Coordinator,66541.46,2011-11-11,Average,61.0,Boston,dawn.brown@example.com
+686,Marilyn,Estrada,Male,Sales,Sales Representative,110122.98,2016-02-15,Good,91.0,New York,marilyn.estrada@example.com
+687,Destiny,Boyd,Female,IT,System Administrator,113341.71,2012-02-10,Good,8.0,New York,destiny.boyd@example.com
+688,Tonya,Hicks,Male,Sales,Sales Manager,76334.42,2021-11-09,Average,93.0,Austin,tonya.hicks@example.com
+689,Frederick,Taylor,Male,Engineering,QA Engineer,59568.65,2021-03-10,Excellent,94.0,Seattle,frederick.taylor@example.com
+690,Frank,Calhoun,Female,IT,Network Engineer,123492.25,2013-07-08,Good,33.0,Chicago,frank.calhoun@example.com
+691,Megan,Mathews,Male,Engineering,DevOps Engineer,115614.36,2020-06-17,Average,13.0,Seattle,megan.mathews@example.com
+692,Marc,Fisher,Female,Engineering,DevOps Engineer,113807.94,2011-11-17,Excellent,75.0,Austin,marc.fisher@example.com
+693,Kathryn,Melton,Other,Finance,Payroll Specialist,90094.78,2013-08-29,Below Average,20.0,Austin,kathryn.melton@example.com
+694,Kara,Jackson,Male,Marketing,Content Strategist,142030.32,2012-11-06,Excellent,68.0,Boston,kara.jackson@example.com
+695,Kimberly,Curry,Male,Finance,Accountant,114603.32,2015-01-27,Good,21.0,Seattle,kimberly.curry@example.com
+696,April,Price,Female,Engineering,Data Engineer,131052.18,2023-03-10,Good,84.0,Chicago,april.price@example.com
+697,Justin,Simmons,Other,Marketing,Marketing Manager,111896.1,2015-12-25,Excellent,86.0,New York,justin.simmons@example.com
+698,Eric,Francis,Male,HR,HR Manager,109224.15,2016-03-06,Average,37.0,New York,eric.francis@example.com
+699,Jennifer,Olson,Female,Sales,Sales Representative,86221.57,2020-05-14,Excellent,77.0,San Francisco,jennifer.olson@example.com
+700,Sarah,Brown,Male,HR,Recruiter,119662.83,2018-02-19,Below Average,30.0,San Francisco,sarah.brown@example.com
+701,John,Pennington,Male,Marketing,SEO Specialist,81507.61,2020-12-25,Average,19.0,Boston,john.pennington@example.com
+702,James,Glass,Female,IT,Network Engineer,142949.9,2021-10-09,Excellent,44.0,San Francisco,james.glass@example.com
+703,Colleen,Fletcher,Other,HR,HR Manager,134636.57,2021-02-20,Poor,29.0,New York,colleen.fletcher@example.com
+704,Kenneth,Coleman,Male,Engineering,Software Engineer,57069.22,2023-07-23,Below Average,95.0,New York,kenneth.coleman@example.com
+705,Ellen,Williams,Female,HR,HR Coordinator,137545.65,2018-08-22,Average,59.0,San Francisco,ellen.williams@example.com
+706,Gene,Smith,Other,Finance,Accountant,130053.28,2016-03-11,Poor,17.0,Boston,gene.smith@example.com
+707,Jody,Stewart,Other,Sales,Sales Manager,95425.66,2018-02-13,Below Average,6.0,Austin,jody.stewart@example.com
+708,Sarah,Carrillo,Female,HR,HR Manager,51228.44,2019-07-25,Below Average,5.0,Chicago,sarah.carrillo@example.com
+709,Emily,Valencia,Male,IT,Network Engineer,144956.03,2010-11-10,Excellent,60.0,Chicago,emily.valencia@example.com
+710,David,Lee,Other,Marketing,Marketing Manager,68483.79,2020-07-20,Good,91.0,Chicago,david.lee@example.com
+711,Jenna,Diaz,Other,HR,Recruiter,84131.27,2011-12-10,Below Average,70.0,Boston,jenna.diaz@example.com
+712,Andrew,Willis,Other,HR,HR Manager,120978.24,2023-07-15,Excellent,8.0,New York,andrew.willis@example.com
+713,Debbie,Huff,Female,HR,Recruiter,72166.2,2016-10-26,Good,40.0,San Francisco,debbie.huff@example.com
+714,Stephanie,Taylor,Other,Sales,Sales Manager,53512.12,2023-02-21,Average,33.0,Seattle,stephanie.taylor@example.com
+715,Kevin,Graves,Male,Engineering,QA Engineer,110667.95,2015-12-15,Average,26.0,Austin,kevin.graves@example.com
+716,Gregory,Rodriguez,Male,HR,HR Coordinator,137087.17,2016-06-26,Poor,18.0,Seattle,gregory.rodriguez@example.com
+717,Samantha,Chen,Male,Engineering,Data Engineer,80736.04,2018-04-18,Below Average,5.0,New York,samantha.chen@example.com
+718,Rebecca,Hicks,Female,Engineering,QA Engineer,138918.1,2013-06-08,Poor,34.0,Seattle,rebecca.hicks@example.com
+719,Sheila,Bradley,Male,IT,Network Engineer,96489.98,2021-08-21,Average,90.0,Seattle,sheila.bradley@example.com
+720,Julia,White,Female,IT,Network Engineer,95298.09,2017-05-03,Poor,22.0,Seattle,julia.white@example.com
+721,Nicholas,Booker,Male,Finance,Financial Analyst,107483.77,2013-10-02,Below Average,90.0,Austin,nicholas.booker@example.com
+722,Jennifer,Heath,Other,Finance,Payroll Specialist,102357.39,2015-02-27,Below Average,13.0,Seattle,jennifer.heath@example.com
+723,Alejandro,Beasley,Female,IT,IT Support Specialist,138816.41,2012-07-31,Average,2.0,Chicago,alejandro.beasley@example.com
+724,Timothy,Young,Other,HR,Recruiter,65416.46,2019-09-11,Poor,86.0,Boston,timothy.young@example.com
+725,Joel,Martin,Male,Sales,Sales Representative,68293.68,2019-07-11,Average,57.0,New York,joel.martin@example.com
+726,Patricia,Steele,Male,Engineering,DevOps Engineer,126223.7,2017-09-11,Good,44.0,San Francisco,patricia.steele@example.com
+727,Ronnie,Good,Female,Marketing,Marketing Manager,121093.48,2018-10-06,Excellent,2.0,New York,ronnie.good@example.com
+728,Lauren,Mckinney,Female,HR,Recruiter,87110.91,2019-10-06,Poor,12.0,New York,lauren.mckinney@example.com
+729,Michael,Gonzalez,Other,IT,System Administrator,57470.94,2014-02-20,Excellent,95.0,San Francisco,michael.gonzalez@example.com
+730,Tiffany,Dixon,Female,HR,HR Manager,119010.0,2011-03-29,Good,84.0,Boston,tiffany.dixon@example.com
+731,Jesse,Anthony,Male,Marketing,Marketing Manager,85923.56,2016-01-19,Good,88.0,Boston,jesse.anthony@example.com
+732,Robyn,Bruce,Other,IT,System Administrator,140888.76,2016-09-30,Poor,81.0,Chicago,robyn.bruce@example.com
+733,Timothy,Flowers,Female,HR,Recruiter,117415.22,2013-02-07,Poor,17.0,Boston,timothy.flowers@example.com
+734,Eric,Davenport,Other,IT,IT Support Specialist,52219.28,2013-01-26,Excellent,96.0,San Francisco,eric.davenport@example.com
+735,Miranda,Anderson,Female,HR,Recruiter,57777.2,2019-06-13,Good,24.0,Seattle,miranda.anderson@example.com
+736,Kylie,Carter,Other,Engineering,DevOps Engineer,66989.22,2016-12-01,Average,5.0,San Francisco,kylie.carter@example.com
+737,Alexander,Price,Other,Sales,Account Executive,122907.66,2014-05-06,Poor,11.0,San Francisco,alexander.price@example.com
+738,Jennifer,Rhodes,Other,HR,HR Manager,125350.87,2021-04-10,Good,15.0,New York,jennifer.rhodes@example.com
+739,Bridget,Garcia,Female,IT,IT Support Specialist,111006.99,2022-06-18,Average,56.0,Chicago,bridget.garcia@example.com
+740,Angela,Curtis,Female,Marketing,Content Strategist,88513.45,2020-05-17,Poor,92.0,New York,angela.curtis@example.com
+741,Michael,Jones,Male,Sales,Account Executive,69370.23,2021-12-01,Excellent,53.0,Seattle,michael.jones@example.com
+742,Ashley,Diaz,Female,HR,HR Coordinator,103896.43,2018-06-27,Below Average,94.0,San Francisco,ashley.diaz@example.com
+743,Ashley,Mccann,Female,Finance,Payroll Specialist,81816.53,2022-10-25,Good,82.0,Boston,ashley.mccann@example.com
+744,Jason,Douglas,Male,Engineering,Software Engineer,85118.89,2012-02-14,Poor,31.0,San Francisco,jason.douglas@example.com
+745,Keith,Nelson,Other,Finance,Accountant,106241.65,2017-08-23,Good,33.0,Chicago,keith.nelson@example.com
+746,Ashley,Rich,Other,Sales,Account Executive,94214.69,2023-10-30,Excellent,35.0,Austin,ashley.rich@example.com
+747,Deborah,Bradford,Male,Marketing,Marketing Manager,102349.64,2013-05-02,Below Average,82.0,Austin,deborah.bradford@example.com
+748,Amy,Ortega,Other,IT,Network Engineer,110496.65,2023-11-18,Good,74.0,San Francisco,amy.ortega@example.com
+749,Michael,Baird,Other,Engineering,Data Engineer,57782.31,2017-09-13,Poor,28.0,Austin,michael.baird@example.com
+750,Christopher,Padilla,Other,HR,HR Manager,50677.9,2019-09-16,Below Average,16.0,New York,christopher.padilla@example.com
+751,Brian,Barker,Female,Finance,Accountant,62456.83,2016-07-30,Below Average,96.0,Chicago,brian.barker@example.com
+752,Jennifer,Powell,Female,HR,HR Coordinator,127808.75,2024-03-31,Excellent,50.0,San Francisco,jennifer.powell@example.com
+753,Keith,Doyle,Female,Engineering,Software Engineer,76596.82,2018-06-13,Below Average,73.0,New York,keith.doyle@example.com
+754,James,Jimenez,Female,Engineering,Software Engineer,120457.21,2012-10-11,Average,14.0,Austin,james.jimenez@example.com
+755,Sarah,Walters,Other,Marketing,Content Strategist,72334.95,2017-04-17,Excellent,55.0,New York,sarah.walters@example.com
+756,Calvin,Thompson,Female,Marketing,SEO Specialist,147182.6,2016-05-24,Average,92.0,Austin,calvin.thompson@example.com
+757,Travis,Jackson,Other,IT,System Administrator,108366.43,2018-10-29,Poor,67.0,Chicago,travis.jackson@example.com
+758,Sherri,Allen,Female,IT,System Administrator,92229.12,2015-06-23,Average,54.0,San Francisco,sherri.allen@example.com
+759,Amanda,Hanson,Male,Finance,Payroll Specialist,139648.97,2017-03-28,Good,68.0,Chicago,amanda.hanson@example.com
+760,Ronald,Patrick,Other,Sales,Account Executive,54526.93,2023-02-25,Below Average,87.0,Boston,ronald.patrick@example.com
+761,Robert,Nguyen,Other,Marketing,Content Strategist,75324.4,2013-04-20,Good,69.0,New York,robert.nguyen@example.com
+762,David,Barry,Other,HR,Recruiter,106358.5,2015-05-06,Good,83.0,Chicago,david.barry@example.com
+763,Angela,Curry,Male,Finance,Financial Analyst,69977.96,2012-12-28,Good,71.0,Austin,angela.curry@example.com
+764,Allison,Harvey,Male,HR,HR Coordinator,89440.4,2020-07-10,Good,59.0,Boston,allison.harvey@example.com
+765,Geoffrey,Martin,Male,Sales,Sales Representative,140036.17,2011-03-03,Average,24.0,Boston,geoffrey.martin@example.com
+766,Christine,Wells,Male,Engineering,Data Engineer,55009.3,2012-05-08,Below Average,82.0,New York,christine.wells@example.com
+767,Diana,Woods,Other,Marketing,Content Strategist,82562.85,2018-01-29,Good,3.0,Boston,diana.woods@example.com
+768,Lisa,Evans,Other,Engineering,Data Engineer,70691.84,2015-01-10,Good,45.0,New York,lisa.evans@example.com
+769,Mary,Hamilton,Other,Engineering,DevOps Engineer,136762.77,2010-12-04,Good,24.0,San Francisco,mary.hamilton@example.com
+770,Renee,Wilson,Other,HR,HR Coordinator,144019.17,2021-09-13,Below Average,90.0,Chicago,renee.wilson@example.com
+771,Mark,Bridges,Other,Sales,Sales Manager,95063.69,2017-11-10,Average,73.0,New York,mark.bridges@example.com
+772,Connor,Drake,Other,IT,System Administrator,105034.34,2018-05-10,Good,5.0,San Francisco,connor.drake@example.com
+773,Steven,Gonzalez,Male,Marketing,SEO Specialist,146924.99,2024-04-17,Excellent,43.0,Chicago,steven.gonzalez@example.com
+774,Kathleen,Poole,Other,IT,System Administrator,96396.56,2020-01-01,Average,18.0,Seattle,kathleen.poole@example.com
+775,Michael,Macdonald,Female,Engineering,DevOps Engineer,69586.03,2010-11-23,Good,92.0,Chicago,michael.macdonald@example.com
+776,James,Rodriguez,Other,IT,System Administrator,91505.6,2012-06-11,Excellent,91.0,Austin,james.rodriguez@example.com
+777,Joseph,Estrada,Other,Engineering,DevOps Engineer,56193.38,2010-08-08,Poor,47.0,Boston,joseph.estrada@example.com
+778,Joseph,Richards,Male,Finance,Financial Analyst,91659.78,2019-07-05,Poor,17.0,Seattle,joseph.richards@example.com
+779,Kristy,Walters,Other,HR,HR Coordinator,98839.63,2011-02-28,Poor,14.0,Boston,kristy.walters@example.com
+780,James,Griffin,Female,Sales,Sales Manager,65048.64,2013-10-02,Good,56.0,Boston,james.griffin@example.com
+781,Michael,Taylor,Other,Finance,Financial Analyst,104139.47,2019-11-20,Poor,77.0,Austin,michael.taylor@example.com
+782,Justin,King,Female,Finance,Financial Analyst,145513.03,2012-09-24,Excellent,100.0,San Francisco,justin.king@example.com
+783,Joseph,Walsh,Male,Sales,Account Executive,125973.08,2020-07-28,Poor,21.0,Boston,joseph.walsh@example.com
+784,Lauren,Allen,Female,Finance,Financial Analyst,90812.86,2020-11-25,Poor,91.0,New York,lauren.allen@example.com
+785,Brian,Johnson,Female,Finance,Accountant,69942.15,2021-07-09,Good,22.0,Boston,brian.johnson@example.com
+786,Michelle,Horton,Female,Sales,Account Executive,83268.93,2017-09-10,Excellent,86.0,New York,michelle.horton@example.com
+787,William,Reyes,Female,Marketing,Content Strategist,92547.9,2023-05-11,Poor,59.0,Boston,william.reyes@example.com
+788,Nichole,Elliott,Female,Sales,Sales Manager,99274.47,2018-08-23,Poor,25.0,Austin,nichole.elliott@example.com
+789,Steven,West,Male,IT,IT Support Specialist,84187.15,2018-02-10,Poor,86.0,Seattle,steven.west@example.com
+790,Ryan,Morris,Female,HR,Recruiter,118065.08,2022-02-05,Poor,88.0,Boston,ryan.morris@example.com
+791,Stephanie,Hernandez,Other,IT,Network Engineer,85578.19,2015-09-18,Average,3.0,Boston,stephanie.hernandez@example.com
+792,Aaron,Taylor,Female,Engineering,QA Engineer,95763.86,2023-05-27,Excellent,27.0,New York,aaron.taylor@example.com
+793,Isaac,Holmes,Other,Sales,Sales Representative,73779.7,2017-09-08,Average,81.0,Boston,isaac.holmes@example.com
+794,Travis,Bowman,Other,Finance,Payroll Specialist,61079.13,2013-11-22,Below Average,88.0,Boston,travis.bowman@example.com
+795,Alyssa,Henderson,Female,Sales,Account Executive,131740.83,2020-04-04,Average,2.0,Boston,alyssa.henderson@example.com
+796,David,Kennedy,Male,IT,System Administrator,129064.42,2021-04-05,Good,26.0,Austin,david.kennedy@example.com
+797,Lauren,Rivas,Other,Engineering,Software Engineer,54030.19,2012-05-13,Poor,34.0,New York,lauren.rivas@example.com
+798,Bradley,Hooper,Other,Sales,Sales Manager,68195.03,2017-06-25,Below Average,53.0,Boston,bradley.hooper@example.com
+799,Brian,Brown,Female,Sales,Sales Representative,83471.93,2015-10-10,Good,67.0,Seattle,brian.brown@example.com
+800,Elizabeth,White,Other,Sales,Sales Representative,130396.13,2015-02-27,Average,79.0,Boston,elizabeth.white@example.com
+801,Thomas,Anderson,Female,Finance,Payroll Specialist,133025.97,2012-03-23,Poor,38.0,Chicago,thomas.anderson@example.com
+802,James,Thompson,Male,Finance,Payroll Specialist,126458.36,2021-09-12,Average,3.0,Chicago,james.thompson@example.com
+803,Stephanie,Cook,Other,Engineering,Software Engineer,118438.3,2023-08-22,Average,59.0,New York,stephanie.cook@example.com
+804,Patricia,Jenkins,Male,Sales,Sales Representative,144930.37,2020-03-10,Good,88.0,Seattle,patricia.jenkins@example.com
+805,Jessica,Powers,Female,Sales,Sales Representative,102296.06,2020-04-17,Poor,6.0,Austin,jessica.powers@example.com
+806,Garrett,Bryant,Other,IT,Network Engineer,83872.34,2021-12-11,Average,18.0,New York,garrett.bryant@example.com
+807,Anna,Garcia,Male,Engineering,Software Engineer,86869.11,2016-08-21,Below Average,66.0,Seattle,anna.garcia@example.com
+808,Patrick,Kane,Female,Marketing,Marketing Manager,137655.43,2015-09-15,Poor,68.0,Seattle,patrick.kane@example.com
+809,Daniel,Crawford,Female,Engineering,DevOps Engineer,124163.96,2023-01-13,Average,63.0,Chicago,daniel.crawford@example.com
+810,Johnathan,Adams,Female,Marketing,Content Strategist,96027.92,2010-12-31,Good,19.0,Chicago,johnathan.adams@example.com
+811,Anthony,Fuller,Female,Sales,Sales Manager,90908.44,2014-12-29,Good,61.0,New York,anthony.fuller@example.com
+812,Mary,Trujillo,Female,IT,System Administrator,95378.38,2017-05-22,Below Average,10.0,New York,mary.trujillo@example.com
+813,Luis,Montgomery,Female,IT,Network Engineer,51369.37,2022-03-13,Below Average,81.0,Boston,luis.montgomery@example.com
+814,Jennifer,Romero,Other,Engineering,DevOps Engineer,136608.97,2012-12-23,Average,45.0,Chicago,jennifer.romero@example.com
+815,John,Meyers,Male,HR,HR Coordinator,130588.43,2019-12-28,Average,99.0,Austin,john.meyers@example.com
+816,Laura,Mcdaniel,Female,Sales,Sales Representative,90479.12,2024-01-03,Below Average,16.0,San Francisco,laura.mcdaniel@example.com
+817,Shannon,Moore,Female,Engineering,DevOps Engineer,64027.01,2016-05-01,Average,3.0,Chicago,shannon.moore@example.com
+818,Timothy,Barr,Other,Sales,Sales Representative,145156.55,2023-08-21,Below Average,14.0,Boston,timothy.barr@example.com
+819,Erin,Keller,Male,Marketing,SEO Specialist,148410.9,2019-08-21,Below Average,22.0,Boston,erin.keller@example.com
+820,Nicole,Garcia,Other,Engineering,Software Engineer,132122.32,2023-04-28,Excellent,96.0,Austin,nicole.garcia@example.com
+821,Donna,Berry,Female,HR,HR Coordinator,71383.08,2019-06-19,Good,81.0,Chicago,donna.berry@example.com
+822,Randy,Holmes,Female,HR,Recruiter,78170.38,2020-04-11,Good,42.0,Seattle,randy.holmes@example.com
+823,Derek,Cline,Female,IT,Network Engineer,128798.82,2021-07-05,Poor,19.0,Boston,derek.cline@example.com
+824,Brittany,Mullins,Other,HR,HR Manager,57018.99,2023-08-15,Excellent,9.0,Austin,brittany.mullins@example.com
+825,Lauren,White,Other,Marketing,Content Strategist,138634.24,2011-02-19,Poor,10.0,Chicago,lauren.white@example.com
+826,Ashley,Crane,Female,HR,HR Manager,62911.67,2023-11-16,Below Average,1.0,Boston,ashley.crane@example.com
+827,Cassidy,Reed,Other,IT,System Administrator,92909.7,2013-04-14,Good,9.0,Chicago,cassidy.reed@example.com
+828,Sara,Hart,Female,IT,Network Engineer,130780.78,2012-09-03,Good,64.0,Boston,sara.hart@example.com
+829,Erik,Phillips,Female,Marketing,Marketing Manager,58602.78,2015-01-29,Average,88.0,San Francisco,erik.phillips@example.com
+830,Kyle,Garcia,Female,Sales,Sales Manager,74165.09,2015-03-22,Average,37.0,San Francisco,kyle.garcia@example.com
+831,Shawn,Montgomery,Female,Marketing,Marketing Manager,137375.05,2023-08-23,Good,58.0,Austin,shawn.montgomery@example.com
+832,Ashley,Neal,Female,IT,IT Support Specialist,132772.6,2021-03-26,Excellent,47.0,Austin,ashley.neal@example.com
+833,Alan,Moore,Female,Sales,Sales Representative,67574.86,2013-11-14,Excellent,25.0,San Francisco,alan.moore@example.com
+834,Kyle,Wilson,Male,Finance,Financial Analyst,128898.56,2010-08-22,Poor,2.0,Austin,kyle.wilson@example.com
+835,Crystal,Elliott,Male,Finance,Financial Analyst,60188.31,2024-01-31,Poor,99.0,Seattle,crystal.elliott@example.com
+836,Christopher,Mullins,Female,IT,System Administrator,143058.65,2022-05-07,Poor,82.0,San Francisco,christopher.mullins@example.com
+837,Rebecca,Valdez,Male,Marketing,Content Strategist,63203.29,2016-02-07,Good,50.0,Austin,rebecca.valdez@example.com
+838,James,Orozco,Other,Marketing,Content Strategist,149819.77,2017-04-15,Excellent,75.0,Austin,james.orozco@example.com
+839,Kristy,Nielsen,Female,IT,IT Support Specialist,72227.83,2018-04-14,Poor,75.0,Seattle,kristy.nielsen@example.com
+840,Jeffrey,Krueger,Male,Engineering,QA Engineer,56314.23,2014-11-24,Excellent,87.0,San Francisco,jeffrey.krueger@example.com
+841,Nicholas,Stewart,Male,Engineering,Data Engineer,63405.89,2023-05-22,Average,37.0,Chicago,nicholas.stewart@example.com
+842,Shane,Kelley,Female,Finance,Financial Analyst,134732.13,2021-11-28,Average,95.0,Seattle,shane.kelley@example.com
+843,Taylor,Boyd,Female,Finance,Payroll Specialist,149850.51,2017-08-15,Excellent,8.0,Austin,taylor.boyd@example.com
+844,Kristine,Lee,Other,Sales,Sales Manager,125228.23,2016-04-21,Excellent,71.0,Seattle,kristine.lee@example.com
+845,Stacy,Brooks,Other,HR,Recruiter,118948.75,2024-03-04,Good,30.0,San Francisco,stacy.brooks@example.com
+846,Neil,Mcmahon,Male,Marketing,SEO Specialist,51158.79,2010-06-02,Below Average,94.0,Boston,neil.mcmahon@example.com
+847,Anne,Stewart,Other,Sales,Account Executive,71259.42,2010-11-18,Below Average,60.0,San Francisco,anne.stewart@example.com
+848,Christina,Browning,Male,Sales,Sales Manager,86352.72,2012-04-04,Average,47.0,Seattle,christina.browning@example.com
+849,Linda,Hoffman,Female,Marketing,SEO Specialist,135238.34,2015-06-15,Average,9.0,Seattle,linda.hoffman@example.com
+850,Danielle,Howe,Female,Marketing,Content Strategist,54807.22,2013-06-01,Good,83.0,San Francisco,danielle.howe@example.com
+851,Christopher,Obrien,Male,Finance,Accountant,87390.97,2014-02-03,Good,78.0,New York,christopher.obrien@example.com
+852,Randy,Gibbs,Other,Engineering,DevOps Engineer,135185.69,2015-07-09,Good,47.0,Austin,randy.gibbs@example.com
+853,Claire,Young,Other,Engineering,DevOps Engineer,71023.34,2012-01-07,Poor,24.0,New York,claire.young@example.com
+854,Carol,Snyder,Male,HR,HR Coordinator,99080.16,2011-09-16,Average,23.0,Boston,carol.snyder@example.com
+855,Christopher,Nunez,Female,Finance,Financial Analyst,115158.76,2021-01-27,Average,21.0,Austin,christopher.nunez@example.com
+856,Paul,Brooks,Female,Engineering,QA Engineer,109795.52,2018-10-06,Excellent,48.0,Boston,paul.brooks@example.com
+857,John,Davis,Male,HR,HR Coordinator,117281.86,2016-03-03,Excellent,15.0,Chicago,john.davis@example.com
+858,Kimberly,Montgomery,Female,Finance,Financial Analyst,62848.8,2010-09-15,Average,51.0,Seattle,kimberly.montgomery@example.com
+859,Allison,Mueller,Male,Finance,Financial Analyst,129471.83,2020-07-21,Excellent,36.0,Boston,allison.mueller@example.com
+860,Lisa,Martin,Female,HR,Recruiter,124391.68,2011-04-18,Below Average,39.0,San Francisco,lisa.martin@example.com
+861,Cassandra,Thompson,Other,Marketing,Marketing Manager,95747.41,2010-06-11,Below Average,55.0,San Francisco,cassandra.thompson@example.com
+862,James,Smith,Female,Sales,Account Executive,97456.44,2020-07-19,Below Average,45.0,San Francisco,james.smith@example.com
+863,Donald,Williams,Female,Sales,Sales Representative,103149.44,2023-12-16,Poor,18.0,Boston,donald.williams@example.com
+864,William,Tran,Female,Engineering,QA Engineer,104247.47,2020-01-16,Average,87.0,New York,william.tran@example.com
+865,Joanna,Summers,Female,Sales,Account Executive,56029.06,2011-07-12,Good,31.0,Chicago,joanna.summers@example.com
+866,Richard,Tran,Female,Finance,Accountant,61463.49,2014-03-22,Below Average,35.0,Seattle,richard.tran@example.com
+867,Christopher,Hayes,Other,Engineering,Data Engineer,85956.77,2012-12-27,Poor,51.0,Seattle,christopher.hayes@example.com
+868,Timothy,Torres,Male,HR,HR Manager,103002.17,2019-05-13,Below Average,63.0,Seattle,timothy.torres@example.com
+869,Adam,Castro,Female,Marketing,Content Strategist,149788.16,2023-12-29,Good,60.0,San Francisco,adam.castro@example.com
+870,Crystal,Perez,Female,Finance,Payroll Specialist,100404.27,2018-10-19,Excellent,90.0,Seattle,crystal.perez@example.com
+871,Timothy,Hess,Female,Engineering,QA Engineer,102134.51,2016-04-24,Excellent,1.0,Boston,timothy.hess@example.com
+872,Richard,Williams,Other,HR,HR Coordinator,97399.16,2024-02-11,Excellent,85.0,Boston,richard.williams@example.com
+873,Daniel,Farrell,Other,IT,Network Engineer,82054.03,2015-03-25,Below Average,32.0,Austin,daniel.farrell@example.com
+874,Eric,Martinez,Female,Finance,Accountant,127360.9,2020-02-11,Poor,94.0,New York,eric.martinez@example.com
+875,Ryan,Dodson,Other,Engineering,DevOps Engineer,94300.82,2018-10-08,Good,66.0,Seattle,ryan.dodson@example.com
+876,Brandi,Weeks,Female,Engineering,Data Engineer,53653.23,2018-12-10,Average,30.0,Boston,brandi.weeks@example.com
+877,Rebecca,Patterson,Female,HR,HR Coordinator,149341.7,2022-05-06,Good,88.0,Seattle,rebecca.patterson@example.com
+878,Adam,Valentine,Other,HR,Recruiter,146174.81,2021-04-06,Good,22.0,Seattle,adam.valentine@example.com
+879,Christina,Jones,Male,Marketing,Content Strategist,120488.89,2022-12-09,Good,99.0,Chicago,christina.jones@example.com
+880,Carolyn,Jordan,Female,Sales,Sales Representative,54788.25,2011-05-18,Good,36.0,Chicago,carolyn.jordan@example.com
+881,Shawn,Cook,Male,HR,HR Manager,63655.24,2012-03-20,Excellent,38.0,Seattle,shawn.cook@example.com
+882,Jerry,Simpson,Other,Marketing,Content Strategist,57173.59,2012-10-27,Good,47.0,New York,jerry.simpson@example.com
+883,Benjamin,Kaiser,Other,Engineering,QA Engineer,142453.42,2013-05-30,Poor,34.0,San Francisco,benjamin.kaiser@example.com
+884,Joe,Hernandez,Other,HR,HR Coordinator,115695.51,2014-03-19,Good,26.0,Chicago,joe.hernandez@example.com
+885,Nicolas,Evans,Male,Engineering,QA Engineer,138272.5,2013-08-18,Good,68.0,Boston,nicolas.evans@example.com
+886,Alexis,Love,Female,Finance,Financial Analyst,67046.87,2022-08-10,Average,7.0,Seattle,alexis.love@example.com
+887,Lisa,Johnson,Other,Finance,Payroll Specialist,144889.19,2020-08-19,Good,58.0,Chicago,lisa.johnson@example.com
+888,Shannon,Campbell,Male,IT,Network Engineer,69046.99,2013-10-04,Excellent,23.0,Seattle,shannon.campbell@example.com
+889,Erica,Henry,Other,Marketing,SEO Specialist,107260.14,2022-05-26,Average,39.0,Chicago,erica.henry@example.com
+890,William,Lee,Male,HR,Recruiter,72527.16,2016-01-26,Below Average,78.0,Boston,william.lee@example.com
+891,Paul,Navarro,Female,Marketing,Content Strategist,97176.27,2021-09-14,Poor,4.0,New York,paul.navarro@example.com
+892,Aaron,Anderson,Other,IT,System Administrator,93072.36,2018-07-01,Excellent,78.0,Chicago,aaron.anderson@example.com
+893,Melinda,Barnes,Other,Engineering,Software Engineer,97966.87,2018-09-26,Poor,52.0,Austin,melinda.barnes@example.com
+894,Kirsten,Rowe,Female,Marketing,SEO Specialist,111802.29,2017-10-29,Poor,62.0,Boston,kirsten.rowe@example.com
+895,Patricia,Jones,Female,IT,Network Engineer,108992.46,2016-08-23,Good,38.0,Seattle,patricia.jones@example.com
+896,Derek,Mendez,Male,Sales,Sales Representative,70666.66,2022-04-02,Good,73.0,Chicago,derek.mendez@example.com
+897,James,Jackson,Female,Marketing,SEO Specialist,62102.75,2019-12-31,Poor,90.0,Boston,james.jackson@example.com
+898,David,Thomas,Female,Marketing,SEO Specialist,125340.34,2015-09-04,Below Average,1.0,Chicago,david.thomas@example.com
+899,Valerie,Parker,Other,Finance,Accountant,62938.85,2015-04-10,Excellent,53.0,Chicago,valerie.parker@example.com
+900,Matthew,Scott,Male,Marketing,Marketing Manager,56205.75,2017-12-06,Excellent,41.0,Boston,matthew.scott@example.com
+901,Tom,Cunningham,Male,Finance,Accountant,56978.91,2018-10-22,Excellent,47.0,New York,tom.cunningham@example.com
+902,Dustin,Miller,Male,Marketing,SEO Specialist,148540.38,2013-09-15,Excellent,1.0,San Francisco,dustin.miller@example.com
+903,Wesley,Jefferson,Other,Finance,Accountant,91998.79,2016-11-20,Excellent,95.0,Seattle,wesley.jefferson@example.com
+904,Ana,White,Female,HR,HR Manager,144271.54,2022-10-13,Average,28.0,Seattle,ana.white@example.com
+905,Jeremy,Washington,Other,Finance,Accountant,117085.79,2020-05-19,Poor,100.0,New York,jeremy.washington@example.com
+906,Jennifer,Cochran,Other,HR,HR Manager,67540.48,2021-12-20,Below Average,64.0,San Francisco,jennifer.cochran@example.com
+907,Jennifer,Liu,Male,IT,Network Engineer,57715.71,2011-12-23,Excellent,59.0,Austin,jennifer.liu@example.com
+908,Megan,Woods,Male,Sales,Account Executive,80118.76,2020-07-03,Poor,79.0,New York,megan.woods@example.com
+909,Ashley,Thomas,Male,Sales,Sales Representative,99567.6,2013-10-14,Good,46.0,Seattle,ashley.thomas@example.com
+910,Eric,Fuller,Other,IT,Network Engineer,56087.94,2020-11-27,Excellent,26.0,Boston,eric.fuller@example.com
+911,Donna,Haynes,Other,Marketing,SEO Specialist,133236.67,2014-02-04,Excellent,63.0,Boston,donna.haynes@example.com
+912,Allison,Jenkins,Female,IT,System Administrator,69646.9,2020-08-02,Below Average,63.0,San Francisco,allison.jenkins@example.com
+913,Wendy,Love,Female,Marketing,Content Strategist,81883.74,2018-07-20,Good,65.0,Austin,wendy.love@example.com
+914,Angelica,Owens,Female,Finance,Financial Analyst,93620.2,2016-04-17,Poor,48.0,San Francisco,angelica.owens@example.com
+915,Adam,Hanson,Male,HR,Recruiter,113032.2,2022-08-11,Poor,38.0,New York,adam.hanson@example.com
+916,Margaret,Rocha,Male,Engineering,Data Engineer,141199.91,2016-04-09,Below Average,62.0,Boston,margaret.rocha@example.com
+917,Aimee,Knapp,Female,Sales,Sales Manager,67857.39,2018-08-11,Average,45.0,Seattle,aimee.knapp@example.com
+918,Timothy,White,Female,Engineering,Data Engineer,140776.43,2012-09-26,Poor,27.0,San Francisco,timothy.white@example.com
+919,Christopher,Perez,Other,Finance,Accountant,67876.32,2016-09-02,Average,36.0,San Francisco,christopher.perez@example.com
+920,Samantha,Martin,Other,Finance,Payroll Specialist,123478.25,2013-07-01,Poor,45.0,Chicago,samantha.martin@example.com
+921,Pamela,Patton,Male,Finance,Payroll Specialist,50287.15,2019-04-07,Average,82.0,Austin,pamela.patton@example.com
+922,Amanda,Wallace,Male,IT,IT Support Specialist,62015.72,2021-12-11,Below Average,12.0,Seattle,amanda.wallace@example.com
+923,Angela,Lowe,Other,Finance,Financial Analyst,101827.06,2023-05-06,Poor,19.0,Boston,angela.lowe@example.com
+924,Cameron,Stevens,Other,HR,HR Manager,133005.4,2022-10-09,Below Average,70.0,New York,cameron.stevens@example.com
+925,Kayla,French,Male,HR,HR Coordinator,75176.68,2022-04-02,Average,31.0,New York,kayla.french@example.com
+926,James,Hinton,Other,Engineering,Software Engineer,65642.58,2022-03-24,Average,1.0,Austin,james.hinton@example.com
+927,Vincent,Rice,Other,HR,HR Manager,66255.89,2014-01-25,Poor,46.0,Austin,vincent.rice@example.com
+928,Emily,Schmidt,Male,HR,Recruiter,141118.61,2020-05-06,Good,70.0,Chicago,emily.schmidt@example.com
+929,Nathan,Walker,Male,Engineering,Data Engineer,97547.01,2015-02-26,Below Average,18.0,Austin,nathan.walker@example.com
+930,Austin,Kelley,Other,IT,System Administrator,75445.79,2023-04-11,Average,10.0,New York,austin.kelley@example.com
+931,Kathleen,Nicholson,Other,Finance,Financial Analyst,79480.08,2011-06-18,Average,78.0,Boston,kathleen.nicholson@example.com
+932,Kelsey,Castro,Female,Marketing,Marketing Manager,52925.0,2018-01-09,Average,8.0,Austin,kelsey.castro@example.com
+933,Kelly,Stewart,Male,HR,HR Manager,73818.8,2016-08-17,Good,91.0,Chicago,kelly.stewart@example.com
+934,Nancy,Barron,Female,Engineering,Software Engineer,68734.53,2012-11-12,Below Average,13.0,Chicago,nancy.barron@example.com
+935,Jessica,Miller,Female,Engineering,Data Engineer,67871.97,2018-04-13,Poor,98.0,Boston,jessica.miller@example.com
+936,Kathryn,Anderson,Male,Marketing,SEO Specialist,147407.81,2021-01-10,Below Average,30.0,New York,kathryn.anderson@example.com
+937,Jessica,Palmer,Female,IT,IT Support Specialist,102784.77,2015-04-03,Excellent,19.0,San Francisco,jessica.palmer@example.com
+938,Pam,Caldwell,Female,IT,Network Engineer,77796.22,2014-09-23,Good,92.0,New York,pam.caldwell@example.com
+939,Robert,Davis,Other,Marketing,Content Strategist,56320.18,2020-04-05,Excellent,89.0,Seattle,robert.davis@example.com
+940,Deborah,Wagner,Female,Sales,Account Executive,145633.72,2022-10-11,Poor,98.0,Seattle,deborah.wagner@example.com
+941,Carl,Allison,Other,IT,System Administrator,134132.02,2017-01-10,Excellent,53.0,Chicago,carl.allison@example.com
+942,Peter,Porter,Female,IT,IT Support Specialist,53722.3,2020-07-14,Good,46.0,New York,peter.porter@example.com
+943,James,Green,Male,HR,HR Coordinator,51667.37,2021-03-14,Good,72.0,San Francisco,james.green@example.com
+944,Victor,Frank,Female,HR,HR Coordinator,142612.16,2023-01-04,Good,38.0,Seattle,victor.frank@example.com
+945,John,Taylor,Male,Marketing,Marketing Manager,56818.09,2020-09-15,Good,10.0,Austin,john.taylor@example.com
+946,Emily,Obrien,Female,Engineering,QA Engineer,75516.86,2019-03-10,Poor,11.0,Austin,emily.obrien@example.com
+947,Daniel,Lewis,Female,Sales,Sales Manager,133970.17,2022-06-30,Poor,26.0,San Francisco,daniel.lewis@example.com
+948,Shannon,Diaz,Other,Marketing,Content Strategist,94437.97,2022-05-07,Poor,65.0,Chicago,shannon.diaz@example.com
+949,Cindy,Reid,Female,HR,HR Coordinator,97722.25,2018-02-16,Poor,30.0,Austin,cindy.reid@example.com
+950,Nicholas,Russell,Male,Marketing,SEO Specialist,76629.55,2014-08-13,Poor,49.0,New York,nicholas.russell@example.com
+951,Chris,Jackson,Male,HR,Recruiter,122253.6,2022-10-05,Below Average,15.0,Boston,chris.jackson@example.com
+952,Nicholas,Gardner,Male,Engineering,Software Engineer,140157.63,2023-02-12,Good,10.0,San Francisco,nicholas.gardner@example.com
+953,Holly,Kelly,Male,Finance,Accountant,56931.21,2012-08-25,Excellent,61.0,Chicago,holly.kelly@example.com
+954,Julie,Horne,Female,HR,HR Coordinator,148368.96,2024-01-02,Average,51.0,Chicago,julie.horne@example.com
+955,Steven,Gilbert,Female,Sales,Sales Representative,149601.33,2023-09-15,Average,27.0,New York,steven.gilbert@example.com
+956,Alexander,Meyer,Female,HR,HR Coordinator,84625.39,2022-04-29,Average,81.0,Chicago,alexander.meyer@example.com
+957,Daniel,Holland,Other,HR,Recruiter,145627.4,2024-01-04,Good,66.0,New York,daniel.holland@example.com
+958,Darren,Singleton,Other,Finance,Financial Analyst,120305.6,2010-10-25,Good,25.0,Austin,darren.singleton@example.com
+959,John,Ferguson,Other,Marketing,Content Strategist,109787.85,2023-07-23,Excellent,62.0,Boston,john.ferguson@example.com
+960,James,Dixon,Other,Marketing,Marketing Manager,86237.68,2021-05-16,Below Average,89.0,San Francisco,james.dixon@example.com
+961,Jessica,Fox,Female,IT,IT Support Specialist,79826.69,2011-12-21,Average,52.0,New York,jessica.fox@example.com
+962,Robert,Martin,Female,Marketing,SEO Specialist,59948.14,2022-10-29,Excellent,10.0,San Francisco,robert.martin@example.com
+963,Dale,Walker,Female,Marketing,Marketing Manager,83791.43,2017-01-01,Good,11.0,San Francisco,dale.walker@example.com
+964,William,Carroll,Female,Finance,Payroll Specialist,132856.74,2019-06-11,Poor,49.0,Seattle,william.carroll@example.com
+965,Jessica,Lawrence,Other,Marketing,SEO Specialist,62384.64,2010-09-28,Good,95.0,New York,jessica.lawrence@example.com
+966,Nicole,Alvarado,Male,HR,HR Manager,133228.16,2023-04-22,Below Average,84.0,Seattle,nicole.alvarado@example.com
+967,Keith,Foster,Other,Marketing,Marketing Manager,92785.58,2020-07-06,Excellent,31.0,Seattle,keith.foster@example.com
+968,Michael,Johnston,Male,Marketing,Marketing Manager,50005.07,2012-09-14,Good,7.0,Austin,michael.johnston@example.com
+969,Daniel,Little,Other,Engineering,DevOps Engineer,87437.49,2014-06-20,Below Average,66.0,San Francisco,daniel.little@example.com
+970,Todd,Schneider,Other,Finance,Payroll Specialist,73912.32,2012-09-22,Below Average,29.0,San Francisco,todd.schneider@example.com
+971,Julie,King,Female,Finance,Payroll Specialist,139379.23,2016-06-05,Below Average,2.0,Boston,julie.king@example.com
+972,Joshua,Cook,Female,HR,HR Manager,108507.14,2021-02-07,Poor,41.0,New York,joshua.cook@example.com
+973,James,Beck,Male,Marketing,Content Strategist,96631.39,2022-10-04,Below Average,12.0,Austin,james.beck@example.com
+974,Daniel,Rodriguez,Other,Marketing,Content Strategist,118697.96,2014-10-06,Poor,26.0,Austin,daniel.rodriguez@example.com
+975,Michael,Paul,Female,Marketing,SEO Specialist,145562.64,2014-08-18,Poor,1.0,New York,michael.paul@example.com
+976,James,Roman,Other,Finance,Payroll Specialist,133409.14,2023-02-23,Excellent,81.0,San Francisco,james.roman@example.com
+977,Katherine,Coleman,Other,Engineering,Software Engineer,115934.19,2013-08-16,Poor,12.0,Chicago,katherine.coleman@example.com
+978,Matthew,Figueroa,Male,Marketing,SEO Specialist,141904.09,2010-11-14,Poor,4.0,Austin,matthew.figueroa@example.com
+979,Garrett,Carey,Female,IT,Network Engineer,69185.02,2011-10-10,Excellent,68.0,New York,garrett.carey@example.com
+980,Alex,Roberts,Female,Sales,Sales Manager,61323.33,2014-11-03,Poor,98.0,Seattle,alex.roberts@example.com
+981,William,Collins,Male,Engineering,QA Engineer,105478.74,2015-07-19,Good,85.0,Boston,william.collins@example.com
+982,Robert,Ayala,Female,Engineering,Data Engineer,147820.44,2013-11-26,Average,22.0,Seattle,robert.ayala@example.com
+983,Christopher,Smith,Female,Finance,Payroll Specialist,124710.34,2021-04-17,Good,37.0,San Francisco,christopher.smith@example.com
+984,Kim,Hughes,Male,Finance,Payroll Specialist,130053.93,2020-04-13,Average,26.0,New York,kim.hughes@example.com
+985,Edward,Bartlett,Other,HR,Recruiter,114417.03,2012-09-10,Good,26.0,Seattle,edward.bartlett@example.com
+986,Duane,Gutierrez,Male,Finance,Financial Analyst,144151.44,2013-10-18,Below Average,99.0,Boston,duane.gutierrez@example.com
+987,Reginald,Garcia,Other,HR,HR Coordinator,63390.19,2020-01-16,Poor,60.0,San Francisco,reginald.garcia@example.com
+988,Kimberly,Smith,Other,HR,HR Manager,132704.64,2019-03-09,Excellent,30.0,Seattle,kimberly.smith@example.com
+989,Jason,Smith,Male,Marketing,Content Strategist,132125.77,2014-08-21,Poor,96.0,Boston,jason.smith@example.com
+990,Steven,Crawford,Male,Engineering,Software Engineer,136719.09,2020-06-20,Average,7.0,Austin,steven.crawford@example.com
+991,Robin,Cobb,Male,Finance,Financial Analyst,71577.1,2011-10-06,Poor,27.0,Boston,robin.cobb@example.com
+992,Kimberly,Edwards,Other,HR,HR Coordinator,123054.63,2014-01-01,Good,86.0,Seattle,kimberly.edwards@example.com
+993,Melissa,Turner,Male,Sales,Sales Manager,79424.96,2016-02-11,Good,35.0,Boston,melissa.turner@example.com
+994,Steven,Johnson,Male,IT,Network Engineer,103442.11,2014-08-08,Excellent,23.0,Chicago,steven.johnson@example.com
+995,Terri,West,Female,IT,Network Engineer,70284.69,2022-04-17,Poor,33.0,Seattle,terri.west@example.com
+996,Joseph,Armstrong,Male,Marketing,Content Strategist,58256.67,2015-05-13,Good,11.0,Chicago,joseph.armstrong@example.com
+997,Alfred,Gordon,Female,Sales,Account Executive,59357.48,2020-09-27,Average,19.0,New York,alfred.gordon@example.com
+998,Stacey,Bailey,Male,IT,Network Engineer,77039.42,2020-06-26,Average,45.0,Seattle,stacey.bailey@example.com
+999,Henry,White,Female,Sales,Sales Manager,63078.2,2014-02-06,Poor,92.0,Austin,henry.white@example.com
+1000,Rodney,Berry,Female,Sales,Sales Representative,76768.5,2023-09-29,Below Average,69.0,Boston,rodney.berry@example.com
