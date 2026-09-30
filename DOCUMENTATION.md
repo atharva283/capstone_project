@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Name** | [PUT YOUR FULL NAME HERE] |
-| **Email** | [PUT YOUR EMAIL HERE] |
-| **Mobile No** | [PUT YOUR MOBILE NUMBER HERE] |
+| **Name** | Atharva Baldota |
+| **Email** | atharvabaldota402@gmail.com |
+| **Mobile No** | 9028440649 |
 | **Batch** | Morning Batch 13 |
 | **Project** | Enterprise Document Assistant (Edureka GenAI Capstone) |
 
