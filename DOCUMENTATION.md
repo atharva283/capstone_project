@@ -1,5 +1,13 @@
 # Enterprise Document Assistant - Technical Documentation
 
+| | |
+|---|---|
+| **Name** | [PUT YOUR FULL NAME HERE] |
+| **Email** | [PUT YOUR EMAIL HERE] |
+| **Mobile No** | [PUT YOUR MOBILE NUMBER HERE] |
+| **Batch** | Morning Batch 13 |
+| **Project** | Enterprise Document Assistant (Edureka GenAI Capstone) |
+
 An AI-agent-based question-answering system for enterprise documents. Users upload PDF, TXT,
 CSV or Excel files and ask questions in plain English. A **LangChain agent** searches the files
 with a vector database, reasons over what it finds, and answers **only** from that evidence -

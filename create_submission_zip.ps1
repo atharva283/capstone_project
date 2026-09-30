@@ -7,6 +7,8 @@
     requirements.txt, .env and .env.example). Everything else is left out on purpose:
     .venv, .git, __pycache__, .kilo, .vscode, node_modules, .cache, dist, chroma_db data,
     uploaded_documents data, OS/IDE files and the course PDFs.
+  * Puts everything inside ONE wrapper folder named like the ZIP (<name>_capstone_morning_batch_13/),
+    so evaluators extract a single tidy folder they can open in a terminal.
   * Writes ZIP entries with forward slashes so the file opens correctly on Windows, Mac and Linux
     (Windows PowerShell's Compress-Archive does not).
   * Checks that .env holds a real Gemini key, and that no API key appears in any OTHER file.
@@ -36,7 +38,8 @@ function IsRealKey($value) {
 
 if ($Name -notmatch '^[A-Za-z0-9_]+$') { Fail "Name may contain only letters, digits and underscores (got '$Name')." }
 $root = (Resolve-Path -LiteralPath (Split-Path -Parent $MyInvocation.MyCommand.Path)).Path
-$zipName = "${Name}_capstone_morning_batch_13.zip"
+$wrapper = "${Name}_capstone_morning_batch_13"
+$zipName = "$wrapper.zip"
 $distDir = Join-Path $root 'dist'
 $zipPath = Join-Path $distDir $zipName
 $limitBytes = [long]($MaxMegabytes * 1024 * 1024)
@@ -111,13 +114,13 @@ $stream = [System.IO.File]::Open($zipPath, [System.IO.FileMode]::Create)
 $zip = New-Object System.IO.Compression.ZipArchive($stream, [System.IO.Compression.ZipArchiveMode]::Create)
 try {
     foreach ($rel in $include) {
-        $entry = $zip.CreateEntry($rel, [System.IO.Compression.CompressionLevel]::Optimal)
+        $entry = $zip.CreateEntry("$wrapper/$rel", [System.IO.Compression.CompressionLevel]::Optimal)
         $bytes = [System.IO.File]::ReadAllBytes((Join-Path $root $rel))
         $target = $entry.Open()
         try { $target.Write($bytes, 0, $bytes.Length) } finally { $target.Dispose() }
     }
     foreach ($marker in 'chroma_db/.gitkeep', 'uploaded_documents/.gitkeep') {
-        $null = $zip.CreateEntry($marker)   # empty folders that the app fills at run time
+        $null = $zip.CreateEntry("$wrapper/$marker")   # empty folders that the app fills at run time
     }
 } finally {
     $zip.Dispose()
@@ -131,8 +134,12 @@ $forbidden = '(^|/)(\.venv|venv|\.git|__pycache__|\.kilo|\.vscode|\.idea|node_mo
 $archive = [System.IO.Compression.ZipFile]::OpenRead($zipPath)
 try {
     $names = @($archive.Entries | ForEach-Object { $_.FullName })
-    $uncompressed = ($archive.Entries | Measure-Object -Property Length -Sum).Sum
 } finally { $archive.Dispose() }
+foreach ($n in $names) {
+    if (-not $n.StartsWith("$wrapper/")) { Fail "Entry is outside the wrapper folder '$wrapper': $n" }
+}
+# From here on, look at the paths as they appear INSIDE the wrapper folder.
+$names = @($names | ForEach-Object { $_.Substring($wrapper.Length + 1) })
 foreach ($n in $names) {
     if ($n.Contains('\')) { Fail "Entry uses a backslash: $n" }
     foreach ($pattern in $forbidden) { if ($n -match $pattern) { Fail "Forbidden item in ZIP: $n" } }
@@ -148,7 +155,7 @@ $size = (Get-Item -LiteralPath $zipPath).Length
 if ($size -ge $limitBytes) { Fail ("ZIP is {0:N2} MB, which is NOT under the {1} MB limit." -f ($size / 1MB), $MaxMegabytes) }
 
 Write-Host ''
-Write-Host 'Contents (top level):' -ForegroundColor Cyan
+Write-Host "Contents of $wrapper/ (top level):" -ForegroundColor Cyan
 $names | ForEach-Object { ($_ -split '/')[0] } | Group-Object | Sort-Object Name |
     ForEach-Object { '  {0,-24} {1} file(s)' -f $_.Name, $_.Count }
 Write-Host ''

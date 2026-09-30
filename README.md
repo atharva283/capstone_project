@@ -1,5 +1,13 @@
 # 📄 Enterprise Document Assistant
 
+| | |
+|---|---|
+| **Name** | Atharva Baldota |
+| **Email** | atharvabaldota402@gmail.com |
+| **Mobile No** | 9028440649 |
+| **Batch** | Morning Batch 13 |
+| **Project** | Enterprise Document Assistant (Edureka GenAI Capstone) |
+
 **What is this?** A small website that runs on *your own computer*. You give it documents (PDF, TXT, CSV or Excel
 files) and then you **ask it questions in normal English**. It finds the right part of your documents and answers -
 and it shows you the exact sentences it used. If the answer is not in your documents, it says so instead of guessing.
@@ -136,18 +144,19 @@ The last two lines install what is missing (it may ask for your password; nothin
 ## Step 2 - Unzip the project
 
 **🪟 Windows:** find `atharvabaldota_capstone_morning_batch_13.zip` (probably in **Downloads**). **Right-click** it → **Extract All...** → **Extract**.
-A normal folder opens. **Open folders until you can see a file called `app.py`** - that is the *project folder*.
+A normal folder opens. Inside the ZIP is one folder called **`atharvabaldota_capstone_morning_batch_13`** - that is the *project folder*.
+*(Windows may show two folders with the same name, one inside the other. Keep opening the folder until you can see a file called `app.py`.)*
 
-**🍎 Mac:** double-click the ZIP. A folder appears next to it. Open it until you see `app.py`.
+**🍎 Mac:** double-click the ZIP. A folder called `atharvabaldota_capstone_morning_batch_13` appears next to it. Open it until you see `app.py`.
 
-**🐧 Linux:** `unzip atharvabaldota_capstone_morning_batch_13.zip -d capstone` (then `cd capstone`).
+**🐧 Linux:** `unzip atharvabaldota_capstone_morning_batch_13.zip` (then `cd atharvabaldota_capstone_morning_batch_13`).
 
 ✅ **Check:** inside the project folder you should see these files and folders: `app.py`, `agent.py`, `README.md`, `DOCUMENTATION.md`, `requirements.txt`, `.env`,
 `sample_documents`, `chroma_db`, `uploaded_documents`, `tests`.
 *(If you cannot see `.env`: it is a "hidden" file on Mac/Linux, and on Windows it may just show as `.env` with no name. It is there - you do not need to open it.)*
 
 ❌ **Problem: the ZIP will not open / "Extract All" is missing** → right-click → **Open with** → **Windows Explorer**; or install the free 7-Zip from <https://www.7-zip.org>.
-❌ **Problem: you see only one more folder and no `app.py`** → open that folder; sometimes there are two folders inside each other.
+❌ **Problem: you see only one more folder and no `app.py`** → open that folder; Windows often puts the project folder inside another folder of the same name.
 
 ---
 
