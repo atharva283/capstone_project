@@ -165,11 +165,13 @@ A normal folder opens. Inside the ZIP is one folder called **`atharvabaldota_cap
 The terminal has to be "standing" in the project folder, otherwise it cannot find the files.
 
 ### 🪟 Windows (easiest way - works on Windows 10 and 11)
+> ⚠️ **On Windows you MUST use the Command Prompt (`cmd`) - the black window - for every command in this guide.** Do not use PowerShell (the blue window); some commands (like activating the `.venv`) are different there.
+
 1. In File Explorer, open the project folder (the one with `app.py`).
 2. Click once on the **address bar** at the top (the box that shows the folder path). The path turns blue.
 3. Type **`cmd`** and press **Enter**. A black Command Prompt opens, already inside the folder.
 
-*(Another way on Windows 11: right-click an empty spot in the folder → **Open in Terminal**. That opens **PowerShell** (blue). Type `cmd` and press Enter to switch to the black Command Prompt used in this guide.)*
+*(Another way on Windows 11: right-click an empty spot in the folder → **Open in Terminal**. That opens **PowerShell** (blue). Type `cmd` right there inside the blue terminal window and press Enter to switch to the black Command Prompt. **Please strictly use the Command Prompt for this guide.**)*
 
 ### 🍎 Mac
 Right-click the project folder → **Services** → **New Terminal at Folder**. *(If you don't see it: open **Terminal**, type `cd ` with a space after it, **drag the project folder** into the Terminal window, then press **Enter**.)*

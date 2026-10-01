@@ -51,7 +51,7 @@ Write-Host '-----------------------------------------------'
 # ---------------------------------------------------------------- 1. choose the files (whitelist)
 $rootFiles = 'app.py', 'agent.py', 'ingestion.py', 'retriever.py', 'llm.py', 'requirements.txt',
              '.env', '.env.example', 'README.md', 'DOCUMENTATION.md', 'run_windows.bat',
-             'architecture_diagram.jpg', '.streamlit/config.toml'
+             'architecture_diagram.jpg', 'README.pdf', 'DOCUMENTATION.pdf', '.streamlit/config.toml'
 $junkNames = 'Thumbs.db', '.DS_Store', 'desktop.ini'
 $include = New-Object 'System.Collections.Generic.List[string]'
 
@@ -145,7 +145,7 @@ foreach ($n in $names) {
     foreach ($pattern in $forbidden) { if ($n -match $pattern) { Fail "Forbidden item in ZIP: $n" } }
     if ($n -match '^(chroma_db|uploaded_documents)/' -and $n -notmatch '/\.gitkeep$') { Fail "Runtime data in ZIP: $n" }
 }
-foreach ($must in 'app.py', 'README.md', 'DOCUMENTATION.md', 'architecture_diagram.jpg', 'requirements.txt', '.env', '.env.example',
+foreach ($must in 'app.py', 'README.md', 'DOCUMENTATION.md', 'README.pdf', 'DOCUMENTATION.pdf', 'architecture_diagram.jpg', 'requirements.txt', '.env', '.env.example',
                   'chroma_db/.gitkeep', 'uploaded_documents/.gitkeep', 'sample_documents/HR_Policy_Guide.pdf') {
     if ($names -notcontains $must) { Fail "Missing from ZIP: $must" }
 }
