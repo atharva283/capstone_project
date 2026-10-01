@@ -27,7 +27,7 @@ models), ChromaDB (search database). Curious how it works inside? See [DOCUMENTA
 | 3 | Open a **terminal** inside the project folder | 1 min |
 | 4 | Create a private Python space (`.venv`) | 1 min |
 | 5 | Switch that space on | 1 min |
-| 6 | Install the needed packages | 3-10 min |
+| 6 | Install the needed packages | 3-15 min |
 | 7 | *(Optional)* Test that everything works | 3 min |
 | 8 | Start the app | 1 min |
 | 9 | Use the app and try the test questions | 10 min |
@@ -246,7 +246,7 @@ From now on, `python` (even on a Mac) means the right Python. **Keep this window
 
 ## Step 6 - Install the packages (the longest step)
 
-This downloads the tools the app needs (including a big AI library). **It takes 3-10 minutes and prints a LOT of text. That is normal.**
+This downloads the tools the app needs (including a big AI library). **It takes 3-15 minutes and prints a LOT of text. That is normal.**
 Do not close the window and do not press keys while it works.
 
 ```
