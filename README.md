@@ -106,7 +106,7 @@ Python 3.11.9
 | `Python was not found; run without arguments to install from the Microsoft Store...` | Windows only has a fake shortcut | Install Python from python.org (below). Then try again |
 | `Python 3.8.x` / `3.9.x` or lower | Too old | Install Python 3.11 (below) |
 | `Python 3.14.x` or higher | Newer than what was tested; some packages may not exist yet | Install Python 3.11 (below) - it can live next to the newer one |
-| Nothing works, but you know Python is installed | Try `py --version` instead. If that works, **use `py` instead of `python`** in every command below |
+| Nothing works, but you know Python is installed | Windows may know it under a different name | Try `py --version` instead. If that works, **use `py` instead of `python`** in every command below |
 
 **How to install Python (Windows):**
 1. Open <https://www.python.org/downloads/windows/> and download **"Windows installer (64-bit)"** for **Python 3.11**.
@@ -248,6 +248,12 @@ From now on, `python` (even on a Mac) means the right Python. **Keep this window
 
 This downloads the tools the app needs (including a big AI library). **It takes 3-15 minutes and prints a LOT of text. That is normal.**
 Do not close the window and do not press keys while it works.
+
+> ⏳ **Please be patient - this is the slowest step of the whole guide.** Some of the packages are very big (the AI tools
+> **LangChain**, **PyTorch** and the other things they need are hundreds of megabytes). How long it takes depends **entirely on your
+> internet speed and how fast your computer is**: a quick connection may finish in about 3 minutes, a slow one can take 15 minutes or more.
+> If the screen looks frozen for a while, it is **not** stuck - it is still downloading. Go make a cup of tea, and
+> **just wait until you see `Successfully installed ...` and the `(.venv)` prompt again.**
 
 ```
 python -m pip install -r requirements.txt
